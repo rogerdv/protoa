@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bus3bl2dfi1he"]
+
+[ext_resource type="PackedScene" uid="uid://cmb64uww8qbog" path="res://scenes/iso_camera.tscn" id="1_mx36s"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4aphy"]
+size = Vector2(20, 20)
+subdivide_width = 20
+subdivide_depth = 20
+
+[sub_resource type="BoxMesh" id="BoxMesh_ctec8"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="level" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="level"]
+transform = Transform3D(1, 0, 0, 0, 0.790989, 0.611831, 0, -0.611831, 0.790989, 0, 3.29243, 0)
+
+[node name="floor" type="MeshInstance3D" parent="level"]
+mesh = SubResource("PlaneMesh_4aphy")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426265, 0)
+mesh = SubResource("BoxMesh_ctec8")
+
+[node name="pivot" parent="." instance=ExtResource("1_mx36s")]
