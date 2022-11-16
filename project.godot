@@ -8,6 +8,16 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "CharacterBody3D",
+"class": &"entity",
+"language": &"GDScript",
+"path": "res://scripts/entity.gd"
+}]
+_global_script_class_icons={
+"entity": ""
+}
+
 [application]
 
 config/name="Combat Prototype A"
