@@ -9,6 +9,7 @@ var SPEED = 7.0 #speed factor *dah!
 
 func _ready():
 	add_child(nav_agent) #add as remote node
+	nav_target(global_transform.origin)
 
 func _physics_process(delta):
 	#Movement formula using navigation

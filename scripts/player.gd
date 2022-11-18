@@ -6,6 +6,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#test purpose
-	if GlobalControl.Lclick != Vector3.ZERO:
-		nav_target(GlobalControl.Lclick)
+	pass
+
+func _on_input_event(camera, event, position, normal, shape_idx):
+	#Selects player
+	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
+		GlobalControl.selected[0] = get_node(".")

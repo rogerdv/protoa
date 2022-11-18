@@ -60,10 +60,11 @@ func _input(event):
 		var to = from + camera.project_ray_normal(event.position) * ray_length
 		var intersection = space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from,to))
 		
-		#store intersection into an autoload to be globaly accessible
+		#Send click information to the global control
 		if GlobalControl.debug: print("Left click on: " + str(intersection.position))
 		if intersection != null:
-			GlobalControl.Lclick = intersection.position
+			#GlobalControl.Lclick = intersection.position
+			GlobalControl.left_click(intersection.position)
 			
 
 
