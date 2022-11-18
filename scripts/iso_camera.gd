@@ -5,6 +5,10 @@ extends Node3D
 # var a = 2
 # var b = "text"
 
+#Raycasting Variables
+@onready var camera = $Camera3D
+const ray_length = 1000 #length of the raycast
+
 const SCROLL_SPEED = 10
 var UP:bool = false
 var DOWN:bool = false
@@ -49,7 +53,21 @@ func _input(event):
 				if $Camera3D.size>10:
 					$Camera3D.size-=0.5
 			
+	#Raycasting for click position
+	if event is InputEventMouseButton and event.pressed and event.button_index == 2:
+		var space_state = get_world_3d().direct_space_state
+		var from = camera.project_ray_origin(event.position)
+		var to = from + camera.project_ray_normal(event.position) * ray_length
+		var intersection = space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from,to))
+		
+		#Send click information to the global control
+		if GlobalControl.debug: print("Left click on: " + str(intersection.position))
+		if intersection != null:
+			#GlobalControl.Lclick = intersection.position
+			GlobalControl.left_click(intersection.position)
 			
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_key_pressed(KEY_W) or UP:		
@@ -66,4 +84,6 @@ func _process(delta):
 		self.rotate(Vector3(0, 1,0),-1*delta)
 	if Input.is_key_pressed(KEY_E):
 		self.rotate(Vector3(0, 1,0),1*delta)
+	if Input.is_key_pressed(KEY_ESCAPE):
+		GlobalControl.selected = [null,null,null,null]
 		
