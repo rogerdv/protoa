@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ic5t3m5am8xd"]
 
-[ext_resource type="PackedScene" uid="uid://ck07ikhedwsx3" path="res://models/player1/NLA.glb" id="1_gl36t"]
+[ext_resource type="PackedScene" uid="uid://cg70ex6pxqq1b" path="res://models/player1/NLA.glb" id="1_gl36t"]
 
 [node name="NLA" instance=ExtResource("1_gl36t")]
 
@@ -102,6 +102,6 @@ bones/79/position = Vector3(-0.0227965, 0.348625, -0.127774)
 bones/79/rotation = Quaternion(0.989167, 0.0576956, 0.0363501, -0.129997)
 
 [node name="weapon" type="BoneAttachment3D" parent="Game Rig/Skeleton3D" index="1"]
-transform = Transform3D(-0.862719, 0.226938, 0.44485, -0.101663, -0.955778, 0.29449, 0.496475, 0.201961, 0.841888, -0.654107, 1.25836, -0.418432)
+transform = Transform3D(-0.862716, 0.226935, 0.44485, -0.101665, -0.955775, 0.294493, 0.496471, 0.201959, 0.841891, -0.654107, 1.25836, -0.418433)
 bone_name = "DEF-fuckyoufinger.R"
 bone_idx = 56
