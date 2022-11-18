@@ -1,22 +1,22 @@
 extends CharacterBody3D
 class_name entity
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+#Lets add NavigationAgent3D trowgh code, accessible as 'nav_agent', 
+#we don't need to interact with such node directly in the actual tree..
+var nav_agent = NavigationAgent3D.new() #Navigation agent itself
+var nav_target:Vector3 #Reachable target for the navigation
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var SPEED = 7.0 #speed factor *dah!
 
-# An array of dictionaries
-var actions = []
-# {"type":use_item/use_ability, "item_id/ability_id":"id of item/ability"}
-
+func _ready():
+	add_child(nav_agent) #add as remote node
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-
-	
-
-	move_and_slide()
+	#Movement formula using navigation
+	if nav_agent.is_target_reachable() and not nav_agent.is_target_reached():
+		var current_location = global_transform.origin
+		var next_location = nav_agent.get_next_location()
+		var new_velocity = (next_location - current_location).normalized() * SPEED
+		
+		velocity = new_velocity
+		move_and_slide()
