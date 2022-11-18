@@ -12,13 +12,18 @@ func _ready():
 
 func _physics_process(delta):
 	#Movement formula using navigation
-	if nav_agent.is_target_reachable() and not nav_agent.is_target_reached():
+	if not nav_agent.is_target_reached():
 		var current_location = global_transform.origin
 		var next_location = nav_agent.get_next_location()
 		var new_velocity = (next_location - current_location).normalized() * SPEED
 		
+		if not nav_agent.is_target_reachable() and current_location.round() == next_location.round():
+			nav_target(current_location)
+			return
+		
 		velocity = new_velocity
 		move_and_slide()
+	
 
 #Use this method for set navigation target, please dont set it directly.
 func nav_target(target:Vector3):
