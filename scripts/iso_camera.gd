@@ -84,4 +84,6 @@ func _process(delta):
 		self.rotate(Vector3(0, 1,0),-1*delta)
 	if Input.is_key_pressed(KEY_E):
 		self.rotate(Vector3(0, 1,0),1*delta)
+	if Input.is_key_pressed(KEY_ESCAPE):
+		GlobalControl.selected = [null,null,null,null]
 		
