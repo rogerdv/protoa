@@ -24,3 +24,7 @@ config/name="Combat Prototype A"
 run/main_scene="res://scenes/test.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalControl="*res://scripts/control.gd"
