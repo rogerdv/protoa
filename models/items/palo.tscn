@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr7tg8t25p6f1"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qpmxd"]
+top_radius = 0.02
+bottom_radius = 0.02
+height = 1.0
+radial_segments = 6
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qyuci"]
+size = Vector3(0.08, 0.564, 0.08)
+
+[node name="palo" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43703, 0)
+mesh = SubResource("CylinderMesh_qpmxd")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.204113, 0)
+shape = SubResource("BoxShape3D_qyuci")
