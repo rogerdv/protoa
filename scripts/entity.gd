@@ -4,7 +4,6 @@ class_name entity
 #Lets add NavigationAgent3D trowgh code, accessible as 'nav_agent', 
 #we don't need to interact with such node directly in the actual tree..
 var nav_agent = NavigationAgent3D.new() #Navigation agent itself
-var nav_target:Vector3 #Reachable target for the navigation
 
 var SPEED = 7.0 #speed factor *dah!
 
@@ -20,3 +19,7 @@ func _physics_process(delta):
 		
 		velocity = new_velocity
 		move_and_slide()
+
+#Use this method for set navigation target, please dont set it directly.
+func nav_target(target:Vector3):
+	nav_agent.set_target_location(target)
