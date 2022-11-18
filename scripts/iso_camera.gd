@@ -61,8 +61,10 @@ func _input(event):
 		var intersection = space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from,to))
 		
 		#store intersection into an autoload to be globaly accessible
+		if GlobalControl.debug: print("Left click on: " + str(intersection.position))
 		if intersection != null:
 			GlobalControl.Lclick = intersection.position
+			
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
