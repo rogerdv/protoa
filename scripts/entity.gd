@@ -22,6 +22,18 @@ func _physics_process(delta):
 			nav_target(current_location)
 			return
 		
+		#Smooth rotation
+		var rot_temp = rotation #store actual rotation
+		
+		look_at(next_location,Vector3.UP) #get the wanter rotation
+		var rot_wanted = rotation
+		
+		rotation = rot_temp #restore rotation
+		
+		var tween = create_tween() #tweened for smmothness
+		tween.tween_property(self,":rotation",rot_wanted,0.3)
+		
+		
 		velocity = new_velocity
 		move_and_slide()
 	
