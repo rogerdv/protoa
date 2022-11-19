@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dat27kn81ggdw"
+uid="uid://im38wp0fnblg"
 path="res://.godot/imported/hammer.glb-5a440004a1e931d7b0ed0b00166e76c5.scn"
 
 [deps]
@@ -23,7 +23,7 @@ meshes/create_shadow_meshes=true
 meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 skins/use_named_skins=true
-animation/import=true
+animation/import=false
 animation/fps=30
 import_script/path=""
 _subresources={}

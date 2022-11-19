@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnnrcfm6ewcgy"]
+
+[ext_resource type="PackedScene" uid="uid://im38wp0fnblg" path="res://models/weapons/hammer/hammer.glb" id="1_n4mi8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwqv4"]
+albedo_color = Color(0.215686, 0.529412, 0.0313726, 1)
+
+[node name="hammer" instance=ExtResource("1_n4mi8")]
+
+[node name="hammer2" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_pwqv4")
