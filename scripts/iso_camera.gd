@@ -50,7 +50,7 @@ func _input(event):
 					$Camera3D.size+=0.5
 			# zoom out
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-				if $Camera3D.size>10:
+				if $Camera3D.size>5:
 					$Camera3D.size-=0.5
 			
 	#Raycasting for click position
