@@ -25,3 +25,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426265, 0)
 mesh = SubResource("BoxMesh_ctec8")
 
 [node name="pivot" parent="." instance=ExtResource("1_mx36s")]
+
+[node name="input" type="Node3D" parent="."]

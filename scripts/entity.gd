@@ -11,6 +11,9 @@ func _ready():
 	add_child(nav_agent) #add as remote node
 	nav_target(global_transform.origin)
 
+func move_to(pos:Vector3):
+	nav_target(pos)
+
 func _physics_process(delta):
 	#Movement formula using navigation
 	if not nav_agent.is_target_reached():
