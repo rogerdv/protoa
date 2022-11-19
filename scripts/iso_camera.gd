@@ -54,17 +54,17 @@ func _input(event):
 					$Camera3D.size-=0.5
 			
 	#Raycasting for click position
-	if event is InputEventMouseButton and event.pressed and event.button_index == 2:
-		var space_state = get_world_3d().direct_space_state
-		var from = camera.project_ray_origin(event.position)
-		var to = from + camera.project_ray_normal(event.position) * ray_length
-		var intersection = space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from,to))
-		
-		#Send click information to the global control
-		if GlobalControl.debug: print("Left click on: " + str(intersection.position))
-		if intersection != null:
-			#GlobalControl.Lclick = intersection.position
-			GlobalControl.left_click(intersection.position)
+#	if event is InputEventMouseButton and event.pressed and event.button_index == 2:
+#		var space_state = get_world_3d().direct_space_state
+#		var from = camera.project_ray_origin(event.position)
+#		var to = from + camera.project_ray_normal(event.position) * ray_length
+#		var intersection = space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from,to))
+#
+#		#Send click information to the global control
+#		if GlobalControl.debug: print("Left click on: " + str(intersection.position))
+#		if intersection != null:
+#			#GlobalControl.Lclick = intersection.position
+#			GlobalControl.left_click(intersection.position)
 			
 
 
