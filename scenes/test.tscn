@@ -63,4 +63,4 @@ shape = SubResource("ConcavePolygonShape3D_t7t2r")
 script = ExtResource("2_fqsbe")
 
 [node name="player" parent="." instance=ExtResource("2_0uj07")]
-model_scene = "res://models/player1/nla.tscn"
+model_scene = "res://models/player_character/player_character.tscn"
