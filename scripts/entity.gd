@@ -26,16 +26,9 @@ func _physics_process(delta):
 			return
 		
 		#Smooth rotation
-		var rot_temp = rotation #store actual rotation
-		
-		look_at(next_location,Vector3.UP) #get the wanter rotation
-		var rot_wanted = rotation
-		
-		rotation = rot_temp #restore rotation
-		
-		var tween = create_tween() #tweened for smmothness
-		tween.tween_property(self,":rotation",rot_wanted,0.3)
-		
+		var from = Quaternion(transform.basis)
+		var to = Quaternion(transform.looking_at(next_location).basis)
+		transform.basis = Basis(from.slerp(to,0.1))
 		
 		velocity = new_velocity
 		move_and_slide()
