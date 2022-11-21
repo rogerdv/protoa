@@ -4,4 +4,5 @@ class_name item_weapon
 @export var damage:float
 
 func use(owner, target):
-	target.hp[0]-=damage
+	model.damage=damage
+	owner.actor.get_node("AnimationPlayer").play("attack_one_handed")

@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_pko4e")
 damage = 2.0
+id = "hammer"
 mesh = ExtResource("1_xwmfo")
 slot = "weapon"

@@ -76,7 +76,7 @@ bones/70/position = Vector3(0.527092, 0.682659, -0.133191)
 material_override = SubResource("StandardMaterial3D_724n6")
 
 [node name="weapon" type="BoneAttachment3D" parent="player_skeleton/Skeleton3D" index="1"]
-transform = Transform3D(0.612864, 0.700338, 0.365955, 0.674489, -0.704915, 0.219449, 0.411656, 0.11234, -0.904388, 0.485382, 1.16626, 0.316352)
+transform = Transform3D(0.612863, 0.700339, 0.365956, 0.67449, -0.704914, 0.219451, 0.411658, 0.112341, -0.904388, 0.485382, 1.16626, 0.316353)
 bone_name = "hand.R"
 bone_idx = 33
 

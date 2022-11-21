@@ -36,6 +36,11 @@ func move_to(pos:Vector3):
 	nav_target(pos)
 	actor.get_node("AnimationPlayer").play("run_forward_one_handed")
 
+func smooth_rotate(pos:Vector3):
+	var from = Quaternion(transform.basis)
+	var to = Quaternion(transform.looking_at(pos).basis)
+	transform.basis = Basis(from.slerp(to,0.1))
+		
 func _physics_process(delta):
 	#Movement formula using navigation
 	if not nav_agent.is_target_reached():

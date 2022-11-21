@@ -6,11 +6,13 @@ class_name item_base
 @export var mesh:Resource
 @export var slot:String	#slot to put the item
 
+var model 
+
 func use(owner, target):
 	pass
 
 func equip(owner):
-	var model = mesh.instantiate()
+	model = mesh.instantiate()
 	#Temporary workaround, replace with better code
 	var attach = owner.actor.find_child("weapon", true)
 	attach.add_child(model)
