@@ -4,4 +4,4 @@ class_name item_weapon
 @export var damage:float
 
 func use(owner, target):
-	pass
+	target.hp[0]-=damage

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b64ct1sr3433f"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_8gmtv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hs2wu"]
+radius = 0.3
+height = 1.8
+
+[node name="npc" type="CharacterBody3D"]
+script = ExtResource("1_8gmtv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.947788, 0)
+shape = SubResource("CapsuleShape3D_hs2wu")

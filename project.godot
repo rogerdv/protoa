@@ -13,9 +13,21 @@ _global_script_classes=[{
 "class": &"entity",
 "language": &"GDScript",
 "path": "res://scripts/entity.gd"
+}, {
+"base": "Resource",
+"class": &"item_base",
+"language": &"GDScript",
+"path": "res://scripts/game/item_base.gd"
+}, {
+"base": "item_base",
+"class": &"item_weapon",
+"language": &"GDScript",
+"path": "res://scripts/game/item_weapon.gd"
 }]
 _global_script_class_icons={
-"entity": ""
+"entity": "",
+"item_base": "",
+"item_weapon": ""
 }
 
 [application]

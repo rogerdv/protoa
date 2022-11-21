@@ -16,12 +16,13 @@ func _input(event):
 		var intersection = space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from,to))
 		if intersection != null:
 			$"../player".move_to(intersection.position)
-		#Send click information to the global control
-#		if GlobalControl.debug: print("Left click on: " + str(intersection.position))
-#		if intersection != null:
-#			#GlobalControl.Lclick = intersection.position
-#			GlobalControl.left_click(intersection.position)
-#
+	elif  event is InputEventKey:
+		### TEST Remove!!!!!!!!!!!!!
+		if event.keycode==KEY_1:
+			$"../player".inventory[0].equip($"../player")
+		elif event.keycode==KEY_2:
+			$"../player".actor.get_node("AnimationPlayer").play("attack_one_handed")
+#		### TEST Remove!!!!!!!!!!!!!
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
