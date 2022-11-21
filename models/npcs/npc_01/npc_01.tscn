@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cb5p5wb4uu46s"]
+[gd_scene load_steps=3 format=3 uid="uid://cb5p5wb4uu46s"]
 
 [ext_resource type="PackedScene" uid="uid://b8mioj33fp0jc" path="res://models/npcs/npc_01/npc_01.glb" id="1_6la8b"]
+[ext_resource type="Script" path="res://scripts/actor.gd" id="2_1fvke"]
 
 [node name="npc_01" instance=ExtResource("1_6la8b")]
+script = ExtResource("2_1fvke")
 
 [node name="Skeleton3D" parent="NPC_01_rig" index="0"]
 bones/0/position = Vector3(0, -0.2658, 0)
