@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnnrcfm6ewcgy"]
+[gd_scene load_steps=5 format=3 uid="uid://dnnrcfm6ewcgy"]
 
 [ext_resource type="PackedScene" uid="uid://im38wp0fnblg" path="res://models/weapons/hammer/hammer.glb" id="1_n4mi8"]
+[ext_resource type="Script" path="res://scripts/game/weapon.gd" id="2_aksc0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwqv4"]
 albedo_color = Color(0.215686, 0.529412, 0.0313726, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iwvfi"]
-size = Vector3(0.155453, 0.315645, 0.490015)
+size = Vector3(0.130532, 0.267056, 0.278739)
 
 [node name="hammer" instance=ExtResource("1_n4mi8")]
+script = ExtResource("2_aksc0")
 
 [node name="hammer2" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.081042, 0.219467)
@@ -17,5 +19,7 @@ material_override = SubResource("StandardMaterial3D_pwqv4")
 [node name="Area3D" type="Area3D" parent="hammer2" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hammer2/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, -0.0257092, -0.536904)
+transform = Transform3D(1, 0, 0, 0, 0.999999, 2.13163e-14, 0, -2.13163e-14, 0.999999, 0, -0.0531115, -0.610533)
 shape = SubResource("BoxShape3D_iwvfi")
+
+[connection signal="body_entered" from="hammer2/Area3D" to="." method="_on_area_3d_body_entered"]
