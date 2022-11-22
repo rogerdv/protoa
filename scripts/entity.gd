@@ -36,15 +36,19 @@ func _ready():
 	actor = load(model_scene).instantiate()
 	add_child(actor)
 
-func move_to(pos:Vector3):
+#When player move over terrain "separation" is set to 0.1, so player can reach
+#the accurate pointed location. Increase the value when attacking to avoid 
+#models overlaping and get a nicer and realistic attack distance.
+func move_to(pos:Vector3,separation:float=0.1):
 	moving = true
+	nav_agent.target_desired_distance = separation
 	nav_target(pos)
 	actor.get_node("AnimationPlayer").play("run_forward_one_handed")
 
-func smooth_rotate(pos:Vector3):
+func smooth_rotate(pos:Vector3,amount:float=ROTATION):
 	var from = Quaternion(transform.basis)
 	var to = Quaternion(transform.looking_at(pos).basis)
-	transform.basis = Basis(from.slerp(to,ROTATION))
+	transform.basis = Basis(from.slerp(to,amount))
 		
 func _physics_process(delta):
 	#Movement formula using navigation
@@ -66,6 +70,7 @@ func _physics_process(delta):
 	elif nav_agent.is_target_reached() and moving:
 		moving = false
 		actor.get_node("AnimationPlayer").play("idle_one_handed")
+		if GlobalControl.debug:print(nav_agent.distance_to_target())
 	
 
 #Use this method for set navigation target, please dont set it directly.
