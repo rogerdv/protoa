@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bus3bl2dfi1he"]
+[gd_scene load_steps=14 format=3 uid="uid://bus3bl2dfi1he"]
 
 [ext_resource type="PackedScene" uid="uid://cmb64uww8qbog" path="res://scenes/iso_camera.tscn" id="1_mx36s"]
+[ext_resource type="Script" path="res://scripts/scene_init.gd" id="1_ov8lr"]
 [ext_resource type="PackedScene" uid="uid://c0tjgps5mletg" path="res://models/player.tscn" id="2_0uj07"]
 [ext_resource type="Script" path="res://scripts/gameplay_input.gd" id="2_fqsbe"]
 [ext_resource type="Resource" uid="uid://c02be53efv68q" path="res://game_data/items/weapons/hammer.tres" id="4_af7fo"]
@@ -28,6 +29,7 @@ subdivide_depth = 20
 albedo_color = Color(0.137255, 0.333333, 0.0431373, 1)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_ov8lr")
 
 [node name="level" type="Node3D" parent="."]
 

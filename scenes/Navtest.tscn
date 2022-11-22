@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://fecoj7bsuycc"]
+[gd_scene load_steps=16 format=3 uid="uid://fecoj7bsuycc"]
 
+[ext_resource type="Script" path="res://scripts/scene_init.gd" id="1_071yl"]
 [ext_resource type="PackedScene" uid="uid://cmb64uww8qbog" path="res://scenes/iso_camera.tscn" id="1_abvfp"]
 [ext_resource type="PackedScene" uid="uid://c0tjgps5mletg" path="res://models/player.tscn" id="2_y24i8"]
 [ext_resource type="Script" path="res://scripts/gameplay_input.gd" id="3_6ql3t"]
@@ -29,6 +30,7 @@ material = SubResource("StandardMaterial3D_d6nma")
 albedo_color = Color(1, 0, 0, 1)
 
 [node name="testfield" type="Node3D"]
+script = ExtResource("1_071yl")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(6.27132, 0, 0, 0, 1, 0, 0, 0, 6.27132, 0, 0, 0)
