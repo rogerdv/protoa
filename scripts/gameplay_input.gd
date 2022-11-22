@@ -26,11 +26,14 @@ func _input(event):
 					intersection["collider"].toggle_select(true)
 					player.target = intersection["collider"]
 					player.smooth_rotate(player.target.global_transform.origin)
+					$"../UI/target".text=intersection["collider"].name
 				else:
 					#clicked on ground, unselect current target
 					if player.target!=null:
 						player.target.toggle_select(false)
-					player.target=null		
+						player.target=null
+						$"../UI/target".text=""
+							
 		
 	elif  event is InputEventKey:
 		### TEST Remove!!!!!!!!!!!!!
@@ -40,6 +43,9 @@ func _input(event):
 			player.smooth_rotate(player.target.position)
 			player.inventory[0].use(player, player.target)
 #		### TEST Remove!!!!!!!!!!!!!
+		elif event.keycode==KEY_ESCAPE:
+			get_tree().quit()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

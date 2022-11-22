@@ -6,6 +6,7 @@ extends Node
 var selected = [null,null,null,null]
 
 var debug:bool #for debug purposes
+var scene_ui
 
 func _ready():
 	debug = true
