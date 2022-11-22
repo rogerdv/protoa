@@ -6,6 +6,7 @@ class_name entity
 var nav_agent = NavigationAgent3D.new() #Navigation agent itself
 
 var SPEED = 7.0 #speed factor *dah!
+var ROTATION = 0.2 #amount of rotation
 
 @export var model_scene:String
 var actor
@@ -43,7 +44,7 @@ func move_to(pos:Vector3):
 func smooth_rotate(pos:Vector3):
 	var from = Quaternion(transform.basis)
 	var to = Quaternion(transform.looking_at(pos).basis)
-	transform.basis = Basis(from.slerp(to,0.1))
+	transform.basis = Basis(from.slerp(to,ROTATION))
 		
 func _physics_process(delta):
 	#Movement formula using navigation
@@ -58,9 +59,7 @@ func _physics_process(delta):
 			return
 		
 		#Smooth rotation
-		var from = Quaternion(transform.basis)
-		var to = Quaternion(transform.looking_at(next_location).basis)
-		transform.basis = Basis(from.slerp(to,0.1))
+		smooth_rotate(next_location)
 		
 		velocity = new_velocity
 		move_and_slide()
