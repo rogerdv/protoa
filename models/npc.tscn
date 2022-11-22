@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b64ct1sr3433f"]
+[gd_scene load_steps=6 format=3 uid="uid://b64ct1sr3433f"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_8gmtv"]
+[ext_resource type="Texture2D" uid="uid://d25rgj7q3wuol" path="res://textures/select.png" id="2_lyf01"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hs2wu"]
 radius = 0.3
 height = 1.8
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_no6ea"]
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3tgrc"]
+transparency = 1
+albedo_texture = ExtResource("2_lyf01")
 
 [node name="npc" type="CharacterBody3D"]
 script = ExtResource("1_8gmtv")
@@ -12,3 +20,9 @@ script = ExtResource("1_8gmtv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.947788, 0)
 shape = SubResource("CapsuleShape3D_hs2wu")
+
+[node name="select" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00854811, 0)
+visible = false
+mesh = SubResource("PlaneMesh_no6ea")
+surface_material_override/0 = SubResource("StandardMaterial3D_3tgrc")
