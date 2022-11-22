@@ -26,6 +26,9 @@ var attrib=[5,5,5,5,5]
 var target		
 @export var inventory:Array
 
+var moving = false	#is the entity moving?
+
+
 func _ready():
 	add_child(nav_agent) #add as remote node
 	nav_target(global_transform.origin)
@@ -33,6 +36,7 @@ func _ready():
 	add_child(actor)
 
 func move_to(pos:Vector3):
+	moving = true
 	nav_target(pos)
 	actor.get_node("AnimationPlayer").play("run_forward_one_handed")
 
@@ -50,7 +54,7 @@ func _physics_process(delta):
 		
 		if not nav_agent.is_target_reachable() and current_location.round() == next_location.round():
 			nav_target(current_location)
-			actor.get_node("AnimationPlayer").play("idle_one_handed")
+#			actor.get_node("AnimationPlayer").play("idle_one_handed")
 			return
 		
 		#Smooth rotation
@@ -60,8 +64,9 @@ func _physics_process(delta):
 		
 		velocity = new_velocity
 		move_and_slide()
-#	else:
-#		actor.get_node("AnimationPlayer").play("idle_one_handed")
+	elif nav_agent.is_target_reached() and moving:
+		moving = false
+		actor.get_node("AnimationPlayer").play("idle_one_handed")
 	
 
 #Use this method for set navigation target, please dont set it directly.
