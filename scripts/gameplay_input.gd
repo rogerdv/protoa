@@ -22,11 +22,15 @@ func _input(event):
 		elif event.button_index == 1:
 			# LEft click, look for NPC or interactable
 			if intersection != null:
-				if intersection["collider"] is entity:
-					print("Click on character")
+				if intersection["collider"] is npc:					
+					intersection["collider"].toggle_select(true)
 					player.target = intersection["collider"]
 					player.smooth_rotate(player.target.global_transform.origin)
-					
+				else:
+					#clicked on ground, unselect current target
+					if player.target!=null:
+						player.target.toggle_select(false)
+					player.target=null		
 		
 	elif  event is InputEventKey:
 		### TEST Remove!!!!!!!!!!!!!
