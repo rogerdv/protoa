@@ -23,11 +23,17 @@ _global_script_classes=[{
 "class": &"item_weapon",
 "language": &"GDScript",
 "path": "res://scripts/game/item_weapon.gd"
+}, {
+"base": "entity",
+"class": &"npc",
+"language": &"GDScript",
+"path": "res://scripts/npc.gd"
 }]
 _global_script_class_icons={
 "entity": "",
 "item_base": "",
-"item_weapon": ""
+"item_weapon": "",
+"npc": ""
 }
 
 [application]
