@@ -18,7 +18,10 @@ func _input(event):
 		var intersection = space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from,to))
 		if event.button_index == 2:
 			if intersection != null:
-				player.move_to(intersection.position)
+				if intersection["collider"] is npc:
+					player.move_to(intersection.position,2) #keep distance and avoid overlaping
+				else:
+					player.move_to(intersection.position)
 		elif event.button_index == 1:
 			# LEft click, look for NPC or interactable
 			if intersection != null:
