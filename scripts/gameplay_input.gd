@@ -33,13 +33,17 @@ func _input(event):
 					intersection["collider"].toggle_select(true)
 					player.target = intersection["collider"]
 					player.turn_at(player.target.global_transform.origin)
+					$"../UI/target".text=intersection["collider"].name
+
 				else:
 					#clicked on ground, unselect current target
 					if player.target!=null:
 						player.target.toggle_select(false)
-					player.target=null		
+						player.target=null
+						$"../UI/target".text=""
+							
 		
-	elif  event is InputEventKey:
+	elif  event is InputEventKey and event.pressed:
 		### TEST Remove!!!!!!!!!!!!!
 		if event.keycode==KEY_1:
 			player.inventory[0].equip($"../player")
@@ -47,6 +51,9 @@ func _input(event):
 			player.turn_at(player.target.position)
 			player.inventory[0].use(player, player.target)
 #		### TEST Remove!!!!!!!!!!!!!
+		elif event.keycode==KEY_ESCAPE:
+			get_tree().quit()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

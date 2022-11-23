@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bus3bl2dfi1he"]
+[gd_scene load_steps=14 format=3 uid="uid://bus3bl2dfi1he"]
 
 [ext_resource type="PackedScene" uid="uid://cmb64uww8qbog" path="res://scenes/iso_camera.tscn" id="1_mx36s"]
+[ext_resource type="Script" path="res://scripts/scene_init.gd" id="1_ov8lr"]
 [ext_resource type="PackedScene" uid="uid://c0tjgps5mletg" path="res://models/player.tscn" id="2_0uj07"]
 [ext_resource type="Script" path="res://scripts/gameplay_input.gd" id="2_fqsbe"]
 [ext_resource type="Resource" uid="uid://c02be53efv68q" path="res://game_data/items/weapons/hammer.tres" id="4_af7fo"]
 [ext_resource type="PackedScene" uid="uid://b64ct1sr3433f" path="res://models/npc.tscn" id="5_bkokk"]
+[ext_resource type="PackedScene" uid="uid://d2b2b4qbke2we" path="res://UI/ui.tscn" id="6_cdpqt"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_vwcsu"]
 vertices = PackedVector3Array(-9.5, 0.426265, 2.3, -2.3, 0.426265, 2.3, -2.3, 0.426265, 1.7, -9.5, 0.426265, 2.3, -2.3, 0.426265, 1.7, -2.1, 0.426265, 1.4, -1.2, 0.426265, -9.5, -9.5, 0.426265, -9.5, -2.1, 0.426265, 1.4, -1.2, 0.426265, 1.3, -1.2, 0.426265, -9.5, -0.200002, 0.426265, 1.7, -0.200002, 0.426265, 2.3, 9.5, 0.426265, 2.3, -0.400002, 0.426265, 1.4, -0.200002, 0.426265, 1.7, 9.5, 0.426265, 2.3, -1.2, 0.426265, 1.3, -0.400002, 0.426265, 1.4, 9.5, 0.426265, 2.3, 9.5, 0.426265, -9.5, -1.2, 0.426265, -9.5, -1.2, 0.426265, 9.5, -1.2, 0.426265, 3.4, -1.9, 0.426265, 3.4, -1.2, 0.426265, 9.5, -1.9, 0.426265, 3.4, -2.2, 0.426265, 3.2, -9.5, 0.426265, 2.3, -9.5, 0.426265, 9.5, -2.2, 0.426265, 3.2, -2.3, 0.426265, 2.3, -9.5, 0.426265, 2.3, -0.600001, 0.426265, 3.4, -1.2, 0.426265, 3.4, -1.2, 0.426265, 9.5, -0.300002, 0.426265, 3.2, -0.600001, 0.426265, 3.4, -1.2, 0.426265, 9.5, 9.5, 0.426265, 9.5, 9.5, 0.426265, 2.3, 9.5, 0.426265, 2.3, -0.200002, 0.426265, 2.3, -0.300002, 0.426265, 3.2)
@@ -27,6 +29,7 @@ subdivide_depth = 20
 albedo_color = Color(0.137255, 0.333333, 0.0431373, 1)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_ov8lr")
 
 [node name="level" type="Node3D" parent="."]
 
@@ -70,3 +73,5 @@ inventory = [ExtResource("4_af7fo")]
 [node name="npc" parent="." instance=ExtResource("5_bkokk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83593, 0, 0.66316)
 model_scene = "res://models/npcs/npc_01/npc_01.tscn"
+
+[node name="UI" parent="." instance=ExtResource("6_cdpqt")]

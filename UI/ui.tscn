@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2b2b4qbke2we"]
+
+[ext_resource type="Script" path="res://scripts/ui/gameplay_ui.gd" id="1_bf8eg"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+script = ExtResource("1_bf8eg")
+
+[node name="MessageArea" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -208.0
+offset_top = -89.0
+offset_right = 208.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Text" type="VBoxContainer" parent="MessageArea"]
+layout_mode = 2
+
+[node name="target" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.0
+offset_top = 19.0
+offset_right = 90.0
+offset_bottom = 42.0
+grow_horizontal = 2
+horizontal_alignment = 1

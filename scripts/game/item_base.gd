@@ -14,5 +14,9 @@ func use(owner, target):
 func equip(owner):
 	model = mesh.instantiate()
 	#Temporary workaround, replace with better code
-	var attach = owner.actor.find_child("weapon", true)
-	attach.add_child(model)
+	var attach:BoneAttachment3D = owner.actor.find_child(slot, true)
+	if attach.get_child_count()>0:
+		# Item is already equipped, remnove
+		attach.remove_child(attach.get_child(0))
+	else :
+		attach.add_child(model)
