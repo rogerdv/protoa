@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="animation_library"
 importer_version=1
-type="PackedScene"
-uid="uid://cjcpkch3bbue4"
-path="res://.godot/imported/player_character.glb-466761ea5aa609d861c89caad2442f7b.scn"
+type="AnimationLibrary"
+uid="uid://ob5guuqsxu2k"
+path="res://.godot/imported/player_character_anim_lib.glb-66b156c9ad81e28fd65f90b2445cb886.res"
 
 [deps]
 
-source_file="res://models/player_character/player_character.glb"
-dest_files=["res://.godot/imported/player_character.glb-466761ea5aa609d861c89caad2442f7b.scn"]
+source_file="res://models/player_character/player_character_anim_lib.glb"
+dest_files=["res://.godot/imported/player_character_anim_lib.glb-66b156c9ad81e28fd65f90b2445cb886.res"]
 
 [params]
 
