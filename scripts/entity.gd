@@ -89,4 +89,9 @@ func turn_at(target:Vector3):
 	face_target = target
 
 func auto_attack():
+	actor.get_node("AnimationPlayer").animation_finished.connect(_atk_animation_ends)
 	inventory[0].use(self, target)
+#workaround needs brainstorm
+func _atk_animation_ends(anim_name):
+	if anim_name == ("attack_one_handed"):
+		print(target.name," takes: ",inventory[0].damage," damage")
