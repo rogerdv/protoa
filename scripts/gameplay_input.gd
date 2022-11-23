@@ -18,15 +18,23 @@ func _input(event):
 		var intersection = space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from,to))
 		if event.button_index == 2:
 			if intersection != null:
-				player.move_to(intersection.position)
+				#if is a npc
+				if intersection["collider"] is npc:
+					player.target = intersection["collider"]
+					player.move_to(intersection.position,2,true) #keep distance and avoid overlaping
+				#if is just the ground
+				else:
+					player.move_to(intersection.position)
+		
 		elif event.button_index == 1:
 			# LEft click, look for NPC or interactable
 			if intersection != null:
 				if intersection["collider"] is npc:					
 					intersection["collider"].toggle_select(true)
 					player.target = intersection["collider"]
-					player.smooth_rotate(player.target.global_transform.origin)
+					player.turn_at(player.target.global_transform.origin)
 					$"../UI/target".text=intersection["collider"].name
+
 				else:
 					#clicked on ground, unselect current target
 					if player.target!=null:
@@ -40,7 +48,7 @@ func _input(event):
 		if event.keycode==KEY_1:
 			player.inventory[0].equip($"../player")
 		elif event.keycode==KEY_2:
-			player.smooth_rotate(player.target.position)
+			player.turn_at(player.target.position)
 			player.inventory[0].use(player, player.target)
 #		### TEST Remove!!!!!!!!!!!!!
 		elif event.keycode==KEY_ESCAPE:
