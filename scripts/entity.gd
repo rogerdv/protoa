@@ -108,3 +108,4 @@ func auto_attack():
 func _atk_animation_ends(anim_name):
 	if anim_name == ("attack_one_handed"):
 		print(target.name," takes: ",inventory[0].damage," damage")
+		GlobalControl.scene_ui.add_message("Hit")
