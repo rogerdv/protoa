@@ -9,6 +9,11 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Resource",
+"class": &"ability_base",
+"language": &"GDScript",
+"path": "res://scripts/game/ability_base.gd"
+}, {
 "base": "CharacterBody3D",
 "class": &"entity",
 "language": &"GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[{
 "path": "res://scripts/npc.gd"
 }]
 _global_script_class_icons={
+"ability_base": "",
 "entity": "",
 "item_base": "",
 "item_weapon": "",

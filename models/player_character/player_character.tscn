@@ -17,7 +17,6 @@ bones/2/rotation = Quaternion(-1.67638e-08, 1.98915e-11, 4.73773e-09, 1)
 bones/3/rotation = Quaternion(7.45058e-09, 1.42109e-14, -8.88178e-16, 1)
 bones/4/rotation = Quaternion(-0.000399522, 0.0778429, 0.035249, 0.996342)
 bones/5/rotation = Quaternion(0.125513, 0.331227, 0.0903694, 0.930789)
-bones/7/rotation = Quaternion(0.5, 0.5, 0.5, -0.5)
 bones/8/rotation = Quaternion(0.0384565, 0.959855, -0.277001, -0.0216709)
 bones/9/rotation = Quaternion(0.121267, -0.466636, 0.0125892, 0.876006)
 bones/10/rotation = Quaternion(-4.74618e-09, 0.707107, 3.74007e-08, 0.707107)
@@ -77,7 +76,7 @@ bones/69/position = Vector3(-0.206255, 0.682659, -0.75179)
 bones/70/position = Vector3(0.527092, 0.682659, -0.133191)
 
 [node name="weapon" type="BoneAttachment3D" parent="." index="1"]
-transform = Transform3D(-0.832543, -0.470861, -0.291824, 0.290952, 0.0766105, -0.953666, 0.471401, -0.878875, 0.0732162, 0.485382, 1.16626, 0.316352)
+transform = Transform3D(-0.832544, -0.470861, -0.291824, 0.290951, 0.0766112, -0.953666, 0.471401, -0.878875, 0.0732154, 0.485382, 1.16626, 0.316353)
 bone_name = "hand.R"
 bone_idx = 33
 use_external_skeleton = true
