@@ -28,6 +28,7 @@ var target
 @export var inventory:Array
 
 var moving = false	#is the entity moving?
+var autoatk:bool
 
 #
 var face_target:Vector3
@@ -41,7 +42,8 @@ func _ready():
 #When player move over terrain "separation" is set to 0.1, so player can reach
 #the accurate pointed location. Increase the value when attacking to avoid 
 #models overlaping and get a nicer and realistic attack distance.
-func move_to(pos:Vector3,separation:float=0.1):
+func move_to(pos:Vector3,separation:float=0.1,attacking:bool=false):
+	autoatk = attacking
 	moving = true
 	nav_agent.target_desired_distance = separation
 	nav_target(pos)
@@ -51,7 +53,10 @@ func smooth_rotate(pos:Vector3,amount:float=ROTATION):
 	var from = Quaternion(transform.basis)
 	var to = Quaternion(transform.looking_at(pos).basis)
 	transform.basis = Basis(from.slerp(to,amount))
-		
+
+func _process(delta):
+	if autoatk and nav_agent.is_target_reached():auto_attack()
+
 func _physics_process(delta):
 	#Movement formula using navigation
 	if not nav_agent.is_target_reached():
@@ -82,3 +87,6 @@ func nav_target(target:Vector3):
 
 func turn_at(target:Vector3):
 	face_target = target
+
+func auto_attack():
+	inventory[0].use(self, target)

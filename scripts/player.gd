@@ -10,7 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	super(delta)
 
 func _on_input_event(camera, event, position, normal, shape_idx):
 	#Selects player
