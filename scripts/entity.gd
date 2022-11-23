@@ -29,6 +29,8 @@ var target
 
 var moving = false	#is the entity moving?
 
+#
+var face_target:Vector3
 
 func _ready():
 	add_child(nav_agent) #add as remote node
@@ -56,14 +58,12 @@ func _physics_process(delta):
 		var current_location = global_transform.origin
 		var next_location = nav_agent.get_next_location()
 		var new_velocity = (next_location - current_location).normalized() * SPEED
+		turn_at(next_location)
 		
 		if not nav_agent.is_target_reachable() and current_location.round() == next_location.round():
 			nav_target(current_location)
 #			actor.get_node("AnimationPlayer").play("idle_one_handed")
 			return
-		
-		#Smooth rotation
-		smooth_rotate(next_location)
 		
 		velocity = new_velocity
 		move_and_slide()
@@ -72,7 +72,13 @@ func _physics_process(delta):
 		actor.get_node("AnimationPlayer").play("idle_one_handed")
 		if GlobalControl.debug:print(nav_agent.distance_to_target())
 	
+	#Smooth rotation
+	smooth_rotate(face_target)
+	
 
 #Use this method for set navigation target, please dont set it directly.
 func nav_target(target:Vector3):
 	nav_agent.set_target_location(target)
+
+func turn_at(target:Vector3):
+	face_target = target

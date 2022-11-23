@@ -28,7 +28,7 @@ func _input(event):
 				if intersection["collider"] is npc:					
 					intersection["collider"].toggle_select(true)
 					player.target = intersection["collider"]
-					player.smooth_rotate(player.target.global_transform.origin)
+					player.turn_at(player.target.global_transform.origin)
 				else:
 					#clicked on ground, unselect current target
 					if player.target!=null:
@@ -40,7 +40,7 @@ func _input(event):
 		if event.keycode==KEY_1:
 			player.inventory[0].equip($"../player")
 		elif event.keycode==KEY_2:
-			player.smooth_rotate(player.target.position)
+			player.turn_at(player.target.position)
 			player.inventory[0].use(player, player.target)
 #		### TEST Remove!!!!!!!!!!!!!
 
