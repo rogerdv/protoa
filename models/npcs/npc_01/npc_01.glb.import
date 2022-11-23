@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bfwxtbx1m7cgd"
+uid="uid://k45rjl621crt"
 path="res://.godot/imported/npc_01.glb-5c29dc657567e2d2685ac97257a4b0e8.scn"
 
 [deps]
@@ -29,7 +29,7 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:NPC_01_rig/Skeleton3D": {
-"retarget/bone_map": Resource("res://models/bone_map.tres")
+"retarget/bone_map": null
 }
 }
 }

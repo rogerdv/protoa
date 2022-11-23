@@ -35,7 +35,7 @@ func _input(event):
 						$"../UI/target".text=""
 							
 		
-	elif  event is InputEventKey:
+	elif  event is InputEventKey and event.pressed:
 		### TEST Remove!!!!!!!!!!!!!
 		if event.keycode==KEY_1:
 			player.inventory[0].equip($"../player")
