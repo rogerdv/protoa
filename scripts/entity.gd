@@ -28,10 +28,10 @@ var target
 @export var inventory:Array
 
 var moving = false	#is the entity moving?
-var autoatk:bool
+var autoatk:bool #true if player is attacking
 
-#
-var face_target:Vector3
+#just store here a position then player turn facing it
+var face_target:Vector3 
 
 func _ready():
 	add_child(nav_agent) #add as remote node
@@ -39,9 +39,18 @@ func _ready():
 	actor = load(model_scene).instantiate()
 	add_child(actor)
 
-#When player move over terrain "separation" is set to 0.1, so player can reach
-#the accurate pointed location. Increase the value when attacking to avoid 
-#models overlaping and get a nicer and realistic attack distance.
+#Void	move_to
+#set the parameters for character navigation
+#Parameters:
+#
+#Vector3	pos
+#the position character will try to reach
+#
+#float		separation	[default:0.1]
+#the separation between character and target.
+#
+#bool		attacking	[default:false]
+#set to true when moving to attack another character
 func move_to(pos:Vector3,separation:float=0.1,attacking:bool=false):
 	autoatk = attacking
 	moving = true
@@ -49,6 +58,8 @@ func move_to(pos:Vector3,separation:float=0.1,attacking:bool=false):
 	nav_target(pos)
 	actor.get_node("AnimationPlayer").play("run_forward_one_handed")
 
+#Void	smooth_rotate
+#set the parameters for character to make a nice smooth rotation
 func smooth_rotate(pos:Vector3,amount:float=ROTATION):
 	var from = Quaternion(transform.basis)
 	var to = Quaternion(transform.looking_at(pos).basis)
@@ -85,6 +96,8 @@ func _physics_process(delta):
 func nav_target(target:Vector3):
 	nav_agent.set_target_location(target)
 
+#void	turn_at
+#the default method to set where character should be facing.
 func turn_at(target:Vector3):
 	face_target = target
 
