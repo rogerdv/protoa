@@ -6,9 +6,11 @@ func toggle_collisions(toggle):
 	$hammer2/Area3D.monitoring = toggle
 	
 func _on_area_3d_body_entered(body):
+	# play use sound
+	$AudioStreamPlayer3D.play()
 	# Disable colisions until next use
 	toggle_collisions(false)
-	#Play weapon sound
+	
 	#body bleeds on intersection
 	#print("Hit ",body.name," for "+str(damage)+" damage")
 	var msg:String=body.name

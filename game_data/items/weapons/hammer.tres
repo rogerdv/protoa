@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c02be53efv68q"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c02be53efv68q"]
 
 [ext_resource type="Script" path="res://scripts/game/item_weapon.gd" id="1_pko4e"]
 [ext_resource type="PackedScene" uid="uid://dnnrcfm6ewcgy" path="res://models/weapons/hammer/hammer.tscn" id="1_xwmfo"]
+[ext_resource type="AudioStream" uid="uid://c13g1xro5beg8" path="res://audio/sfx/chop.ogg" id="3_22cvl"]
 
 [resource]
 script = ExtResource("1_pko4e")
@@ -9,3 +10,5 @@ damage = 2.0
 id = "hammer"
 mesh = ExtResource("1_xwmfo")
 slot = "weapon"
+use_sfx = ExtResource("3_22cvl")
+use_time = 1.0
