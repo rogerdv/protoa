@@ -4,6 +4,7 @@ class_name entity
 #Lets add NavigationAgent3D trowgh code, accessible as 'nav_agent', 
 #we don't need to interact with such node directly in the actual tree..
 var nav_agent = NavigationAgent3D.new() #Navigation agent itself
+var anim 
 
 var SPEED = 7.0 #speed factor *dah!
 var ROTATION = 0.2 #amount of rotation
@@ -38,6 +39,7 @@ func _ready():
 	nav_target(global_transform.origin)
 	actor = load(model_scene).instantiate()
 	add_child(actor)
+	anim=actor.get_node("AnimationTree")
 
 #Void	move_to
 #set the parameters for character navigation
@@ -56,7 +58,12 @@ func move_to(pos:Vector3,separation:float=0.1,attacking:bool=false):
 	moving = true
 	nav_agent.target_desired_distance = separation
 	nav_target(pos)
-	actor.get_node("AnimationPlayer").play("run_forward_one_handed")
+#	actor.get_node("AnimationPlayer").play("run_forward_one_handed")
+	#Run anim
+	if attacking:
+		anim.set("parameters/stance/blend_position", Vector2(0,0) )
+	else :
+		anim.set("parameters/stance/blend_position", Vector2(0,1) )
 
 #Void	smooth_rotate
 #set the parameters for character to make a nice smooth rotation
@@ -85,7 +92,8 @@ func _physics_process(delta):
 		move_and_slide()
 	elif nav_agent.is_target_reached() and moving:
 		moving = false
-		actor.get_node("AnimationPlayer").play("idle_one_handed")
+#		actor.get_node("AnimationPlayer").play("idle_one_handed")
+		anim.set("parameters/stance/blend_position", Vector2(1,0) )
 		if GlobalControl.debug:print(nav_agent.distance_to_target())
 	
 	#Smooth rotation
@@ -101,6 +109,8 @@ func nav_target(target:Vector3):
 func turn_at(target:Vector3):
 	face_target = target
 
+# Needs to be reworked, AnimationTree doesnt supports signals
+# maybe check custom animation tracks?
 func auto_attack():
 	actor.get_node("AnimationPlayer").animation_finished.connect(_atk_animation_ends)
 	inventory[0].use(self, target)
