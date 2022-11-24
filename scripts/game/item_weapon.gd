@@ -6,4 +6,4 @@ class_name item_weapon
 func use(owner, target):
 	model.damage=damage
 #	owner.actor.get_node("AnimationPlayer").play("attack_one_handed")
-	owner.anim.set("parameters/Transition/current", 1 )
+	owner.anim.set("parameters/OneShot/active", true )
