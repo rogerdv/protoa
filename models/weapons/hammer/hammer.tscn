@@ -17,6 +17,7 @@ transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.
 material_override = SubResource("StandardMaterial3D_pwqv4")
 
 [node name="Area3D" type="Area3D" parent="hammer2" index="0"]
+monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hammer2/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 2.13163e-14, 0, -2.13163e-14, 0.999999, 0, -0.0531115, -0.610533)

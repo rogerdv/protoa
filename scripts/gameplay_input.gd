@@ -39,8 +39,7 @@ func _input(event):
 					#clicked on ground, unselect current target
 					if player.target!=null:
 						player.target.toggle_select(false)
-						player.target=null
-						$"../UI/target".text=""
+						player.target=null#						
 							
 		
 	elif  event is InputEventKey and event.pressed:
@@ -48,7 +47,8 @@ func _input(event):
 		if event.keycode==KEY_1:
 			player.inventory[0].equip($"../player")
 		elif event.keycode==KEY_2:
-			player.turn_at(player.target.position)
+			if player.target!=null:
+				player.turn_at(player.target.position)
 			player.inventory[0].use(player, player.target)
 #		### TEST Remove!!!!!!!!!!!!!
 		elif event.keycode==KEY_ESCAPE:

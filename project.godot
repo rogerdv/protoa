@@ -52,3 +52,4 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalControl="*res://scripts/control.gd"
+game_instance="*res://scripts/game_instance.gd"
