@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bsxbp38ghufhh"]
+
+[ext_resource type="PackedScene" uid="uid://cjl7e1x0oxg88" path="res://models/abilties/test_magic_ball.tscn" id="1_pl1v3"]
+[ext_resource type="Script" path="res://scripts/game/ability_testmagicball.gd" id="1_pngb1"]
+
+[resource]
+script = ExtResource("1_pngb1")
+id = "testmb"
+desc = null
+fx = ExtResource("1_pl1v3")
+cooldown = 2.0

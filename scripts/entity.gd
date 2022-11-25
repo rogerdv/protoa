@@ -27,6 +27,12 @@ var attrib=[5,5,5,5,5]
 #Target os tje entity I have selected, for attack or dialog
 var target		
 @export var inventory:Array
+# Abilities known to this entity
+# { ability_id:{"cooldown":0}
+# ability_id:{"cooldown":0}
+# }
+# When cooldown is 0, ability can be cast again
+var abilities = {"testmb":{"cooldown":0.0},"test2":{"cooldown":0.0}}
 
 var moving = false	#is the entity moving?
 var autoatk:bool #true if player is attacking
@@ -74,6 +80,12 @@ func smooth_rotate(pos:Vector3,amount:float=ROTATION):
 
 func _process(delta):
 	if autoatk and nav_agent.is_target_reached():auto_attack()
+	
+	# update cooldowns in ability list
+	if abilities.size()>0:
+		for a in abilities.keys():
+			if abilities[a]["cooldown"]>0:
+				abilities[a]["cooldown"]-=delta
 
 func _physics_process(delta):
 	#Movement formula using navigation

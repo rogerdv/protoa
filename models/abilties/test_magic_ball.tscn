@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjl7e1x0oxg88"]
+
+[ext_resource type="Script" path="res://scripts/game/projectile.gd" id="1_wvlsh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ong0q"]
+albedo_color = Color(0.25098, 0.454902, 0.996078, 1)
+emission_enabled = true
+emission = Color(0, 0.4, 0.87451, 1)
+emission_energy_multiplier = 1.96
+
+[sub_resource type="SphereMesh" id="SphereMesh_bhb4t"]
+material = SubResource("StandardMaterial3D_ong0q")
+radius = 0.1
+height = 0.2
+radial_segments = 8
+rings = 4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n8j0t"]
+radius = 0.15
+
+[node name="magic_ball" type="Node3D"]
+script = ExtResource("1_wvlsh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_bhb4t")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_n8j0t")

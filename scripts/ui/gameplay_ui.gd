@@ -19,3 +19,11 @@ func _process(delta):
 	else :
 		$target.text=""
 		
+
+
+func _on_slot_pressed(extra_arg_0):
+	if game_instance.player.abilities["testmb"]["cooldown"]<=0:
+		#we can cast
+		for a in game_instance.abilities:
+			if a["id"]=="testmb":
+				a.use(game_instance.player, game_instance.player.target)

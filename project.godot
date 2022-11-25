@@ -33,13 +33,19 @@ _global_script_classes=[{
 "class": &"npc",
 "language": &"GDScript",
 "path": "res://scripts/npc.gd"
+}, {
+"base": "ability_base",
+"class": &"test_magicball",
+"language": &"GDScript",
+"path": "res://scripts/game/ability_testmagicball.gd"
 }]
 _global_script_class_icons={
 "ability_base": "",
 "entity": "",
 "item_base": "",
 "item_weapon": "",
-"npc": ""
+"npc": "",
+"test_magicball": ""
 }
 
 [application]
@@ -52,4 +58,4 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalControl="*res://scripts/control.gd"
-game_instance="*res://scripts/game_instance.gd"
+game_instance="*res://scenes/game_instance.tscn"

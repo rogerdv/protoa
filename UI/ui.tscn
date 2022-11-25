@@ -19,9 +19,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -208.0
-offset_top = -89.0
-offset_right = 208.0
+offset_left = -214.0
+offset_top = -138.0
+offset_right = 202.0
+offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -39,3 +40,24 @@ offset_right = 90.0
 offset_bottom = 42.0
 grow_horizontal = 2
 horizontal_alignment = 1
+
+[node name="slot_bar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -162.0
+offset_top = -40.0
+offset_right = 162.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="1" type="Button" parent="slot_bar"]
+layout_mode = 2
+offset_right = 34.0
+offset_bottom = 40.0
+text = "MB"
+
+[connection signal="pressed" from="slot_bar/1" to="." method="_on_slot_pressed" binds= [1]]

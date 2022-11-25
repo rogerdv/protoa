@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://llj5famqj0fr"]
+
+[ext_resource type="Script" path="res://scripts/game_instance.gd" id="1_1y4vr"]
+[ext_resource type="Resource" uid="uid://bsxbp38ghufhh" path="res://game_data/abilities/test_mb.tres" id="2_pf7rg"]
+
+[node name="game_instance" type="Node3D"]
+script = ExtResource("1_1y4vr")
+abilities = [ExtResource("2_pf7rg")]
