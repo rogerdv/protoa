@@ -8,10 +8,13 @@ var player
 func _ready():
 	camera = $"../pivot/Camera3D"
 	player = $"../player"
+	
 
-func _input(event):
+func _unhandled_input(event):
 	#Raycasting for click position
+	print("unhandled input")
 	if event is InputEventMouseButton and event.pressed :
+		print("Mouse click")
 		var space_state = get_world_3d().direct_space_state
 		var from = camera.project_ray_origin(event.position)
 		var to = from + camera.project_ray_normal(event.position) * ray_length
@@ -39,10 +42,11 @@ func _input(event):
 					#clicked on ground, unselect current target
 					if player.target!=null:
 						player.target.toggle_select(false)
-						player.target=null#						
-							
-		
-	elif  event is InputEventKey and event.pressed:
+						player.target=null#		
+	
+func _input(event):
+
+	if  event is InputEventKey and event.pressed:
 		### TEST Remove!!!!!!!!!!!!!
 		if event.keycode==KEY_1:
 			player.inventory[0].equip(player)
@@ -51,14 +55,14 @@ func _input(event):
 				player.turn_at(player.target.position)
 			player.inventory[0].use(player, player.target)
 		elif event.keycode==KEY_3:			
-			
+
 			if player.abilities["testmb"]["cooldown"]<=0:				
 				#we can cast
 				for a in game_instance.abilities:
 					if a["id"]=="testmb":
 						a.use(player, player.target)
 						player.abilities["testmb"]["cooldown"]=a["cooldown"]
-			
+
 #		### TEST Remove!!!!!!!!!!!!!
 		elif event.keycode==KEY_ESCAPE:
 			get_tree().quit()
