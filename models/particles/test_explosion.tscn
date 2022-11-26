@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhryfwufev8xh"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nfnvi"]
+lifetime_randomness = 0.91
+particle_flag_rotate_y = true
+direction = Vector3(0, 0, 1)
+spread = 180.0
+gravity = Vector3(0, -1, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+linear_accel_min = 1.45
+linear_accel_max = 4.35
+radial_accel_min = 1.0
+radial_accel_max = 2.0
+angle_min = 208.7
+angle_max = 208.7
+color = Color(0.0509804, 0.0627451, 0.745098, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uly3l"]
+albedo_color = Color(0.12549, 0.0196078, 0.870588, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_nhaax"]
+material = SubResource("StandardMaterial3D_uly3l")
+radius = 0.02
+height = 0.05
+radial_segments = 4
+rings = 4
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 30
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_nfnvi")
+draw_pass_1 = SubResource("SphereMesh_nhaax")

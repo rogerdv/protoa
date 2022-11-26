@@ -28,3 +28,7 @@ mesh = SubResource("SphereMesh_bhb4t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_n8j0t")
+
+[node name="sfx" type="AudioStreamPlayer3D" parent="."]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

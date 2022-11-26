@@ -45,17 +45,19 @@ func _input(event):
 	elif  event is InputEventKey and event.pressed:
 		### TEST Remove!!!!!!!!!!!!!
 		if event.keycode==KEY_1:
-			player.inventory[0].equip($"../player")
+			player.inventory[0].equip(player)
 		elif event.keycode==KEY_2:
 			if player.target!=null:
 				player.turn_at(player.target.position)
 			player.inventory[0].use(player, player.target)
-		elif event.keycode==KEY_3:
-			if game_instance.player.abilities["testmb"]["cooldown"]<=0:
+		elif event.keycode==KEY_3:			
+			
+			if player.abilities["testmb"]["cooldown"]<=0:				
 				#we can cast
 				for a in game_instance.abilities:
 					if a["id"]=="testmb":
 						a.use(player, player.target)
+						player.abilities["testmb"]["cooldown"]=a["cooldown"]
 			
 #		### TEST Remove!!!!!!!!!!!!!
 		elif event.keycode==KEY_ESCAPE:

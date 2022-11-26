@@ -12,3 +12,8 @@ script = ExtResource("1_8pgjm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.960126, 0)
 shape = SubResource("CapsuleShape3D_hs2wu")
+
+[node name="origin" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26924, -0.680647)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
