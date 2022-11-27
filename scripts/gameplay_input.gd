@@ -3,6 +3,7 @@ extends Node3D
 var camera 
 const ray_length = 1000 #length of the raycast
 var player
+var char_s = preload("res://UI/character_sheet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -64,6 +65,9 @@ func _input(event):
 #		### TEST Remove!!!!!!!!!!!!!
 		elif event.keycode==KEY_ESCAPE:
 			get_tree().quit()
+		elif event.keycode==KEY_C:
+			var cs= char_s.instantiate()
+			GlobalControl.scene_ui.add_child(cs)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

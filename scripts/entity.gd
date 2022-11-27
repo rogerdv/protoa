@@ -45,7 +45,9 @@ var abilities = {"testmb":{"cooldown":0.0},"test2":{"cooldown":0.0}}
 
 var moving = false	#is the entity moving?
 var autoatk:bool #true if player is attacking
-
+# Set to locked to prevent player to respond to commands or NPCs to process 
+# AI and move 
+var locked = false
 #just store here a position then player turn facing it
 var face_target:Vector3 
 

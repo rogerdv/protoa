@@ -18,7 +18,7 @@ func _process(delta):
 		$target.text = tname+"("+str(game_instance.player.target.hp[0])+"/"+str(game_instance.player.target.hp[1])+")"
 	else :
 		$target.text=""
-		
+	$hp.text = str(game_instance.player.hp[0])+"/"+str(game_instance.player.hp[1])	
 
 
 func _on_slot_pressed(extra_arg_0):

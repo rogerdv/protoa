@@ -1,0 +1,128 @@
+[gd_scene load_steps=2 format=3 uid="uid://c04x8exys0134"]
+
+[ext_resource type="Script" path="res://scripts/ui/character_sheet.gd" id="1_rv4rl"]
+
+[node name="char_sheet" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 57.0
+offset_top = 39.0
+offset_right = -41.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rv4rl")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+offset_right = 1054.0
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="attribs" type="VBoxContainer" parent="Panel/HBoxContainer"]
+offset_right = 513.0
+offset_bottom = 550.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/attribs"]
+offset_right = 513.0
+offset_bottom = 26.0
+text = "Attributes:"
+
+[node name="str" type="HBoxContainer" parent="Panel/HBoxContainer/attribs"]
+offset_top = 28.0
+offset_right = 513.0
+offset_bottom = 59.0
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/attribs/str"]
+offset_top = 2.0
+offset_right = 21.0
+offset_bottom = 28.0
+text = "str"
+
+[node name="str_val" type="LineEdit" parent="Panel/HBoxContainer/attribs/str"]
+offset_left = 25.0
+offset_right = 92.0
+offset_bottom = 31.0
+
+[node name="int" type="HBoxContainer" parent="Panel/HBoxContainer/attribs"]
+offset_top = 61.0
+offset_right = 513.0
+offset_bottom = 92.0
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/attribs/int"]
+offset_top = 2.0
+offset_right = 21.0
+offset_bottom = 28.0
+text = "int"
+
+[node name="int_val" type="LineEdit" parent="Panel/HBoxContainer/attribs/int"]
+offset_left = 25.0
+offset_right = 92.0
+offset_bottom = 31.0
+
+[node name="dex" type="HBoxContainer" parent="Panel/HBoxContainer/attribs"]
+offset_top = 94.0
+offset_right = 513.0
+offset_bottom = 125.0
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/attribs/dex"]
+offset_top = 2.0
+offset_right = 28.0
+offset_bottom = 28.0
+text = "dex"
+
+[node name="dex_val" type="LineEdit" parent="Panel/HBoxContainer/attribs/dex"]
+offset_left = 32.0
+offset_right = 99.0
+offset_bottom = 31.0
+
+[node name="con" type="HBoxContainer" parent="Panel/HBoxContainer/attribs"]
+offset_top = 127.0
+offset_right = 513.0
+offset_bottom = 158.0
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/attribs/con"]
+offset_top = 2.0
+offset_right = 28.0
+offset_bottom = 28.0
+text = "con
+"
+
+[node name="con_val" type="LineEdit" parent="Panel/HBoxContainer/attribs/con"]
+offset_left = 32.0
+offset_right = 99.0
+offset_bottom = 31.0
+
+[node name="skills" type="VBoxContainer" parent="Panel/HBoxContainer"]
+offset_left = 518.0
+offset_right = 1031.0
+offset_bottom = 550.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/skills"]
+offset_right = 513.0
+offset_bottom = 26.0
+text = "Skills"
+
+[node name="close" type="Button" parent="Panel/HBoxContainer"]
+offset_left = 1036.0
+offset_right = 1054.0
+offset_bottom = 31.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "X"
+
+[connection signal="pressed" from="Panel/HBoxContainer/close" to="." method="_on_close_pressed"]
