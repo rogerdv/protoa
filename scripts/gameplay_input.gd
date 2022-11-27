@@ -11,10 +11,8 @@ func _ready():
 	
 
 func _unhandled_input(event):
-	#Raycasting for click position
-	print("unhandled input")
-	if event is InputEventMouseButton and event.pressed :
-		print("Mouse click")
+	#Raycasting for click position	
+	if event is InputEventMouseButton and event.pressed :		
 		var space_state = get_world_3d().direct_space_state
 		var from = camera.project_ray_origin(event.position)
 		var to = from + camera.project_ray_normal(event.position) * ray_length

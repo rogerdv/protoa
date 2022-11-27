@@ -27,4 +27,4 @@ func _on_slot_pressed(extra_arg_0):
 		for a in game_instance.abilities:
 			if a["id"]=="testmb":
 				a.use(game_instance.player, game_instance.player.target)
-				game_instance.player.abilities["testmb"]["cooldown"]=a["id"]["cooldown"]
+				game_instance.player.abilities["testmb"]["cooldown"]=a["cooldown"]
