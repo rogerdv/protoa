@@ -68,10 +68,12 @@ script = ExtResource("2_fqsbe")
 
 [node name="player" parent="." instance=ExtResource("2_0uj07")]
 model_scene = "res://models/player_character/player_character.tscn"
+attrib = [6, 5, 7, 8, 5]
 inventory = [ExtResource("4_af7fo")]
 
 [node name="npc" parent="." instance=ExtResource("5_bkokk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83593, 0, 0.66316)
 model_scene = "res://models/npcs/npc_01/npc_01.tscn"
+attrib = [8, 5, 5, 8, 3]
 
 [node name="UI" parent="." instance=ExtResource("6_cdpqt")]

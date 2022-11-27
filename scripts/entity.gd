@@ -12,9 +12,10 @@ var ROTATION = 0.2 #amount of rotation
 @export var model_scene:String
 var actor
 
+
 # Attributes and such RPG stuff
-var hp = [100,100] 	#hit points
-var ep = [100,100] 	#energy points
+var hp = [100.0,100.0] 	#hit points
+var ep = [100.0,100.0] 	#energy points
 
 const STR = 0
 const INT = 1
@@ -22,7 +23,10 @@ const DEX = 2
 const CON = 3
 const CHR = 4
 
-var attrib=[5,5,5,5,5]
+@export var attrib=[5,5,5,5,5]
+var actions = []
+#derived stats
+var hp_regen:float=1.0
 
 #Target os tje entity I have selected, for attack or dialog
 var target		
@@ -33,6 +37,11 @@ var target
 # }
 # When cooldown is 0, ability can be cast again
 var abilities = {"testmb":{"cooldown":0.0},"test2":{"cooldown":0.0}}
+
+# Do not confuse faction and group!
+# Faction is a global organization, a group is just local to current scene
+@export var faction:String="none"
+@export var group:int =0
 
 var moving = false	#is the entity moving?
 var autoatk:bool #true if player is attacking
@@ -46,7 +55,16 @@ func _ready():
 	actor = load(model_scene).instantiate()
 	add_child(actor)
 	anim=actor.get_node("AnimationTree")
+	recalc_stats()
 
+# Recalculate derived stats
+func recalc_stats():
+	hp[1]=10*attrib[CON]*attrib[STR]/10
+	hp[0]=hp[1]
+	hp_regen = attrib[CON]/100
+	ep[1]= 5*attrib[INT]*attrib[CON]/10
+	ep[0]=ep[1]
+	
 #Void	move_to
 #set the parameters for character navigation
 #Parameters:
