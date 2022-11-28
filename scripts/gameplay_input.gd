@@ -43,8 +43,7 @@ func _unhandled_input(event):
 						player.target.toggle_select(false)
 						player.target=null#		
 	
-func _input(event):
-
+func _unhandled_key_input(event):
 	if  event is InputEventKey and event.pressed:
 		### TEST Remove!!!!!!!!!!!!!
 		if event.keycode==KEY_1:
