@@ -8,8 +8,10 @@
 
 [resource]
 script = ExtResource("1_pngb1")
+damage = 3.0
 id = "testmb"
 desc = null
+energy = 5.0
 fx = ExtResource("1_pl1v3")
 hit_fx = ExtResource("3_1mbyh")
 cast_sound = ExtResource("1_1wc7j")

@@ -59,3 +59,7 @@ config/icon="res://icon.svg"
 
 GlobalControl="*res://scripts/control.gd"
 game_instance="*res://scenes/game_instance.tscn"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://game_data/translation.en.translation", "res://game_data/translation.es.translation")

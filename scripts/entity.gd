@@ -37,6 +37,8 @@ var target
 # }
 # When cooldown is 0, ability can be cast again
 var abilities = {"testmb":{"cooldown":0.0},"test2":{"cooldown":0.0}}
+var skills = {"swords":{"level":1},"combat":{"level":1},"elemental":{"level":1},
+				"dodge":{"level":1}}
 
 # Do not confuse faction and group!
 # Faction is a global organization, a group is just local to current scene

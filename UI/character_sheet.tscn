@@ -16,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_rv4rl")
 
 [node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,6 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 2
 offset_right = 1054.0
 offset_bottom = 550.0
 grow_horizontal = 2
@@ -30,82 +32,96 @@ grow_vertical = 2
 theme_override_constants/separation = 5
 
 [node name="attribs" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
 offset_right = 513.0
 offset_bottom = 550.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 2
 
 [node name="Label" type="Label" parent="Panel/HBoxContainer/attribs"]
+layout_mode = 2
 offset_right = 513.0
 offset_bottom = 26.0
-text = "Attributes:"
+text = "atr"
 
 [node name="str" type="HBoxContainer" parent="Panel/HBoxContainer/attribs"]
+layout_mode = 2
 offset_top = 28.0
 offset_right = 513.0
 offset_bottom = 59.0
 
 [node name="Label" type="Label" parent="Panel/HBoxContainer/attribs/str"]
+layout_mode = 2
 offset_top = 2.0
 offset_right = 21.0
 offset_bottom = 28.0
 text = "str"
 
 [node name="str_val" type="LineEdit" parent="Panel/HBoxContainer/attribs/str"]
+layout_mode = 2
 offset_left = 25.0
 offset_right = 92.0
 offset_bottom = 31.0
 
 [node name="int" type="HBoxContainer" parent="Panel/HBoxContainer/attribs"]
+layout_mode = 2
 offset_top = 61.0
 offset_right = 513.0
 offset_bottom = 92.0
 
 [node name="Label" type="Label" parent="Panel/HBoxContainer/attribs/int"]
+layout_mode = 2
 offset_top = 2.0
 offset_right = 21.0
 offset_bottom = 28.0
 text = "int"
 
 [node name="int_val" type="LineEdit" parent="Panel/HBoxContainer/attribs/int"]
+layout_mode = 2
 offset_left = 25.0
 offset_right = 92.0
 offset_bottom = 31.0
 
 [node name="dex" type="HBoxContainer" parent="Panel/HBoxContainer/attribs"]
+layout_mode = 2
 offset_top = 94.0
 offset_right = 513.0
 offset_bottom = 125.0
 
 [node name="Label" type="Label" parent="Panel/HBoxContainer/attribs/dex"]
+layout_mode = 2
 offset_top = 2.0
 offset_right = 28.0
 offset_bottom = 28.0
 text = "dex"
 
 [node name="dex_val" type="LineEdit" parent="Panel/HBoxContainer/attribs/dex"]
+layout_mode = 2
 offset_left = 32.0
 offset_right = 99.0
 offset_bottom = 31.0
 
 [node name="con" type="HBoxContainer" parent="Panel/HBoxContainer/attribs"]
+layout_mode = 2
 offset_top = 127.0
 offset_right = 513.0
 offset_bottom = 158.0
 
 [node name="Label" type="Label" parent="Panel/HBoxContainer/attribs/con"]
+layout_mode = 2
 offset_top = 2.0
 offset_right = 28.0
 offset_bottom = 28.0
-text = "con
-"
+text = "con"
 
 [node name="con_val" type="LineEdit" parent="Panel/HBoxContainer/attribs/con"]
+layout_mode = 2
 offset_left = 32.0
 offset_right = 99.0
 offset_bottom = 31.0
 
 [node name="skills" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
 offset_left = 518.0
 offset_right = 1031.0
 offset_bottom = 550.0
@@ -113,11 +129,13 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 2
 
 [node name="Label" type="Label" parent="Panel/HBoxContainer/skills"]
+layout_mode = 2
 offset_right = 513.0
 offset_bottom = 26.0
-text = "Skills"
+text = "skills"
 
 [node name="close" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
 offset_left = 1036.0
 offset_right = 1054.0
 offset_bottom = 31.0

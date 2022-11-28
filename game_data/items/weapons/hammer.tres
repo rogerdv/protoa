@@ -6,8 +6,10 @@
 
 [resource]
 script = ExtResource("1_pko4e")
-damage = 2.0
+damage = 4.0
+skill = "swords"
 id = "hammer"
+desc = null
 mesh = ExtResource("1_xwmfo")
 slot = "weapon"
 use_sfx = ExtResource("3_22cvl")

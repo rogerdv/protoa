@@ -3,8 +3,8 @@ extends Node3D
 var damage = 1	#just in case
 var target 
 var rot = Vector3()
-var speed = 5
-var rotation_speed = 2.5
+var speed = 15
+var rotation_speed = 8
 var hit_fx
 
 # Called when the node enters the scene tree for the first time.
