@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bus3bl2dfi1he"]
+[gd_scene load_steps=14 format=3 uid="uid://dt7gftf2ag1aq"]
 
 [ext_resource type="PackedScene" uid="uid://cmb64uww8qbog" path="res://scenes/iso_camera.tscn" id="1_mx36s"]
 [ext_resource type="Script" path="res://scripts/scene_init.gd" id="1_ov8lr"]

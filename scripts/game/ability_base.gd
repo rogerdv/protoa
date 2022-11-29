@@ -10,6 +10,7 @@ class_name ability_base
 # and an hit sound (played when spell hits target)
 @export var cast_sound:Resource
 @export var hit_sound:Resource
+@export var cast_time:float=1.0
 @export var cooldown:float = 1.0
 
 func use(owner, target):

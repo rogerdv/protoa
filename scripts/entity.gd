@@ -28,7 +28,7 @@ var actions = []
 #derived stats
 var hp_regen:float=1.0
 
-#Target os tje entity I have selected, for attack or dialog
+#Target, the entity I have selected, for attack or dialog
 var target		
 @export var inventory:Array
 # Abilities known to this entity
@@ -100,6 +100,50 @@ func smooth_rotate(pos:Vector3,amount:float=ROTATION):
 	var to = Quaternion(transform.looking_at(pos).basis)
 	transform.basis = Basis(from.slerp(to,amount))
 
+# Process the action queue
+func process_actions(delta):
+	if actions.size()==0:
+		return
+	# Always process top of the queue (index 0)
+	if actions[0]["type"]=="use_item":
+		#TODO: what item?
+		if actions[0]["done"]:
+			#the action was performed, now just wait
+			# timer is the time left to remove or reset action
+			actions[0]["timer"]-=delta
+		else:
+			actions[0]["done"]=true
+			#execute the action
+			#just in case, we request a target. 
+			# Maybe selected target is not the destination of item/spell
+			inventory[0].use(self, actions[0]["target"])
+	elif actions[0]["type"]=="cast_ability":
+		if actions[0]["done"]:
+			#the action was performed, now just wait
+			# timer is the time left to remove or reset action
+			actions[0]["timer"]-=delta
+		else:
+			actions[0]["done"]=true
+			#execute the action
+			#just in case, we request a target. 
+			# Maybe selected target is not the destination of item/spell
+			for a in game_instance.abilities:
+				if a["id"]==actions[0]["id"]:
+					a.use(self, actions[0]["target"])
+		
+	if actions[0]["timer"]<=0:
+		# remove if not loopable action (like attack)
+		# remove if loopable, but there is another action queued
+		if actions[0]["loop"] and actions.size()==1:
+			# reset values
+			actions[0]["timer"]=actions[0]["cooldown"]
+			actions[0]["done"]=false
+			return
+		else :
+			#remove
+			actions.remove_at(0)
+			return
+	
 func _process(delta):
 	if autoatk and nav_agent.is_target_reached():auto_attack()
 	
@@ -108,6 +152,9 @@ func _process(delta):
 		for a in abilities.keys():
 			if abilities[a]["cooldown"]>0:
 				abilities[a]["cooldown"]-=delta
+	
+	# Process the action queue
+	process_actions(delta)
 
 func _physics_process(delta):
 	#Movement formula using navigation
@@ -148,6 +195,7 @@ func turn_at(target:Vector3):
 func auto_attack():
 	actor.get_node("AnimationPlayer").animation_finished.connect(_atk_animation_ends)
 	inventory[0].use(self, target)
+
 #workaround needs brainstorm
 func _atk_animation_ends(anim_name):
 	if anim_name == ("attack_one_handed"):

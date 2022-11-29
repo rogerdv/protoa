@@ -13,7 +13,9 @@ func _ready():
 
 func _unhandled_input(event):
 	#Raycasting for click position	
-	if event is InputEventMouseButton and event.pressed :		
+	if event is InputEventMouseButton and event.pressed :	
+		# Clear player action queue
+		player.actions.clear()	
 		var space_state = get_world_3d().direct_space_state
 		var from = camera.project_ray_origin(event.position)
 		var to = from + camera.project_ray_normal(event.position) * ray_length
@@ -51,14 +53,24 @@ func _unhandled_key_input(event):
 		elif event.keycode==KEY_2:
 			if player.target!=null:
 				player.turn_at(player.target.position)
-			player.inventory[0].use(player, player.target)
+			#player.inventory[0].use(player, player.target)
+			var action ={"type": "use_item", "id":player.inventory[0]["id"],
+							"timer":player.inventory[0]["use_time"], 
+							"cooldown":player.inventory[0]["use_time"],
+							"target":player.target, "done":false, "loop":true}
+			player.actions.append(action)
 		elif event.keycode==KEY_3:			
 
 			if player.abilities["testmb"]["cooldown"]<=0:				
 				#we can cast
+				
 				for a in game_instance.abilities:
 					if a["id"]=="testmb":
-						a.use(player, player.target)
+						var action ={"type": "cast_ability", "id":"testmb",
+							"timer":a["cast_time"], 
+							"cooldown":a["cooldown"],
+							"target":player.target, "done":false, "loop":false}
+						player.actions.append(action)
 						player.abilities["testmb"]["cooldown"]=a["cooldown"]
 
 #		### TEST Remove!!!!!!!!!!!!!
