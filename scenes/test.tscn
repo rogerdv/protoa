@@ -1,10 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dt7gftf2ag1aq"]
+[gd_scene load_steps=12 format=3 uid="uid://dt7gftf2ag1aq"]
 
 [ext_resource type="PackedScene" uid="uid://cmb64uww8qbog" path="res://scenes/iso_camera.tscn" id="1_mx36s"]
 [ext_resource type="Script" path="res://scripts/scene_init.gd" id="1_ov8lr"]
-[ext_resource type="PackedScene" uid="uid://c0tjgps5mletg" path="res://models/player.tscn" id="2_0uj07"]
 [ext_resource type="Script" path="res://scripts/gameplay_input.gd" id="2_fqsbe"]
-[ext_resource type="Resource" uid="uid://c02be53efv68q" path="res://game_data/items/weapons/hammer.tres" id="4_af7fo"]
 [ext_resource type="PackedScene" uid="uid://b64ct1sr3433f" path="res://models/npc.tscn" id="5_bkokk"]
 [ext_resource type="PackedScene" uid="uid://d2b2b4qbke2we" path="res://UI/ui.tscn" id="6_cdpqt"]
 
@@ -65,11 +63,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_11dum")
 
 [node name="input" type="Node3D" parent="."]
 script = ExtResource("2_fqsbe")
-
-[node name="player" parent="." instance=ExtResource("2_0uj07")]
-model_scene = "res://models/player_character/player_character.tscn"
-attrib = [6, 5, 7, 8, 5]
-inventory = [ExtResource("4_af7fo")]
 
 [node name="npc" parent="." instance=ExtResource("5_bkokk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83593, 0, 0.66316)

@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://fecoj7bsuycc"]
+[gd_scene load_steps=15 format=3 uid="uid://fecoj7bsuycc"]
 
 [ext_resource type="Script" path="res://scripts/scene_init.gd" id="1_071yl"]
 [ext_resource type="PackedScene" uid="uid://cmb64uww8qbog" path="res://scenes/iso_camera.tscn" id="1_abvfp"]
 [ext_resource type="PackedScene" uid="uid://c0tjgps5mletg" path="res://models/player.tscn" id="2_y24i8"]
 [ext_resource type="Script" path="res://scripts/gameplay_input.gd" id="3_6ql3t"]
-[ext_resource type="Resource" uid="uid://c02be53efv68q" path="res://game_data/items/weapons/hammer.tres" id="3_nutvn"]
 [ext_resource type="PackedScene" uid="uid://b64ct1sr3433f" path="res://models/npc.tscn" id="5_rud0l"]
 [ext_resource type="PackedScene" uid="uid://d2b2b4qbke2we" path="res://UI/ui.tscn" id="6_txd0n"]
 
@@ -249,9 +248,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24.3279)
 
 [node name="player" parent="." instance=ExtResource("2_y24i8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26.5708)
-model_scene = "res://models/player_character/player_character.tscn"
 attrib = [10, 10, 10, 10, 10]
-inventory = [ExtResource("3_nutvn")]
 
 [node name="input" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.8943)

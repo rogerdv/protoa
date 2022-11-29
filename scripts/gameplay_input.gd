@@ -8,7 +8,7 @@ var char_s = preload("res://UI/character_sheet.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	camera = $"../pivot/Camera3D"
-	player = $"../player"
+	player = game_instance.player
 	
 
 func _unhandled_input(event):
