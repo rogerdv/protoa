@@ -16,5 +16,5 @@ func _on_area_3d_body_entered(body):
 	#print("Hit ",body.name," for "+str(damage)+" damage")
 	var msg:String=body.name
 	
-	body.hp[0]-=damage
+	body.receive_dmg(damage,0)
 	GlobalControl.scene_ui.add_message("Hit "+msg+" for "+str(damage)+" damage")

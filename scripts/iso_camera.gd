@@ -19,7 +19,7 @@ var RIGHT:bool = false
 func _ready():
 	pass # Replace with function body.
 
-func _input(event):
+func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		if event.button_mask&(MOUSE_BUTTON_MASK_MIDDLE):
 			self.rotate(Vector3(0, 1,0),event.relative.x * -0.002)

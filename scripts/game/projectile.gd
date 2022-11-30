@@ -36,7 +36,7 @@ func _on_area_3d_body_entered(body):
 	fx.get_node("GPUParticles3D").emitting=true
 	$sfx.play()
 	if body is entity:
-		body.hp[0]-=damage
+		body.receive_dmg(damage,0)
 		var msg:String=body.name	
 		GlobalControl.scene_ui.add_message("Magic ball hit "+msg+" for "+str(damage)+" magic damage")
 	queue_free()

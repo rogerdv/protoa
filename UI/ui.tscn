@@ -14,6 +14,7 @@ mouse_filter = 1
 script = ExtResource("1_bf8eg")
 
 [node name="MessageArea" type="ScrollContainer" parent="."]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -25,10 +26,14 @@ offset_right = 202.0
 offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 0
 
 [node name="Text" type="VBoxContainer" parent="MessageArea"]
+layout_mode = 2
+mouse_filter = 0
 
 [node name="target" type="Label" parent="."]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -40,6 +45,7 @@ grow_horizontal = 2
 horizontal_alignment = 1
 
 [node name="slot_bar" type="HBoxContainer" parent="."]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -53,16 +59,19 @@ grow_vertical = 0
 mouse_filter = 0
 
 [node name="1" type="Button" parent="slot_bar"]
+layout_mode = 2
 offset_right = 34.0
 offset_bottom = 40.0
 text = "MB"
 
 [node name="hp" type="Label" parent="."]
+layout_mode = 0
 offset_right = 78.0
 offset_bottom = 34.0
 theme_override_colors/font_color = Color(0.929412, 0, 0, 1)
 
 [node name="ep" type="Label" parent="."]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 36.0
 offset_right = 80.0
