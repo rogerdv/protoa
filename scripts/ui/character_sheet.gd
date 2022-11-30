@@ -17,7 +17,7 @@ func update_ui():
 	
 	for sk in game_instance.player.skills:
 		var l = Label.new()
-		l.text=sk
+		l.text=tr(sk)
 		var cont = HBoxContainer.new()
 		$Panel/HBoxContainer/skills.add_child(cont)
 		cont.add_child(l)
