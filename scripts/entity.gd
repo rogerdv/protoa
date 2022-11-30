@@ -143,10 +143,18 @@ func process_actions(delta):
 			#remove
 			actions.remove_at(0)
 			return
+
+func receive_dmg(damage:float, dmg_type:int):
+	hp[0]-=damage
+
+# Returns skill level
+func get_skill(id:String)->int:
+	if skills.has(id):
+		return skills[id]["level"]
+	else : 
+		return 0
 	
-func _process(delta):
-	if autoatk and nav_agent.is_target_reached():auto_attack()
-	
+func _process(delta):	
 	# update cooldowns in ability list
 	if abilities.size()>0:
 		for a in abilities.keys():
@@ -190,14 +198,3 @@ func nav_target(target:Vector3):
 func turn_at(target:Vector3):
 	face_target = target
 
-# Needs to be reworked, AnimationTree doesnt supports signals
-# maybe check custom animation tracks?
-func auto_attack():
-	actor.get_node("AnimationPlayer").animation_finished.connect(_atk_animation_ends)
-	inventory[0].use(self, target)
-
-#workaround needs brainstorm
-func _atk_animation_ends(anim_name):
-	if anim_name == ("attack_one_handed"):
-		print(target.name," takes: ",inventory[0].damage," damage")
-		GlobalControl.scene_ui.add_message("Hit")
