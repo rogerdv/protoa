@@ -7,6 +7,10 @@ var selected = [null,null,null,null]
 
 var debug:bool #for debug purposes
 var scene_ui
+# Hold quickbuttons config
+var buttons=[{"action":""},{"action":"attack"},{"action":"ability","id":"testmb" },{"action":""},
+			{"action":""},{"action":""},{"action":""},{"action":""},{"action":""},
+			{"action":""}]
 
 func _ready():
 	debug = true

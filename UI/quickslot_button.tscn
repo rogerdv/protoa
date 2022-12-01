@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://8q21sldyppj4"]
+
+[ext_resource type="Texture2D" uid="uid://d2grm14rb4jg3" path="res://textures/ui/slot_backgr.png" id="1_3nr4h"]
+[ext_resource type="Script" path="res://scripts/ui/quickslot_button.gd" id="1_ond8f"]
+
+[node name="quickslot" type="TextureProgressBar" node_paths=PackedStringArray("shortcut_context")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1088.0
+offset_bottom = -583.0
+grow_horizontal = 2
+grow_vertical = 2
+shortcut_context = NodePath("")
+value = 100.0
+texture_under = ExtResource("1_3nr4h")
+script = ExtResource("1_ond8f")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

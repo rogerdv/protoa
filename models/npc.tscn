@@ -16,6 +16,7 @@ albedo_texture = ExtResource("2_lyf01")
 
 [node name="npc" type="CharacterBody3D"]
 script = ExtResource("1_8gmtv")
+attrib = []
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.947788, 0)

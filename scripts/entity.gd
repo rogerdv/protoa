@@ -23,13 +23,17 @@ const DEX = 2
 const CON = 3
 const CHR = 4
 
-@export var attrib=[5,5,5,5,5]
+@export var attrib:Array[int]=[5,5,5,5,5]
 var actions = []
+
 #derived stats
 var hp_regen:float=1.0
+@export var player_class:String = "warrior" 
 
 #Target, the entity I have selected, for attack or dialog
 var target		
+# Inventory structure:
+# {"id":{"amount":1,"quality":1}}
 @export var inventory:Array
 # Abilities known to this entity
 # { ability_id:{"cooldown":0}

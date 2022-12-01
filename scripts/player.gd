@@ -12,7 +12,3 @@ func _ready():
 func _process(delta):
 	super(delta)
 
-func _on_input_event(camera, event, position, normal, shape_idx):
-	#Selects player
-	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		GlobalControl.selected[0] = get_node(".")
