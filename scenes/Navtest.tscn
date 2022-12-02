@@ -38,14 +38,12 @@ navmesh = SubResource("NavigationMesh_a2l8v")
 [node name="region" type="Node3D" parent="NavigationRegion3D"]
 
 [node name="floor" type="StaticBody3D" parent="NavigationRegion3D/region"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/region/floor"]
 transform = Transform3D(7.28392, 0, 0, 0, 1, 0, 0, 0, 7.28392, 0, 0, 0)
 mesh = SubResource("PlaneMesh_lhgd8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/region/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_jmggp")
 
 [node name="Obstacles" type="Node3D" parent="NavigationRegion3D/region"]

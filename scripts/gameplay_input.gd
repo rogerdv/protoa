@@ -25,7 +25,7 @@ func _unhandled_input(event):
 				#if is a npc
 				if intersection["collider"] is npc:
 					player.target = intersection["collider"]
-					player.move_to(intersection.position,2,true) #keep distance and avoid overlaping
+					player.move_to(intersection.position,1.5,true) #keep distance and avoid overlaping
 				#if is just the ground
 				else:
 					player.move_to(intersection.position)
