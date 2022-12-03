@@ -1,7 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b64ct1sr3433f"]
+[gd_scene load_steps=11 format=3 uid="uid://b64ct1sr3433f"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_8gmtv"]
 [ext_resource type="Texture2D" uid="uid://d25rgj7q3wuol" path="res://textures/select.png" id="2_lyf01"]
+[ext_resource type="Script" path="res://addons/yagbta/classes/behavior_tree_root.gd" id="3_20e4l"]
+[ext_resource type="Script" path="res://addons/yagbta/classes/composites/behavior_tree_selector.gd" id="3_xyir0"]
+[ext_resource type="Script" path="res://addons/yagbta/classes/composites/behavior_tree_sequence.gd" id="4_kdj07"]
+[ext_resource type="Script" path="res://scripts/ai/hostile_idle.gd" id="6_qey04"]
+[ext_resource type="Script" path="res://scripts/ai/see_player.gd" id="6_r46sh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hs2wu"]
 radius = 0.3
@@ -32,3 +37,19 @@ surface_material_override/0 = SubResource("StandardMaterial3D_3tgrc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26924, -0.680647)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="BehaviorTreeRoot" type="Node" parent="."]
+script = ExtResource("3_20e4l")
+actor_path = NodePath("..")
+
+[node name="BehaviorTreeSelector" type="Node" parent="BehaviorTreeRoot"]
+script = ExtResource("3_xyir0")
+
+[node name="combat" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector"]
+script = ExtResource("4_kdj07")
+
+[node name="see_player" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector/combat"]
+script = ExtResource("6_r46sh")
+
+[node name="hostile_idle" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector"]
+script = ExtResource("6_qey04")
