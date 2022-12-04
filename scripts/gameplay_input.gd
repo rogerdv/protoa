@@ -21,22 +21,21 @@ func _unhandled_input(event):
 		var to = from + camera.project_ray_normal(event.position) * ray_length
 		var intersection = space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from,to))
 		if event.button_index == 2:
-			if intersection != null:
-				#if is a npc
-				if intersection["collider"] is npc:
-					player.target = intersection["collider"]
-					player.move_to(intersection.position,1.5,true) #keep distance and avoid overlaping
-				#if is just the ground
-				else:
-					player.move_to(intersection.position)
+			if intersection != null:				
+				player.move_to(intersection.position)
 		
 		elif event.button_index == 1:
 			# LEft click, look for NPC or interactable
 			if intersection != null:
-				if intersection["collider"] is npc:					
-					intersection["collider"].toggle_select(true)
-					player.target = intersection["collider"]
-					player.turn_at(player.target.global_transform.origin)
+				if intersection["collider"] is npc:	
+					if player.target==null or player.target.name!=intersection["collider"].name: 				
+						intersection["collider"].toggle_select(true)
+						player.target = intersection["collider"]
+						player.turn_at(player.target.global_transform.origin)
+					else :
+						#target already selected
+						#TODO: moe only if far away						
+						player.move_to(intersection.position,1.5,true) #keep distance and avoid overlaping
 #					
 
 				else:
