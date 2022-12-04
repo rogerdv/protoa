@@ -90,11 +90,6 @@ _global_script_classes=[{
 "path": "res://addons/yagbta/classes/decorators/behavior_tree_until_fails.gd"
 }, {
 "base": "Resource",
-"class": &"Blackboard",
-"language": &"GDScript",
-"path": "res://addons/yagbta/classes/blackboard.gd"
-}, {
-"base": "Resource",
 "class": &"ability_base",
 "language": &"GDScript",
 "path": "res://scripts/game/ability_base.gd"
@@ -151,7 +146,6 @@ _global_script_class_icons={
 "BehaviorTreeSequence": "res://addons/yagbta/icons/BehaviorTreeSequence.svg",
 "BehaviorTreeSucceeder": "res://addons/yagbta/icons/BehaviorTreeSucceeder.svg",
 "BehaviorTreeUntilFails": "res://addons/yagbta/icons/BehaviorTreeUntilFails.svg",
-"Blackboard": "res://addons/yagbta/icons/Blackboard.svg",
 "ability_base": "",
 "entity": "",
 "hostile_idle": "",
