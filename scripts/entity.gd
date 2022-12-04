@@ -29,6 +29,7 @@ var actions = []
 #derived stats
 var hp_regen:float=1.0
 @export var player_class:String = "warrior" 
+@export var align:int = 0 #use 1 for hostile, 0 for neutral
 
 #Target, the entity I have selected, for attack or dialog
 var target		
@@ -50,6 +51,7 @@ var skills = {"swords":{"level":1},"combat":{"level":1},"elemental":{"level":1},
 @export var group:int =0
 
 var moving = false	#is the entity moving?
+var combat = false	#are we in combat?
 var autoatk:bool #true if player is attacking
 # Set to locked to prevent player to respond to commands or NPCs to process 
 # AI and move 

@@ -3,5 +3,8 @@ class_name hostile_idle
 
 
 func tick():
-	print("Idling")
-	status=SUCCESS
+#	print("Idling")
+	if actor.get_node("sensor").see:
+		return FAILURE
+	
+	return SUCCESS

@@ -3,4 +3,6 @@ class_name  see_player
 
 
 func tick():
-	status= FAILURE
+	
+	print("In combat")
+	return SUCCESS

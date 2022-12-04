@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b64ct1sr3433f"]
+[gd_scene load_steps=13 format=3 uid="uid://b64ct1sr3433f"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_8gmtv"]
 [ext_resource type="Texture2D" uid="uid://d25rgj7q3wuol" path="res://textures/select.png" id="2_lyf01"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://addons/yagbta/classes/composites/behavior_tree_sequence.gd" id="4_kdj07"]
 [ext_resource type="Script" path="res://scripts/ai/hostile_idle.gd" id="6_qey04"]
 [ext_resource type="Script" path="res://scripts/ai/see_player.gd" id="6_r46sh"]
+[ext_resource type="Script" path="res://scripts/game/sensor.gd" id="8_hoqni"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hs2wu"]
 radius = 0.3
@@ -18,6 +19,9 @@ size = Vector2(1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3tgrc"]
 transparency = 1
 albedo_texture = ExtResource("2_lyf01")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7k1vi"]
+size = Vector3(2.68824, 1, 3.70556)
 
 [node name="npc" type="CharacterBody3D"]
 script = ExtResource("1_8gmtv")
@@ -44,12 +48,27 @@ actor_path = NodePath("..")
 
 [node name="BehaviorTreeSelector" type="Node" parent="BehaviorTreeRoot"]
 script = ExtResource("3_xyir0")
+reactive = true
+
+[node name="idle" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector"]
+script = ExtResource("4_kdj07")
+
+[node name="hostile_idle" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector/idle"]
+script = ExtResource("6_qey04")
 
 [node name="combat" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector"]
 script = ExtResource("4_kdj07")
+reactive = true
 
 [node name="see_player" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector/combat"]
 script = ExtResource("6_r46sh")
 
-[node name="hostile_idle" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector"]
-script = ExtResource("6_qey04")
+[node name="sensor" type="Area3D" parent="."]
+script = ExtResource("8_hoqni")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sensor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.905184, 2.30413)
+shape = SubResource("BoxShape3D_7k1vi")
+
+[connection signal="body_entered" from="sensor" to="sensor" method="_on_body_entered"]
+[connection signal="body_exited" from="sensor" to="sensor" method="_on_body_exited"]

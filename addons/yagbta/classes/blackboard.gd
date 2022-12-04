@@ -2,7 +2,7 @@ extends Resource
 class_name Blackboard 
 @icon("res://addons/yagbta/icons/Blackboard.svg")
 
-@export var data = {}
+var data = {}
 
 
 func set_data(key, value):
