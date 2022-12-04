@@ -56,6 +56,7 @@ var autoatk:bool #true if player is attacking
 # Set to locked to prevent player to respond to commands or NPCs to process 
 # AI and move 
 var locked = false
+var dead = false
 #just store here a position then player turn facing it
 var face_target:Vector3 
 
@@ -109,6 +110,10 @@ func smooth_rotate(pos:Vector3,amount:float=ROTATION):
 func process_actions(delta):
 	if actions.size()==0:
 		return
+	if target==null or target.dead:
+		actions.clear()
+		combat=false
+		return
 	# Always process top of the queue (index 0)
 	if actions[0]["type"]=="use_item":
 		#TODO: what item?
@@ -159,7 +164,7 @@ func get_skill(id:String)->int:
 	else : 
 		return 0
 	
-func _process(delta):	
+func _process(delta):		
 	# update cooldowns in ability list
 	if abilities.size()>0:
 		for a in abilities.keys():
