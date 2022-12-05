@@ -23,6 +23,7 @@ const DEX = 2
 const CON = 3
 const CHR = 4
 
+@export var level:int = 1
 @export var attrib:Array[int]=[5,5,5,5,5]
 var actions = []
 
@@ -56,8 +57,11 @@ var autoatk:bool #true if player is attacking
 # Set to locked to prevent player to respond to commands or NPCs to process 
 # AI and move 
 var locked = false
+var dead = false
 #just store here a position then player turn facing it
 var face_target:Vector3 
+
+var regen_counter = 0
 
 func _ready():
 	add_child(nav_agent) #add as remote node
@@ -109,6 +113,10 @@ func smooth_rotate(pos:Vector3,amount:float=ROTATION):
 func process_actions(delta):
 	if actions.size()==0:
 		return
+	if target==null or target.dead:
+		actions.clear()
+		combat=false		
+		return
 	# Always process top of the queue (index 0)
 	if actions[0]["type"]=="use_item":
 		#TODO: what item?
@@ -159,7 +167,7 @@ func get_skill(id:String)->int:
 	else : 
 		return 0
 	
-func _process(delta):	
+func _process(delta):		
 	# update cooldowns in ability list
 	if abilities.size()>0:
 		for a in abilities.keys():
@@ -168,6 +176,15 @@ func _process(delta):
 	
 	# Process the action queue
 	process_actions(delta)
+	regen_counter+=delta
+	if regen_counter>1:
+		regen_counter=0
+		print("Regeneration")
+		if hp[0]<hp[1]:
+			print("Regenerating life")
+			hp[0]+=attrib[CON]/10
+		if ep[0]<ep[1]:
+			ep[0]+=attrib[INT]/100+attrib[CON]/100
 
 func _physics_process(delta):
 	#Movement formula using navigation

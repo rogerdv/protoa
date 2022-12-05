@@ -124,6 +124,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://scripts/npc.gd"
 }, {
+"base": "entity",
+"class": &"player",
+"language": &"GDScript",
+"path": "res://scripts/player.gd"
+}, {
 "base": "BehaviorTreeAction",
 "class": &"see_player",
 "language": &"GDScript",
@@ -158,6 +163,7 @@ _global_script_class_icons={
 "item_base": "",
 "item_weapon": "",
 "npc": "",
+"player": "",
 "see_player": "",
 "test_magicball": ""
 }
