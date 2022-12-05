@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://fecoj7bsuycc"]
+[gd_scene load_steps=15 format=3 uid="uid://fecoj7bsuycc"]
 
 [ext_resource type="Script" path="res://scripts/scene_init.gd" id="1_071yl"]
 [ext_resource type="PackedScene" uid="uid://cmb64uww8qbog" path="res://scenes/iso_camera.tscn" id="1_abvfp"]
@@ -27,6 +27,11 @@ material = SubResource("StandardMaterial3D_d6nma")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28gpl"]
 albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Environment" id="Environment_exfxp"]
+tonemap_mode = 2
+tonemap_white = 2.0
+sdfgi_enabled = true
 
 [node name="testfield" type="Node3D"]
 script = ExtResource("1_071yl")
@@ -256,3 +261,6 @@ model_scene = "res://models/npcs/npc_01/npc_01.tscn"
 attrib = [12, 4, 6, 11, 1]
 
 [node name="UI" parent="." instance=ExtResource("6_txd0n")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_exfxp")
