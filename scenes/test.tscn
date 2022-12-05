@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dt7gftf2ag1aq"]
+[gd_scene load_steps=13 format=3 uid="uid://dt7gftf2ag1aq"]
 
 [ext_resource type="PackedScene" uid="uid://cmb64uww8qbog" path="res://scenes/iso_camera.tscn" id="1_mx36s"]
 [ext_resource type="Script" path="res://scripts/scene_init.gd" id="1_ov8lr"]
 [ext_resource type="Script" path="res://scripts/gameplay_input.gd" id="2_fqsbe"]
 [ext_resource type="PackedScene" uid="uid://b64ct1sr3433f" path="res://models/npc.tscn" id="5_bkokk"]
+[ext_resource type="PackedScene" uid="uid://bp4mdtljbkreq" path="res://models/items/hat/hat.tscn" id="6_681g0"]
 [ext_resource type="PackedScene" uid="uid://d2b2b4qbke2we" path="res://UI/ui.tscn" id="6_cdpqt"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_vwcsu"]
@@ -71,3 +72,6 @@ attrib = [8, 5, 5, 8, 3]
 align = 1
 
 [node name="UI" parent="." instance=ExtResource("6_cdpqt")]
+
+[node name="hat" parent="." instance=ExtResource("6_681g0")]
+transform = Transform3D(3.17985, 0, 3.85857, 0, 5, 0, -3.85857, 0, 3.17985, -3.87163, 0.885122, 2.39112)

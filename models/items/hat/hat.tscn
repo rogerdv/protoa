@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp4mdtljbkreq"]
+
+[ext_resource type="PackedScene" uid="uid://cgioku1nsauvl" path="res://models/items/hat/hat.glb" id="1_ihage"]
+[ext_resource type="Texture2D" uid="uid://cwa2xhnewae5w" path="res://models/items/hat/hat_diffuse.png" id="2_hp77f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lb10e"]
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_hp77f")
+
+[node name="hat" instance=ExtResource("1_ihage")]
+
+[node name="hat2" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lb10e")
