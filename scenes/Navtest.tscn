@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cmb64uww8qbog" path="res://scenes/iso_camera.tscn" id="1_abvfp"]
 [ext_resource type="Script" path="res://scripts/gameplay_input.gd" id="3_6ql3t"]
 [ext_resource type="PackedScene" uid="uid://b64ct1sr3433f" path="res://models/npc.tscn" id="5_rud0l"]
+[ext_resource type="Environment" uid="uid://bb6goxby35gmv" path="res://scenes/outdoor_env.tres" id="6_42p5q"]
 [ext_resource type="PackedScene" uid="uid://d2b2b4qbke2we" path="res://UI/ui.tscn" id="6_txd0n"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_a2l8v"]
@@ -27,11 +28,6 @@ material = SubResource("StandardMaterial3D_d6nma")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28gpl"]
 albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="Environment" id="Environment_exfxp"]
-tonemap_mode = 2
-tonemap_white = 2.0
-sdfgi_enabled = true
 
 [node name="testfield" type="Node3D"]
 script = ExtResource("1_071yl")
@@ -263,4 +259,4 @@ attrib = [12, 4, 6, 11, 1]
 [node name="UI" parent="." instance=ExtResource("6_txd0n")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_exfxp")
+environment = ExtResource("6_42p5q")

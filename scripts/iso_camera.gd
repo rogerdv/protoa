@@ -17,6 +17,7 @@ var RIGHT:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	pass # Replace with function body.
 
 func _unhandled_input(event):
@@ -46,12 +47,12 @@ func _unhandled_input(event):
 			# zoom in
 			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 				#zoom
-				if $Camera3D.size<18:
-					$Camera3D.size+=0.5
+				if camera.size<18:
+					camera.size+=0.5
 			# zoom out
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-				if $Camera3D.size>5:
-					$Camera3D.size-=0.5
+				if camera.size>5:
+					camera.size-=0.5
 			
 	#Raycasting for click position
 #	if event is InputEventMouseButton and event.pressed and event.button_index == 2:

@@ -8,4 +8,5 @@ script = ExtResource("1_ypjfj")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 100, 100)
 projection = 1
+current = true
 size = 8.0
