@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bwhohs8q120fa"]
+
+[ext_resource type="Script" path="res://scripts/game/item_armor.gd" id="1_4lw6j"]
+[ext_resource type="PackedScene" uid="uid://bp4mdtljbkreq" path="res://models/items/hat/hat.tscn" id="1_ayc0w"]
+
+[resource]
+script = ExtResource("1_4lw6j")
+prot = 1.0
+id = "hat"
+desc = "fh_desc"
+mesh = ExtResource("1_ayc0w")
+slot = "head"
+use_time = 1.0

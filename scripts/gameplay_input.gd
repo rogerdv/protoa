@@ -71,6 +71,8 @@ func _unhandled_key_input(event):
 							"target":player.target, "done":false, "loop":false}
 						player.actions.append(action)
 						player.abilities["testmb"]["cooldown"]=a["cooldown"]
+		elif event.keycode==KEY_4:
+			player.inventory[1].equip(player)
 
 #		### TEST Remove!!!!!!!!!!!!!
 		elif event.keycode==KEY_ESCAPE:

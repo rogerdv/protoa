@@ -10,6 +10,9 @@ specular_mode = 1
 albedo_texture = ExtResource("2_hp77f")
 
 [node name="hat" instance=ExtResource("1_ihage")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.241648, 0)
 
 [node name="hat2" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_lb10e")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="1"]
