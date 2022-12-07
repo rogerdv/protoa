@@ -179,9 +179,9 @@ func _process(delta):
 	regen_counter+=delta
 	if regen_counter>1:
 		regen_counter=0
-		print("Regeneration")
+#		print("Regeneration")
 		if hp[0]<hp[1]:
-			print("Regenerating life")
+#			print("Regenerating life")
 			hp[0]+=attrib[CON]/10
 		if ep[0]<ep[1]:
 			ep[0]+=attrib[INT]/100+attrib[CON]/100
