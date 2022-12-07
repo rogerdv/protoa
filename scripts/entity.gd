@@ -134,7 +134,7 @@ func process_actions(delta):
 			#execute the action
 			#just in case, we request a target. 
 			# Maybe selected target is not the destination of item/spell
-			inventory[0].use(self, actions[0]["target"])
+			inventory[actions[0]["id"]]["item"].use(self, actions[0]["target"])
 	elif actions[0]["type"]=="cast_ability":
 		if actions[0]["done"]:
 			#the action was performed, now just wait

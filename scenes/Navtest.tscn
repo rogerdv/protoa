@@ -255,7 +255,6 @@ script = ExtResource("3_6ql3t")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05236, 0, -5.90542)
 model_scene = "res://models/npcs/npc_01/npc_01.tscn"
 attrib = [12, 4, 6, 11, 1]
-inventory = null
 
 [node name="UI" parent="." instance=ExtResource("6_txd0n")]
 

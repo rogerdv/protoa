@@ -45,14 +45,20 @@ func to_inventory(item):
 			var data= {"amount":1,"quality":1,"item":item}
 			game_instance.player.inventory[item.id]=data
 	else :
-		var data= {"amount":1,"quality":1}
+		var data= {"amount":1,"quality":1,"item":item}
 		game_instance.player.inventory[item.id]=data
 		
 	update_list()
 
 func equip(id:String):
 	var item = game_instance.get_item(id)
-	game_instance.player.equip[item.slot]=id
+	# Check, just in case
+	if 	game_instance.player.inventory.has(id):
+		# we have the item
+		game_instance.player.inventory[id]["item"].equip(game_instance.player)
+		game_instance.player.equip[item.slot]=id
+			
+	
 					
 func _on_close_pressed():
 	queue_free()

@@ -43,9 +43,10 @@ func _on_slot_pressed(extra_arg_0):
 			#VEry basic action to test attack
 			if game_instance.player.target==null:
 				return
-			var attack = {"type": "use_item", "id":game_instance.player.inventory[0]["id"],
-							"timer":game_instance.player.inventory[0]["use_time"], 
-							"cooldown":game_instance.player.inventory[0]["use_time"],
+			var weapon_id =game_instance.player.equip["weapon"]
+			var attack = {"type": "use_item", "id":weapon_id,
+							"timer":game_instance.player.inventory[weapon_id]["item"].use_time, 
+							"cooldown":game_instance.player.inventory[weapon_id]["item"].use_time,
 							"target":game_instance.player.target, "done":false, "loop":true}
 			game_instance.player.actions.append(attack)
 		"ability":			
