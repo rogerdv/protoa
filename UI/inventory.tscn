@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://qjs1lhqr688f"]
+
+[ext_resource type="Script" path="res://scripts/ui/inventory.gd" id="1_b2838"]
+
+[node name="inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 156.0
+offset_top = 43.0
+offset_right = -127.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_b2838")
+
+[node name="cont" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="cont"]
+offset_right = 869.0
+offset_bottom = 567.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="player" type="VBoxContainer" parent="cont/HBoxContainer"]
+offset_right = 423.0
+offset_bottom = 567.0
+size_flags_horizontal = 3
+
+[node name="items" type="VBoxContainer" parent="cont/HBoxContainer"]
+offset_left = 425.0
+offset_right = 849.0
+offset_bottom = 567.0
+size_flags_horizontal = 3
+
+[node name="close" type="Button" parent="cont/HBoxContainer"]
+offset_left = 851.0
+offset_right = 869.0
+offset_bottom = 31.0
+size_flags_vertical = 0
+text = "X"
+
+[connection signal="pressed" from="cont/HBoxContainer/close" to="." method="_on_close_pressed"]

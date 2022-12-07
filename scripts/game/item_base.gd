@@ -8,6 +8,7 @@ class_name item_base
 @export var slot:String	#slot to put the item
 @export var use_sfx:Resource	#sound effect when using the item
 @export var use_time:float = 1.0	#time required to use the item
+@export var stack:bool=false	#can be stacked, like potions?
 
 var model 
 

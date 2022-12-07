@@ -36,7 +36,12 @@ var hp_regen:float=1.0
 var target		
 # Inventory structure:
 # {"id":{"amount":1,"quality":1}}
-@export var inventory:Array
+var inventory={}
+
+#equipped items
+# {slot:it_id}
+var equip = {"head":"","weapon":""}
+
 # Abilities known to this entity
 # { ability_id:{"cooldown":0}
 # ability_id:{"cooldown":0}

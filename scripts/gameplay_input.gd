@@ -4,6 +4,7 @@ var camera
 const ray_length = 1000 #length of the raycast
 var player
 var char_s = preload("res://UI/character_sheet.tscn")
+var inv_s = preload("res://UI/inventory.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -80,6 +81,9 @@ func _unhandled_key_input(event):
 		elif event.keycode==KEY_C:
 			var cs= char_s.instantiate()
 			GlobalControl.scene_ui.add_child(cs)
+		elif event.keycode==KEY_I:
+			var inv = inv_s.instantiate()
+			GlobalControl.scene_ui.add_child(inv)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

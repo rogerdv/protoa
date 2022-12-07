@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0tjgps5mletg"]
+[gd_scene load_steps=3 format=3 uid="uid://c0tjgps5mletg"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_8pgjm"]
-[ext_resource type="Resource" uid="uid://c02be53efv68q" path="res://game_data/items/weapons/hammer.tres" id="2_ayv42"]
-[ext_resource type="Resource" uid="uid://bwhohs8q120fa" path="res://game_data/items/armor/funny_hat.tres" id="3_vscql"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hs2wu"]
 radius = 0.3
@@ -12,7 +10,6 @@ height = 1.8
 script = ExtResource("1_8pgjm")
 model_scene = "res://models/player_character/player_character.tscn"
 attrib = [5, 5, 5, 5, 5]
-inventory = [ExtResource("2_ayv42"), ExtResource("3_vscql")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.960126, 0)
