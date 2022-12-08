@@ -7,6 +7,13 @@ func _ready():
 
 
 func update_list():
+	# Clear lists
+	var children = $cont/HBoxContainer/items.get_children()
+	for c in children:
+		c.queue_free()
+	children = $cont/HBoxContainer/player.get_children()
+	for c in children:
+		c.queue_free()
 	# Display all items
 	for it in game_instance.items:
 		var line = HBoxContainer.new()

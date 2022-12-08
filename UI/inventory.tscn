@@ -18,7 +18,6 @@ size_flags_vertical = 4
 script = ExtResource("1_b2838")
 
 [node name="cont" type="PanelContainer" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -26,7 +25,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="cont"]
-layout_mode = 2
 offset_right = 869.0
 offset_bottom = 567.0
 grow_horizontal = 2
@@ -34,20 +32,17 @@ grow_vertical = 2
 theme_override_constants/separation = 2
 
 [node name="player" type="VBoxContainer" parent="cont/HBoxContainer"]
-layout_mode = 2
 offset_right = 423.0
 offset_bottom = 567.0
 size_flags_horizontal = 3
 
 [node name="items" type="VBoxContainer" parent="cont/HBoxContainer"]
-layout_mode = 2
 offset_left = 425.0
 offset_right = 849.0
 offset_bottom = 567.0
 size_flags_horizontal = 3
 
 [node name="close" type="Button" parent="cont/HBoxContainer"]
-layout_mode = 2
 offset_left = 851.0
 offset_right = 869.0
 offset_bottom = 31.0

@@ -1,15 +1,16 @@
 extends Node3D
 
 var damage:float
+@export var area:NodePath
 
 func toggle_collisions(toggle):
-	$hammer2/Area3D.monitoring = toggle
+	get_node(area).monitoring = toggle
 	
 func _on_area_3d_body_entered(body):
 	# play use sound
 	$AudioStreamPlayer3D.play()
 	# Disable colisions until next use
-	$hammer2/Area3D.set_deferred("monitoring", false)
+	get_node(area).set_deferred("monitoring", false)
 	#toggle_collisions(false)
 	
 	#body bleeds on intersection

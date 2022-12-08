@@ -32,12 +32,23 @@ func _unhandled_input(event):
 					if player.target==null or player.target.name!=intersection["collider"].name: 				
 						intersection["collider"].toggle_select(true)
 						player.target = intersection["collider"]
-						player.turn_at(player.target.global_transform.origin)
+						player.turn_at(player.target.global_transform.origin)						
 					else :
 						#target already selected
-						#TODO: moe only if far away						
-						player.move_to(intersection.position,1.5,true) #keep distance and avoid overlaping
-#					
+						#TODO: moe only if far away							
+						if intersection["collider"].align>player.align:
+							# Enemy, enable combat
+							player.combat = true
+							var w_rng:float = 1.5 #weapon range
+							if player.equip["weapon"]!="":
+								# get weapon range
+								w_rng=player.inventory[player.equip["weapon"]]["item"].range
+							if player.position.distance_to(player.target.position)>w_rng:				
+								player.move_to(intersection.position,w_rng,true) #keep distance and avoid overlaping
+						else :
+							# TODO: Open dialog
+							if player.position.distance_to(player.target.position)>1.5:				
+								player.move_to(intersection.position,1.5,true) #keep distance and avoid overlaping
 
 				else:
 					#clicked on ground, unselect current target
@@ -47,36 +58,7 @@ func _unhandled_input(event):
 	
 func _unhandled_key_input(event):
 	if  event is InputEventKey and event.pressed:
-		### TEST Remove!!!!!!!!!!!!!
-		if event.keycode==KEY_1:
-			player.inventory[0].equip(player)
-		elif event.keycode==KEY_2:
-			if player.target!=null:
-				player.turn_at(player.target.position)
-			#player.inventory[0].use(player, player.target)
-			var action ={"type": "use_item", "id":player.inventory[0]["id"],
-							"timer":player.inventory[0]["use_time"], 
-							"cooldown":player.inventory[0]["use_time"],
-							"target":player.target, "done":false, "loop":true}
-			player.actions.append(action)
-		elif event.keycode==KEY_3:			
-
-			if player.abilities["testmb"]["cooldown"]<=0:				
-				#we can cast
-				
-				for a in game_instance.abilities:
-					if a["id"]=="testmb":
-						var action ={"type": "cast_ability", "id":"testmb",
-							"timer":a["cast_time"], 
-							"cooldown":a["cooldown"],
-							"target":player.target, "done":false, "loop":false}
-						player.actions.append(action)
-						player.abilities["testmb"]["cooldown"]=a["cooldown"]
-		elif event.keycode==KEY_4:
-			player.inventory[1].equip(player)
-
-#		### TEST Remove!!!!!!!!!!!!!
-		elif event.keycode==KEY_ESCAPE:
+		if event.keycode==KEY_ESCAPE:
 			get_tree().quit()
 		elif event.keycode==KEY_C:
 			var cs= char_s.instantiate()

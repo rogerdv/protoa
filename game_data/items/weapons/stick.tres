@@ -1,6 +1,6 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cba58x85wn1rs"]
+[gd_resource type="Resource" load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://dr7tg8t25p6f1" path="res://models/items/palo.tscn" id="1_7gsp7"]
+[ext_resource type="PackedScene" uid="uid://dr7tg8t25p6f1" path="res://models/weapons/palo.tscn" id="1_7gsp7"]
 [ext_resource type="Script" path="res://scripts/game/item_weapon.gd" id="1_prjpn"]
 
 [resource]

@@ -2,6 +2,7 @@ extends item_base
 class_name item_weapon
 
 @export var damage:float
+@export var range:float=1.5
 @export var skill:String	# What skill influences this weapon
 
 func use(owner, target):
