@@ -209,6 +209,13 @@ func _physics_process(delta):
 		moving = false
 		if autoatk:
 			anim.set("parameters/stance/blend_position", Vector2(0,0) )
+			#create an attack action
+			var weapon_id =game_instance.player.equip["weapon"]
+			var attack = {"type": "use_item", "id":weapon_id,
+							"timer":inventory[weapon_id]["item"].use_time, 
+							"cooldown":inventory[weapon_id]["item"].use_time,
+							"target":target, "done":false, "loop":true}
+			game_instance.player.actions.append(attack)
 		else :
 			anim.set("parameters/stance/blend_position", Vector2(0,-1) )
 		if GlobalControl.debug:print(nav_agent.distance_to_target())

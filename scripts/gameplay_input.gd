@@ -48,7 +48,7 @@ func _unhandled_input(event):
 						else :
 							# TODO: Open dialog
 							if player.position.distance_to(player.target.position)>1.5:				
-								player.move_to(intersection.position,1.5,true) #keep distance and avoid overlaping
+								player.move_to(intersection.position,1.5) #keep distance and avoid overlaping
 
 				else:
 					#clicked on ground, unselect current target
