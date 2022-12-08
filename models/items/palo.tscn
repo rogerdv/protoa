@@ -20,3 +20,5 @@ mesh = SubResource("CylinderMesh_qpmxd")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.204113, 0)
 shape = SubResource("BoxShape3D_qyuci")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
