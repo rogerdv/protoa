@@ -69,8 +69,10 @@ var face_target:Vector3
 var regen_counter = 0
 
 func _ready():
+	#nav config
 	add_child(nav_agent) #add as remote node
 	nav_target(global_transform.origin)
+	
 	actor = load(model_scene).instantiate()
 	add_child(actor)
 	anim=actor.get_node("AnimationTree")
@@ -96,7 +98,7 @@ func recalc_stats():
 #
 #bool		attacking	[default:false]
 #set to true when moving to attack another character
-func move_to(pos:Vector3,separation:float=0.1,attacking:bool=false):
+func move_to(pos:Vector3,separation:float=0.2,attacking:bool=false):
 	autoatk = attacking
 	moving = true
 	nav_agent.target_desired_distance = separation
@@ -109,9 +111,12 @@ func move_to(pos:Vector3,separation:float=0.1,attacking:bool=false):
 
 #Void	smooth_rotate
 #set the parameters for character to make a nice smooth rotation
-func smooth_rotate(pos:Vector3,amount:float=ROTATION):
+func smooth_rotate(pos:Vector3,lockY:bool=false,amount:float=ROTATION):
 	var from = Quaternion(transform.basis)
-	var to = Quaternion(transform.looking_at(pos).basis)
+	if lockY:
+		pos.y = global_transform.origin.y
+	var to = Quaternion(transform.looking_at(pos).basis).normalized()
+	
 	transform.basis = Basis(from.slerp(to,amount))
 
 # Process the action queue
@@ -195,16 +200,26 @@ func _physics_process(delta):
 	#Movement formula using navigation
 	if not nav_agent.is_target_reached():
 		var current_location = global_transform.origin
-		var next_location = nav_agent.get_next_location()
-		var new_velocity = (next_location - current_location).normalized() * SPEED
+		
+		#calculate floor point from navmesh
+		var next_nav_location = nav_agent.get_next_location()
+		var space_state = get_world_3d().get_direct_space_state()
+		var floor_ray = PhysicsRayQueryParameters3D.create(next_nav_location,Vector3(0,-1000,0))
+		var intersection = space_state.intersect_ray(floor_ray)
+		
+		var next_location
+		if intersection:
+			next_location = intersection.position
 		turn_at(next_location)
 		
 		if not nav_agent.is_target_reachable() and current_location.round() == next_location.round():
 			nav_target(current_location)
 			return
-		
-		velocity = new_velocity
+			
+		var new_velocity = (next_location - current_location).normalized() * SPEED
+		set_velocity(new_velocity)
 		move_and_slide()
+	
 	elif nav_agent.is_target_reached() and moving:
 		moving = false
 		if autoatk:
@@ -218,10 +233,9 @@ func _physics_process(delta):
 			game_instance.player.actions.append(attack)
 		else :
 			anim.set("parameters/stance/blend_position", Vector2(0,-1) )
-		if GlobalControl.debug:print(nav_agent.distance_to_target())
 	
-	#Smooth rotation
-	smooth_rotate(face_target)
+	#Smooth rotation with Y axis locked
+	smooth_rotate(face_target,true)
 	
 
 #Use this method for set navigation target, please dont set it directly.
@@ -230,6 +244,5 @@ func nav_target(target:Vector3):
 
 #void	turn_at
 #the default method to set where character should be facing.
-func turn_at(target:Vector3):
-	face_target = target
-
+func turn_at(_target:Vector3):
+	face_target = _target
