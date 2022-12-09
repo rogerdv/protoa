@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://k45rjl621crt"
-path="res://.godot/imported/npc_01.glb-5c29dc657567e2d2685ac97257a4b0e8.scn"
+uid="uid://bf7o1l4j087lg"
+path="res://.godot/imported/npc 01.glb-4d210aa55da9bfa998805fba9ec03a22.scn"
 
 [deps]
 
-source_file="res://models/npcs/npc_01/npc_01.glb"
-dest_files=["res://.godot/imported/npc_01.glb-5c29dc657567e2d2685ac97257a4b0e8.scn"]
+source_file="res://models/npcs/npc01/npc 01.glb"
+dest_files=["res://.godot/imported/npc 01.glb-4d210aa55da9bfa998805fba9ec03a22.scn"]
 
 [params]
 
@@ -28,8 +28,8 @@ animation/fps=30
 import_script/path=""
 _subresources={
 "nodes": {
-"PATH:NPC_01_rig/Skeleton3D": {
-"retarget/bone_map": null
+"PATH:npc_01_skeleton/Skeleton3D": {
+"retarget/bone_map": Resource("res://models/base_animlib/bone_map.tres")
 }
 }
 }

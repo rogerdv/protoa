@@ -52,6 +52,7 @@ reactive = true
 
 [node name="idle" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector"]
 script = ExtResource("4_kdj07")
+reactive = true
 
 [node name="hostile_idle" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector/idle"]
 script = ExtResource("6_qey04")
