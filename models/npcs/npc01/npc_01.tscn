@@ -898,14 +898,14 @@ bones/69/position = Vector3(-0.218834, 0.724295, -0.797642)
 bones/70/position = Vector3(0.274523, 0.724295, -0.141314)
 
 [node name="weapon" type="BoneAttachment3D" parent="npc_01_skeleton/GeneralSkeleton" index="1"]
-transform = Transform3D(-0.628953, -0.387163, -0.674184, 0.382443, 0.600922, -0.701876, 0.676872, -0.699284, -0.229884, 0.397997, 1.27837, 0.179349)
+transform = Transform3D(-0.628952, -0.387163, -0.674184, 0.382444, 0.600922, -0.701876, 0.676872, -0.699284, -0.229883, 0.397998, 1.27837, 0.179349)
 bone_name = "hand.R"
 bone_idx = 33
 use_external_skeleton = true
 external_skeleton = NodePath("..")
 
 [node name="head" type="BoneAttachment3D" parent="npc_01_skeleton/GeneralSkeleton" index="2"]
-transform = Transform3D(0.999221, 0.0268877, -0.028892, -0.0310164, 0.987653, -0.153555, 0.0244066, 0.154332, 0.987718, -0.00950285, 1.96872, 0.0123583)
+transform = Transform3D(0.999221, 0.0268877, -0.028893, -0.0310166, 0.987653, -0.153555, 0.0244075, 0.154331, 0.987718, -0.00950283, 1.96871, 0.0123579)
 bone_name = "Head"
 bone_idx = 5
 use_external_skeleton = true

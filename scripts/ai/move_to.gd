@@ -4,11 +4,20 @@ class_name move_to
 # Move to weapon range
 
 func tick():
-	var rng=actor.inventory[actor.equip["weapon"]]["item"].range
+	var rng
+	if actor.equip["weapon"]!="":
+		rng=actor.inventory[actor.equip["weapon"]]["item"].range
+	else :
+		rng=1.5
 	if actor.position.distance_to(actor.target.position)>rng:
 		print("movint to target")
-		actor.move_to(actor.target.position.rng, true)
+		actor.move_to(actor.target.position,rng, true)
 		return RUNNING
 	else : 
+		var attack = {"type": "use_item", "id":"hammer",
+							"timer":actor.inventory["hammer"]["item"].use_time, 
+							"cooldown":actor.inventory["hammer"]["item"].use_time,
+							"target":actor.target, "done":false, "loop":true}
+		actor.actions.append(attack)
 		return SUCCESS
 		
