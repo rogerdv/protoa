@@ -1,10 +1,12 @@
 extends Area3D
 
 var see:bool=false
+var targets=[]
+var actor
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	actor = get_parent()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,13 +14,14 @@ func _process(delta):
 	pass
 
 
-func _on_body_entered(body):
-	if body.name=="player":
-		see=true
-		print("Saw player")
+# Something entered sensor
+func _on_body_entered(body):	
+	if body is entity: 	#is an entity?
+		targets.append(body)
 
 
 func _on_body_exited(body):
-	if body.name=="player":
-		see=false
-		print("Cant see player")
+	for i in range(targets.size()):
+		if targets[i].name==body.name:
+			targets.remove_at(i)
+			break

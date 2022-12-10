@@ -4,6 +4,7 @@ class_name npc
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super()
+	inventory["hammer"]={"amount":1,"quality":1, "item":game_instance.get_item("hammer")} 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b64ct1sr3433f"]
+[gd_scene load_steps=14 format=3 uid="uid://b64ct1sr3433f"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_8gmtv"]
 [ext_resource type="Texture2D" uid="uid://d25rgj7q3wuol" path="res://textures/select.png" id="2_lyf01"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/ai/hostile_idle.gd" id="6_qey04"]
 [ext_resource type="Script" path="res://scripts/ai/see_player.gd" id="6_r46sh"]
 [ext_resource type="Script" path="res://scripts/game/sensor.gd" id="8_hoqni"]
+[ext_resource type="Script" path="res://scripts/ai/move_to.gd" id="8_nfd6t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hs2wu"]
 radius = 0.3
@@ -64,11 +65,14 @@ reactive = true
 [node name="see_player" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector/combat"]
 script = ExtResource("6_r46sh")
 
+[node name="move_to" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector/combat"]
+script = ExtResource("8_nfd6t")
+
 [node name="sensor" type="Area3D" parent="."]
 script = ExtResource("8_hoqni")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sensor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.905184, 2.30413)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.905184, -2.59276)
 shape = SubResource("BoxShape3D_7k1vi")
 
 [connection signal="body_entered" from="sensor" to="sensor" method="_on_body_entered"]

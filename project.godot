@@ -124,6 +124,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://scripts/game/item_weapon.gd"
 }, {
+"base": "BehaviorTreeAction",
+"class": &"move_to",
+"language": &"GDScript",
+"path": "res://scripts/ai/move_to.gd"
+}, {
 "base": "entity",
 "class": &"npc",
 "language": &"GDScript",
@@ -168,6 +173,7 @@ _global_script_class_icons={
 "item_armor": "",
 "item_base": "",
 "item_weapon": "",
+"move_to": "",
 "npc": "",
 "player": "",
 "see_player": "",
