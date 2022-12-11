@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=3]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cnnbqyo3efqjv"]
 
 [ext_resource type="PackedScene" uid="uid://dr7tg8t25p6f1" path="res://models/weapons/palo.tscn" id="1_7gsp7"]
 [ext_resource type="Script" path="res://scripts/game/item_weapon.gd" id="1_prjpn"]
+[ext_resource type="AudioStream" uid="uid://c13g1xro5beg8" path="res://audio/sfx/chop.ogg" id="3_l5i78"]
 
 [resource]
 script = ExtResource("1_prjpn")
@@ -12,5 +13,6 @@ id = "stick"
 desc = null
 mesh = ExtResource("1_7gsp7")
 slot = "weapon"
+use_sfx = ExtResource("3_l5i78")
 use_time = 1.0
 stack = false

@@ -139,6 +139,7 @@ func process_actions(delta):
 			#execute the action
 			#just in case, we request a target. 
 			# Maybe selected target is not the destination of item/spell
+			turn_at(actions[0]["target"].position)
 			inventory[actions[0]["id"]]["item"].use(self, actions[0]["target"])
 	elif actions[0]["type"]=="cast_ability":
 		if actions[0]["done"]:
@@ -189,10 +190,13 @@ func _process(delta):
 	regen_counter+=delta
 	if regen_counter>1:
 		regen_counter=0
-#		print("Regeneration")
+		print("Regeneration")
 		if hp[0]<hp[1]:
-#			print("Regenerating life")
-			hp[0]+=attrib[CON]/10
+			
+			hp[0]+=attrib[CON]/100
+			print("Regenerating life ", hp[0])
+		else :
+			hp[0]=hp[1]
 		if ep[0]<ep[1]:
 			ep[0]+=attrib[INT]/100+attrib[CON]/100
 
@@ -224,8 +228,9 @@ func _physics_process(delta):
 		moving = false
 		if autoatk:
 			anim.set("parameters/stance/blend_position", Vector2(0,0) )
+			
 			#create an attack action
-			var weapon_id =game_instance.player.equip["weapon"]
+			var weapon_id = equip["weapon"]
 			var attack = {"type": "use_item", "id":weapon_id,
 							"timer":inventory[weapon_id]["item"].use_time, 
 							"cooldown":inventory[weapon_id]["item"].use_time,
