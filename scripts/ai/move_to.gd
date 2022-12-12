@@ -14,9 +14,9 @@ func tick():
 		actor.move_to(actor.target.position,rng, true)
 		return RUNNING
 	else : 
-		var attack = {"type": "use_item", "id":"hammer",
-							"timer":actor.inventory["hammer"]["item"].use_time, 
-							"cooldown":actor.inventory["hammer"]["item"].use_time,
+		var attack = {"type": "use_item", "id":actor.equip["weapon"],
+							"timer":actor.inventory[actor.equip["weapon"]]["item"].use_time, 
+							"cooldown":actor.inventory[actor.equip["weapon"]]["item"].use_time,
 							"target":actor.target, "done":false, "loop":true}
 		actor.actions.append(attack)
 		return SUCCESS

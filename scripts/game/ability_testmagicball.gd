@@ -17,6 +17,7 @@ func use(owner, target):
 	model.damage = damage+(damage*level/10)
 	model.target = target
 	model.hit_fx=hit_fx
+	model.parent_entity=owner
 	
 	# add the effect as child of the scene, not the player!
 	owner.get_parent().add_child(model)
