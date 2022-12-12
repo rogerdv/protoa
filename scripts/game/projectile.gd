@@ -6,6 +6,7 @@ var rot = Vector3()
 var speed = 15
 var rotation_speed = 8
 var hit_fx
+var parent_entity
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,6 +38,10 @@ func _on_area_3d_body_entered(body):
 	$sfx.play()
 	if body is entity:
 		body.receive_dmg(damage,0)
+		body.combat=true
+		#if it is an NPC, set target
+		if body is npc:
+			body.target=parent_entity
 		var msg:String=body.name	
 		GlobalControl.scene_ui.add_message("Magic ball hit "+msg+" for "+str(damage)+" magic damage")
 	queue_free()
