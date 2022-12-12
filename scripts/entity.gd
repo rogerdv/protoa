@@ -140,7 +140,8 @@ func process_actions(delta):
 			#just in case, we request a target. 
 			# Maybe selected target is not the destination of item/spell
 			turn_at(actions[0]["target"].position)
-			inventory[actions[0]["id"]]["item"].use(self, actions[0]["target"])
+			if actions[0]["id"]!="":
+				inventory[actions[0]["id"]]["item"].use(self, actions[0]["target"])
 	elif actions[0]["type"]=="cast_ability":
 		if actions[0]["done"]:
 			#the action was performed, now just wait
@@ -190,11 +191,11 @@ func _process(delta):
 	regen_counter+=delta
 	if regen_counter>1:
 		regen_counter=0
-		print("Regeneration")
+		
 		if hp[0]<hp[1]:
 			
 			hp[0]+=attrib[CON]/100
-			print("Regenerating life ", hp[0])
+#			print("Regenerating life ", hp[0])
 		else :
 			hp[0]=hp[1]
 		if ep[0]<ep[1]:

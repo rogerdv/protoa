@@ -889,14 +889,14 @@ bones/73/position = Vector3(0.23437, 0.618358, -0.120645)
 surface_material_override/0 = SubResource("StandardMaterial3D_bcjcm")
 
 [node name="weapon" type="BoneAttachment3D" parent="npc_02_skeleton/GeneralSkeleton" index="1"]
-transform = Transform3D(0.544819, 0.646324, -0.534264, -0.334786, -0.416494, -0.845252, -0.768824, 0.639373, -0.0105336, 0.293851, 1.0539, 0.144442)
+transform = Transform3D(0.544819, 0.646324, -0.534264, -0.334786, -0.416494, -0.845252, -0.768824, 0.639373, -0.0105332, 0.293852, 1.0539, 0.144442)
 bone_name = "weapon_right"
 bone_idx = 55
 use_external_skeleton = true
 external_skeleton = NodePath("..")
 
 [node name="head" type="BoneAttachment3D" parent="npc_02_skeleton/GeneralSkeleton" index="2"]
-transform = Transform3D(0.999223, 0.0267734, -0.0289152, -0.031131, 0.986193, -0.162649, 0.0241614, 0.163422, 0.98626, -0.00815502, 1.69074, 0.0147083)
+transform = Transform3D(0.999223, 0.0267734, -0.0289162, -0.0311311, 0.986193, -0.162648, 0.0241623, 0.163422, 0.98626, -0.008155, 1.69074, 0.0147083)
 bone_name = "Head"
 bone_idx = 5
 use_external_skeleton = true

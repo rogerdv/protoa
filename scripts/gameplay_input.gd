@@ -23,7 +23,8 @@ func _unhandled_input(event):
 		var from = camera.project_ray_origin(event.position)
 		var to = from + camera.project_ray_normal(event.position) * ray_length
 		var intersection = space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from,to))
-		if event.button_index == 2:
+		if event.button_index == 2:	
+			#Right click
 			if intersection != null:				
 				player.move_to(intersection.position)
 		
@@ -44,9 +45,10 @@ func _unhandled_input(event):
 							var w_rng:float = 1.5 #weapon range
 							if player.equip["weapon"]!="":
 								# get weapon range
+#								print("Player equip weapon is ")
 								w_rng=player.inventory[player.equip["weapon"]]["item"].range
 							if player.position.distance_to(player.target.position)>w_rng:				
-								player.move_to(intersection.position,w_rng,true) #keep distance and avoid overlaping
+								player.move_to(intersection.position,w_rng,false) #keep distance and avoid overlaping
 						else :
 							# TODO: Open dialog
 							if player.position.distance_to(player.target.position)>1.5:				

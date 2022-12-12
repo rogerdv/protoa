@@ -1,9 +1,13 @@
 extends Resource
 class_name item_base
 
+const itWEAPON = 1
+const itHELMET = 2
+
 #Base class for all game items
 @export var id:String
 @export var desc:String
+@export var type:int
 @export var mesh:Resource
 @export var slot:String	#slot to put the item
 @export var use_sfx:Resource	#sound effect when using the item
