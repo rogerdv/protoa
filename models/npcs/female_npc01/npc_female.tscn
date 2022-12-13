@@ -1,0 +1,85 @@
+[gd_scene load_steps=15 format=3 uid="uid://2s6ktbvq68os"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_6qgry"]
+[ext_resource type="Texture2D" uid="uid://d25rgj7q3wuol" path="res://textures/select.png" id="2_px7mf"]
+[ext_resource type="Script" path="res://addons/yagbta/classes/behavior_tree_root.gd" id="3_a3vg5"]
+[ext_resource type="Script" path="res://addons/yagbta/classes/composites/behavior_tree_selector.gd" id="4_kua5c"]
+[ext_resource type="Script" path="res://addons/yagbta/classes/composites/behavior_tree_sequence.gd" id="5_xej4o"]
+[ext_resource type="Script" path="res://scripts/ai/hostile_idle.gd" id="6_4y5tl"]
+[ext_resource type="Script" path="res://scripts/ai/see_player.gd" id="7_v1tah"]
+[ext_resource type="Script" path="res://scripts/ai/move_to.gd" id="8_mp74a"]
+[ext_resource type="Script" path="res://scripts/game/sensor.gd" id="9_8x2me"]
+[ext_resource type="PackedScene" uid="uid://2rrkvbdqjig4" path="res://models/npcs/female_npc01/npc_02_woman.tscn" id="10_7lmjp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hs2wu"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_no6ea"]
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3tgrc"]
+transparency = 1
+albedo_texture = ExtResource("2_px7mf")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7k1vi"]
+size = Vector3(2.68824, 1, 3.70556)
+
+[node name="npc" type="CharacterBody3D"]
+script = ExtResource("1_6qgry")
+model = NodePath("Node3D/npc 02 woman")
+attrib = []
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.947788, 0)
+shape = SubResource("CapsuleShape3D_hs2wu")
+
+[node name="select" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00854811, 0)
+visible = false
+mesh = SubResource("PlaneMesh_no6ea")
+surface_material_override/0 = SubResource("StandardMaterial3D_3tgrc")
+
+[node name="origin" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26924, -0.680647)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="BehaviorTreeRoot" type="Node" parent="."]
+script = ExtResource("3_a3vg5")
+actor_path = NodePath("..")
+
+[node name="BehaviorTreeSelector" type="Node" parent="BehaviorTreeRoot"]
+script = ExtResource("4_kua5c")
+reactive = true
+
+[node name="idle" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector"]
+script = ExtResource("5_xej4o")
+reactive = true
+
+[node name="hostile_idle" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector/idle"]
+script = ExtResource("6_4y5tl")
+
+[node name="combat" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector"]
+script = ExtResource("5_xej4o")
+reactive = true
+
+[node name="see_player" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector/combat"]
+script = ExtResource("7_v1tah")
+
+[node name="move_to" type="Node" parent="BehaviorTreeRoot/BehaviorTreeSelector/combat"]
+script = ExtResource("8_mp74a")
+
+[node name="sensor" type="Area3D" parent="."]
+script = ExtResource("9_8x2me")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sensor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.905184, -2.59276)
+shape = SubResource("BoxShape3D_7k1vi")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="npc 02 woman" parent="Node3D" instance=ExtResource("10_7lmjp")]
+
+[connection signal="body_entered" from="sensor" to="sensor" method="_on_body_entered"]
+[connection signal="body_exited" from="sensor" to="sensor" method="_on_body_exited"]

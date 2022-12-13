@@ -1,11 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://dnntl07sv0dsb"]
+[gd_scene load_steps=16 format=3 uid="uid://dnntl07sv0dsb"]
 
 [ext_resource type="Script" path="res://scripts/scene_init.gd" id="1_3m4j7"]
 [ext_resource type="PackedScene" uid="uid://cmb64uww8qbog" path="res://scenes/iso_camera.tscn" id="1_mx36s"]
 [ext_resource type="Script" path="res://scripts/gameplay_input.gd" id="2_fqsbe"]
-[ext_resource type="PackedScene" uid="uid://b64ct1sr3433f" path="res://models/npc.tscn" id="5_bkokk"]
 [ext_resource type="PackedScene" uid="uid://d2b2b4qbke2we" path="res://UI/ui.tscn" id="6_cdpqt"]
 [ext_resource type="Environment" uid="uid://bb6goxby35gmv" path="res://scenes/outdoor_env.tres" id="6_dchxl"]
+[ext_resource type="PackedScene" uid="uid://2s6ktbvq68os" path="res://models/npcs/female_npc01/npc_female.tscn" id="6_mqb25"]
+[ext_resource type="PackedScene" uid="uid://b4ntm3jeuvl51" path="res://models/npcs/npc01/npc_male.tscn" id="6_o2ntf"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_vwcsu"]
 vertices = PackedVector3Array(-1.5, 0.0169362, 4, -1.5, 0.0169362, 3.5, -2.5, 0.0169362, 3.25, -7.5, 0.0169362, 4, -9.5, 0.0169362, 5.75, -7.75, 0.0169362, 6, -7.5, 0.0169362, 4, -9.5, 0.0169362, -2, -0.500002, 0.0169362, 1.25, -0.250002, 0.0169362, 1.75, -1.90735e-06, 0.0169362, -9.5, -7.5, 0.0169362, 4, -2.5, 0.0169362, 3.25, -2.5, 0.0169362, 1.5, -9.5, 0.0169362, -2, -9.5, 0.0169362, -2, -2.5, 0.0169362, 1.5, -0.500002, 0.0169362, 1.25, -1.90735e-06, 0.0169362, -9.5, -9.5, 0.0169362, -9.5, -0.250002, 0.0169362, 1.75, -0.250002, 0.0169362, 3, 9.5, 0.0169362, 2.75, 9.5, 0.0169362, -3.5, 9.5, 0.0169362, -3.5, 9.5, 0.0169362, -9.5, -1.90735e-06, 0.0169362, -9.5, -0.250002, 0.0169362, 1.75, -0.500002, 0.0169362, 3.5, -1.5, 0.0169362, 3.5, -1.5, 0.0169362, 4, 0.249998, 0.0169362, 4, 0.249998, 0.116936, 8.25, 0.249998, 0.0169362, 9.25, 9.5, 0.0169362, 9.5, -0.250002, 0.0169362, 3, -0.500002, 0.0169362, 3.5, 0.249998, 0.0169362, 4, 9.5, 0.0169362, 2.75, -7.75, 0.0169362, 6, -9.5, 0.0169362, 5.75, -9.5, 0.0169362, 9.5, -7.5, 0.0169362, 9.25, 0.249998, 0.0169362, 9.25, -1.90735e-06, 0.0169362, 9.5, 9.5, 0.0169362, 9.5, -7.5, 0.0169362, 9.25, -9.5, 0.0169362, 9.5, -1.90735e-06, 0.0169362, 9.5, 0.249998, 0.0169362, 9.25, 9.5, 0.0169362, 2.75, 0.249998, 0.0169362, 4, 0.249998, 0.116936, 5, 0.249998, 0.116936, 5, -6.75, 1.85694, 5, -6.75, 1.85694, 8.25, 0.249998, 0.116936, 8.25, -1.15, 1.03694, 5, -2.55, 1.85694, 5, -2.55, 1.85694, 8.25, -1.15, 1.03694, 8.25, -1.01997, 0.856936, 6.50796, -2.50498, 1.85694, 6.49697, 0.249998, 0.116936, 5, 0.249998, 0.116936, 8.25, 9.5, 0.0169362, 9.5, 9.5, 0.0169362, 2.75, 1.98003, 0.0169362, 6.50796, 5.00509, 0.0169362, 8.0129, -6.5, 0.0169362, 5.25, -6.5, 0.0169362, 8, -2.5, 0.0169362, 8, -2.5, 0.0169362, 5.25)
@@ -94,19 +95,16 @@ shape = SubResource("WorldBoundaryShape3D_1k5nw")
 [node name="input" type="Node3D" parent="."]
 script = ExtResource("2_fqsbe")
 
-[node name="Demon" parent="." instance=ExtResource("5_bkokk")]
-transform = Transform3D(0.979194, 0, 0.202924, 0, 1, 0, -0.202924, 0, 0.979194, 1.83593, 0, 5.5117)
-model_scene = "res://models/npcs/npc01/npc_01.tscn"
-attrib = [8, 5, 5, 8, 3]
-align = 1
-
-[node name="Blue Witch" parent="." instance=ExtResource("5_bkokk")]
-transform = Transform3D(0.979194, 0, 0.202924, 0, 1, 0, -0.202924, 0, 0.979194, 5.15657, 0, -2.30736)
-model_scene = "res://models/npcs/female_npc01/npc_02_woman.tscn"
-attrib = [8, 5, 5, 8, 3]
-align = 1
-
 [node name="UI" parent="." instance=ExtResource("6_cdpqt")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("6_dchxl")
+
+[node name="npc" parent="." instance=ExtResource("6_o2ntf")]
+transform = Transform3D(0.585382, 0, 0.810757, 0, 1, 0, -0.810757, 0, 0.585382, 4.16723, 0, -3.28796)
+
+[node name="Blue Witch" parent="." instance=ExtResource("6_mqb25")]
+transform = Transform3D(0.0490416, 0, 0.998797, 0, 1, 0, -0.998797, 0, 0.0490416, 5.88641, 0, 0)
+attrib = [5, 5, 5, 5, 5]
+player_class = "mage"
+align = 1

@@ -9,7 +9,7 @@ var anim
 var SPEED = 7.0 #speed factor *dah!
 var ROTATION = 0.2 #amount of rotation
 
-@export var model_scene:String
+
 var actor
 
 
@@ -72,10 +72,7 @@ func _ready():
 	#nav config
 	add_child(nav_agent) #add as remote node
 	nav_target(global_transform.origin)
-	
-	actor = load(model_scene).instantiate()
-	add_child(actor)
-	anim=actor.get_node("AnimationTree")
+		
 	recalc_stats()
 
 # Recalculate derived stats

@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://fecoj7bsuycc"]
+[gd_scene load_steps=14 format=3 uid="uid://dxkf7vvdkxx80"]
 
 [ext_resource type="Script" path="res://scripts/scene_init.gd" id="1_071yl"]
 [ext_resource type="PackedScene" uid="uid://cmb64uww8qbog" path="res://scenes/iso_camera.tscn" id="1_abvfp"]
 [ext_resource type="Script" path="res://scripts/gameplay_input.gd" id="3_6ql3t"]
-[ext_resource type="PackedScene" uid="uid://b64ct1sr3433f" path="res://models/npc.tscn" id="5_rud0l"]
 [ext_resource type="Environment" uid="uid://bb6goxby35gmv" path="res://scenes/outdoor_env.tres" id="6_42p5q"]
 [ext_resource type="PackedScene" uid="uid://d2b2b4qbke2we" path="res://UI/ui.tscn" id="6_txd0n"]
 
@@ -250,11 +249,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_28gpl")
 [node name="input" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.8943)
 script = ExtResource("3_6ql3t")
-
-[node name="npc" parent="." instance=ExtResource("5_rud0l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05236, 0, -5.90542)
-model_scene = "res://models/npcs/npc01/npc_01.tscn"
-attrib = [12, 4, 6, 11, 1]
 
 [node name="UI" parent="." instance=ExtResource("6_txd0n")]
 

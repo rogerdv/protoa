@@ -1,9 +1,15 @@
 extends entity
 class_name npc
 
+@export var model:NodePath
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super()
+	actor=get_node(model)
+	anim=actor.get_node("AnimationTree")
+	
+	
 	inventory["hammer"]={"amount":1,"quality":1, "item":game_instance.get_item("hammer")} 
 
 
