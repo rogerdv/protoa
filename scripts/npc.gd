@@ -10,7 +10,7 @@ func _ready():
 	anim=actor.get_node("AnimationTree")
 	
 	
-	inventory["hammer"]={"amount":1,"quality":1, "item":game_instance.get_item("hammer")} 
+	inventory["stick"]={"amount":1,"quality":1, "item":game_instance.get_item("stick")} 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

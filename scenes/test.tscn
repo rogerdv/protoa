@@ -100,8 +100,9 @@ script = ExtResource("2_fqsbe")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("6_dchxl")
 
-[node name="npc" parent="." instance=ExtResource("6_o2ntf")]
+[node name="Green Demon" parent="." instance=ExtResource("6_o2ntf")]
 transform = Transform3D(0.585382, 0, 0.810757, 0, 1, 0, -0.810757, 0, 0.585382, 4.16723, 0, -3.28796)
+align = 1
 
 [node name="Blue Witch" parent="." instance=ExtResource("6_mqb25")]
 transform = Transform3D(0.0490416, 0, 0.998797, 0, 1, 0, -0.998797, 0, 0.0490416, 5.88641, 0, 0)

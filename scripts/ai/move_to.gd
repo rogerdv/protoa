@@ -10,7 +10,7 @@ func tick():
 	else :
 		rng=1.5
 	if actor.position.distance_to(actor.target.position)>rng:
-		print("movint to target")
+		
 		actor.move_to(actor.target.position,rng, true)
 		return RUNNING
 	else : 
@@ -18,6 +18,8 @@ func tick():
 							"timer":actor.inventory[actor.equip["weapon"]]["item"].use_time, 
 							"cooldown":actor.inventory[actor.equip["weapon"]]["item"].use_time,
 							"target":actor.target, "done":false, "loop":true}
+		
 		actor.actions.append(attack)
+		
 		return SUCCESS
 		

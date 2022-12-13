@@ -9,8 +9,8 @@ func tick():
 	if actor.equip["weapon"]=="":
 #		print("no weapon equipped")
 		# equip something		
-		actor.inventory["hammer"]["item"].equip(actor)
-		actor.equip["weapon"]="hammer"
+		actor.inventory["stick"]["item"].equip(actor)
+		actor.equip["weapon"]="stick"
 #		print("Weapon slot=", actor.equip["weapon"])
 	
 	return SUCCESS
