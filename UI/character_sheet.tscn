@@ -120,6 +120,12 @@ offset_left = 32.0
 offset_right = 99.0
 offset_bottom = 31.0
 
+[node name="hpregen" type="Label" parent="Panel/HBoxContainer/attribs"]
+layout_mode = 2
+offset_top = 160.0
+offset_right = 513.0
+offset_bottom = 183.0
+
 [node name="skills" type="VBoxContainer" parent="Panel/HBoxContainer"]
 layout_mode = 2
 offset_left = 518.0
