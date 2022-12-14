@@ -4,6 +4,8 @@ class_name move_to
 # Move to weapon range
 
 func tick():
+	if actor.dead:
+		return FAILURE
 	var rng
 	if actor.equip["weapon"]!="":
 		rng=actor.inventory[actor.equip["weapon"]]["item"].range
@@ -20,6 +22,7 @@ func tick():
 							"target":actor.target, "done":false, "loop":true}
 		
 		actor.actions.append(attack)
+		print("IA: added action to ", actor.name)
 		
 		return SUCCESS
 		

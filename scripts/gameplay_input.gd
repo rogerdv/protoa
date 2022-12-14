@@ -48,7 +48,7 @@ func _unhandled_input(event):
 #								print("Player equip weapon is ")
 								w_rng=player.inventory[player.equip["weapon"]]["item"].range
 							if player.position.distance_to(player.target.position)>w_rng:				
-								player.move_to(intersection.position,w_rng,false) #keep distance and avoid overlaping
+								player.move_to(intersection.position,w_rng,true) #keep distance and avoid overlaping
 						else :
 							# TODO: Open dialog
 							if player.position.distance_to(player.target.position)>1.5:				

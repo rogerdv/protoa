@@ -25,6 +25,7 @@ func update_ui():
 		val_edit.text = str(game_instance.player.skills[sk]["level"])
 		cont.add_child(val_edit)
 		val_edit.text_changed.connect(skill_changed.bind(sk))
+	$Panel/HBoxContainer/attribs/hpregen.text=tr("hpreg")+": "+str(game_instance.player.hp_regen)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

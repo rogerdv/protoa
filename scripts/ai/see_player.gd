@@ -3,7 +3,7 @@ class_name  see_player
 
 
 func tick():
-	if not actor.combat	:
+	if not actor.combat or actor.dead:
 		return FAILURE
 #	print("Before weapon slot=",actor.equip["weapon"])	
 	if actor.equip["weapon"]=="":

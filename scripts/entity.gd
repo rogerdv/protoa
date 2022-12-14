@@ -29,6 +29,7 @@ var actions = []
 
 #derived stats
 var hp_regen:float=1.0
+var ep_regen:float=1.0
 @export var player_class:String = "warrior" 
 @export var align:int = 0 #use 1 for hostile, 0 for neutral
 
@@ -77,11 +78,13 @@ func _ready():
 
 # Recalculate derived stats
 func recalc_stats():
-	hp[1]=10*attrib[CON]*attrib[STR]/10
+	hp[1]=5*attrib[CON]+attrib[STR]*2
 	hp[0]=hp[1]
 	hp_regen = attrib[CON]/100
-	ep[1]= 5*attrib[INT]*attrib[CON]/10
+	ep[1]= 5*attrib[INT]+attrib[CON]*2
 	ep[0]=ep[1]
+	ep_regen = attrib[CON]/100+attrib[INT]/100
+	
 	
 #Void	move_to
 #set the parameters for character navigation
@@ -118,8 +121,11 @@ func smooth_rotate(pos:Vector3,lockY:bool=false,amount:float=ROTATION):
 
 # Process the action queue
 func process_actions(delta):
+	
 	if actions.size()==0:
 		return
+	else :
+		print("Action queued in Entity ",name)
 	if target==null or target.dead:
 		actions.clear()
 		combat=false		
@@ -138,6 +144,7 @@ func process_actions(delta):
 			# Maybe selected target is not the destination of item/spell
 			turn_at(actions[0]["target"].position)
 			if actions[0]["id"]!="":
+				print("Target is ",actions[0]["target"].name)
 				inventory[actions[0]["id"]]["item"].use(self, actions[0]["target"])
 	elif actions[0]["type"]=="cast_ability":
 		if actions[0]["done"]:
@@ -184,14 +191,14 @@ func _process(delta):
 				abilities[a]["cooldown"]-=delta
 	
 	# Process the action queue
-	process_actions(delta)
+	if not dead:
+		process_actions(delta)
 	regen_counter+=delta
 	if regen_counter>1:
 		regen_counter=0
 		
-		if hp[0]<hp[1]:
-			
-			hp[0]+=attrib[CON]/100
+		if hp[0]<hp[1]:			
+			hp[0]+=hp_regen
 #			print("Regenerating life ", hp[0])
 		else :
 			hp[0]=hp[1]
@@ -233,7 +240,7 @@ func _physics_process(delta):
 							"timer":inventory[weapon_id]["item"].use_time, 
 							"cooldown":inventory[weapon_id]["item"].use_time,
 							"target":target, "done":false, "loop":true}
-			game_instance.player.actions.append(attack)
+			actions.append(attack)
 		else :
 			anim.set("parameters/stance/blend_position", Vector2(0,-1) )
 	

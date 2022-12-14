@@ -5,7 +5,7 @@ class_name hostile_idle
 
 func tick():
 	
-	if actor.combat:
+	if actor.combat or actor.dead:
 		return FAILURE
 #	print("Idling")
 	if actor.get_node("sensor").targets.size()>0:
