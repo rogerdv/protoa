@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c1c8jbb0tinfm"]
+
+[ext_resource type="Script" path="res://scripts/game/item_weapon.gd" id="1_6mrjw"]
+[ext_resource type="PackedScene" uid="uid://cgygbars7gsph" path="res://models/items/weapons/broadsword/broadsword.tscn" id="1_hl846"]
+
+[resource]
+script = ExtResource("1_6mrjw")
+damage = 3.0
+range = 1.5
+skill = null
+id = "steel_bsword"
+desc = "steel_bsword_desc"
+type = 1
+mesh = ExtResource("1_hl846")
+slot = "weapon"
+use_time = 1.0
+stack = false
