@@ -124,8 +124,6 @@ func process_actions(delta):
 	
 	if actions.size()==0:
 		return
-	else :
-		print("Action queued in Entity ",name)
 	if target==null or target.dead:
 		actions.clear()
 		combat=false		
