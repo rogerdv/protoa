@@ -7,10 +7,11 @@
 [resource]
 script = ExtResource("1_prjpn")
 damage = 2.0
-range = 1.5
+range = 2.0
 skill = "blunt"
 id = "stick"
 desc = null
+type = null
 mesh = ExtResource("1_7gsp7")
 slot = "weapon"
 use_sfx = ExtResource("3_l5i78")

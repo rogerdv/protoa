@@ -14,11 +14,12 @@ normal_texture = ExtResource("4_tt0d8")
 size = Vector3(0.0801325, 0.113933, 0.856003)
 
 [node name="broadsword" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_3jrr2")
 area = NodePath("Broadsword/Area3D")
 
 [node name="Broadsword" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -0.0590403, -0.0484954, -0.114851)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0590403, -0.00349854, 0.0808493)
 mesh = ExtResource("1_s6omp")
 surface_material_override/0 = SubResource("StandardMaterial3D_fo6xk")
 
