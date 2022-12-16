@@ -25,9 +25,8 @@ func _unhandled_input(event):
 		var intersection = space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from,to))
 		if event.button_index == 2:	
 			#Right click
-			if intersection != null:				
-				player.move_to(intersection.position)
-		
+			if intersection != null:
+				player.move_to(intersection)
 		elif event.button_index == 1:
 			# LEft click, look for NPC or interactable
 			if intersection != null:

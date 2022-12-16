@@ -4,6 +4,7 @@ class_name entity
 #Lets add NavigationAgent3D trowgh code, accessible as 'nav_agent', 
 #we don't need to interact with such node directly in the actual tree..
 var nav_agent = NavigationAgent3D.new() #Navigation agent itself
+var nav_target #stores character for position updates
 var anim 
 
 var SPEED = 7.0 #speed factor *dah!
@@ -72,7 +73,7 @@ var regen_counter = 0
 func _ready():
 	#nav config
 	add_child(nav_agent) #add as remote node
-	nav_target(global_transform.origin)
+	set_nav_agent(global_transform.origin)
 		
 	recalc_stats()
 
@@ -84,25 +85,30 @@ func recalc_stats():
 	ep[1]= 5*attrib[INT]+attrib[CON]*2
 	ep[0]=ep[1]
 	ep_regen = attrib[CON]/100+attrib[INT]/100
-	
-	
+
 #Void	move_to
 #set the parameters for character navigation
 #Parameters:
 #
-#Vector3	pos
-#the position character will try to reach
+#Dictionary 	_target
+#Information about target
 #
 #float		separation	[default:0.1]
 #the separation between character and target.
 #
 #bool		attacking	[default:false]
 #set to true when moving to attack another character
-func move_to(pos:Vector3,separation:float=0.2,attacking:bool=false):
+func move_to(_target:Dictionary,separation:float=0.2,attacking:bool=false):
 	autoatk = attacking
 	moving = true
 	nav_agent.target_desired_distance = separation
-	nav_target(pos)
+	#in case target is another character, store the node for update his position
+	if _target["collider"] is entity:
+		nav_target = _target["collider"]
+	else:
+	#in case not. just go to target position
+		nav_target = null
+		set_nav_agent(_target.position)
 	#Run anim
 #	if attacking:
 #		anim.set("parameters/stance/blend_position", Vector2(0,0) )
@@ -204,6 +210,19 @@ func _process(delta):
 			ep[0]+=attrib[INT]/100+attrib[CON]/100
 
 func _physics_process(delta):
+	
+	#if is stored a character as target refresh his location
+	if nav_target:
+		set_nav_agent(nav_target.position)
+	
+	#do movement
+	movement()
+	
+	#Smooth rotation with Y axis locked
+	smooth_rotate(face_target,true)
+	
+
+func movement():
 	#Movement formula using navigation
 	if not nav_agent.is_target_reached():
 		var current_location = global_transform.origin
@@ -220,7 +239,7 @@ func _physics_process(delta):
 		turn_at(next_location)
 		
 		if not nav_agent.is_target_reachable() and current_location.round() == next_location.round():
-			nav_target(current_location)
+			set_nav_agent(current_location)
 			return
 			
 		var new_velocity = (next_location - current_location).normalized() * SPEED
@@ -241,13 +260,9 @@ func _physics_process(delta):
 			actions.append(attack)
 		else :
 			anim.set("parameters/stance/blend_position", Vector2(0,-1) )
-	
-	#Smooth rotation with Y axis locked
-	smooth_rotate(face_target,true)
-	
 
 #Use this method for set navigation target, please dont set it directly.
-func nav_target(target:Vector3):
+func set_nav_agent(target:Vector3):
 	nav_agent.set_target_location(target)
 
 #void	turn_at
