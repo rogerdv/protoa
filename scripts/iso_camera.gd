@@ -47,11 +47,11 @@ func _unhandled_input(event):
 			# zoom in
 			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 				#zoom
-				if camera.size<18:
+				if camera.size<14:
 					camera.size+=0.5
 			# zoom out
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-				if camera.size>5:
+				if camera.size>8:
 					camera.size-=0.5
 			
 	#Raycasting for click position
