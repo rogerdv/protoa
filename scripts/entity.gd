@@ -42,7 +42,7 @@ var inventory={}
 
 #equipped items
 # {slot:it_id}
-var equip = {"head":"","weapon":""}
+var equip = {"head":"","weapon":"","armor":""}
 
 # Abilities known to this entity
 # { ability_id:{"cooldown":0}
@@ -177,9 +177,22 @@ func process_actions(delta):
 			actions.remove_at(0)
 			return
 
+# Calculates damage received
 func receive_dmg(damage:float, dmg_type:int):
-	hp[0]-=damage
+	if damage-get_protection(dmg_type)<0:
+		return
+	hp[0]=hp[0]-(damage-get_protection(dmg_type))
 
+# Returns the total protection for a given damage type
+func get_protection(dmg_type:int):
+	var prot:float=0.0
+	if equip["armor"]!="":
+		prot+=inventory[equip["armor"]]["item"].prot
+	if equip["head"]!="":
+		prot+=inventory[equip["head"]]["item"].prot
+	print("Protection is ", prot)
+	return prot
+	
 # Returns skill level
 func get_skill(id:String)->int:
 	if skills.has(id):

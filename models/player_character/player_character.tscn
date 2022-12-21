@@ -2471,7 +2471,7 @@ bones/72/position = Vector3(-0.206212, 0.682659, -0.751493)
 bones/73/position = Vector3(0.258964, 0.682659, -0.13314)
 
 [node name="weapon" type="BoneAttachment3D" parent="." index="1"]
-transform = Transform3D(-0.634874, -0.361794, -0.682672, 0.414481, 0.586191, -0.696122, 0.652029, -0.724904, -0.2222, 0.369436, 1.16561, 0.142172)
+transform = Transform3D(-0.634874, -0.361794, -0.682672, 0.41448, 0.586191, -0.696122, 0.652029, -0.724904, -0.222201, 0.369436, 1.16561, 0.142172)
 bone_name = "weapon_right"
 bone_idx = 55
 use_external_skeleton = true
@@ -2488,7 +2488,7 @@ parameters/Transition/current = 0
 parameters/stance/blend_position = Vector2(0.0017637, -0.973799)
 
 [node name="head" type="BoneAttachment3D" parent="." index="3"]
-transform = Transform3D(0.999229, 0.0268019, -0.0286824, -0.0310159, 0.9869, -0.158326, 0.0240632, 0.159093, 0.98697, -0.00404003, 1.8861, 0.00225775)
+transform = Transform3D(0.999229, 0.0268021, -0.0286815, -0.031016, 0.9869, -0.158325, 0.0240624, 0.159093, 0.98697, -0.00404005, 1.8861, 0.00225783)
 bone_name = "Head"
 bone_idx = 5
 use_external_skeleton = true
