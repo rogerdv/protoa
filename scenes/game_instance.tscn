@@ -1,13 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://llj5famqj0fr"]
+[gd_scene load_steps=3 format=3 uid="uid://ca0mxo8nfnmu"]
 
 [ext_resource type="Script" path="res://scripts/game_instance.gd" id="1_1y4vr"]
 [ext_resource type="Resource" uid="uid://bsxbp38ghufhh" path="res://game_data/abilities/test_mb.tres" id="2_pf7rg"]
-[ext_resource type="Resource" path="res://game_data/items/weapons/hammer.tres" id="3_pn6eb"]
-[ext_resource type="Resource" uid="uid://cnnbqyo3efqjv" path="res://game_data/items/weapons/stick.tres" id="4_bjuyr"]
-[ext_resource type="Resource" uid="uid://bwhohs8q120fa" path="res://game_data/items/armor/funny_hat.tres" id="5_6sr41"]
-[ext_resource type="Resource" uid="uid://c1c8jbb0tinfm" path="res://game_data/items/weapons/browdsword.tres" id="6_gtmpc"]
 
 [node name="game_instance" type="Node3D"]
 script = ExtResource("1_1y4vr")
 abilities = [ExtResource("2_pf7rg")]
-items = [ExtResource("3_pn6eb"), ExtResource("4_bjuyr"), ExtResource("5_6sr41"), ExtResource("6_gtmpc")]
