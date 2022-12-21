@@ -1,18 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2aqaedgnhlu"]
+[gd_scene load_steps=7 format=3 uid="uid://c2aqaedgnhlu"]
 
 [ext_resource type="Script" path="res://scripts/game/weapon.gd" id="1_3jrr2"]
 [ext_resource type="ArrayMesh" uid="uid://dt2whbjc7p7su" path="res://models/items/weapons/broadsword/broadsword.obj" id="1_s6omp"]
+[ext_resource type="Texture2D" uid="uid://b3jq4wi6vgsag" path="res://models/items/weapons/broadsword/denmargreatsword_difuso_256x256.jpg" id="3_37w3r"]
+[ext_resource type="Texture2D" uid="uid://6ttcddok38q7" path="res://models/items/weapons/broadsword/denmargreatsword_bump_256x256.jpg" id="4_tt0d8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fo6xk"]
+albedo_texture = ExtResource("3_37w3r")
+normal_enabled = true
+normal_texture = ExtResource("4_tt0d8")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j1ybl"]
 size = Vector3(0.0801325, 0.113933, 0.856003)
 
 [node name="broadsword" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 script = ExtResource("1_3jrr2")
 area = NodePath("Broadsword/Area3D")
 
 [node name="Broadsword" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -0.0590403, -0.0484954, -0.114851)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0590403, -0.00349854, 0.0808493)
 mesh = ExtResource("1_s6omp")
+surface_material_override/0 = SubResource("StandardMaterial3D_fo6xk")
 
 [node name="Area3D" type="Area3D" parent="Broadsword"]
 transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, 5.58794e-08, 0.648374)
@@ -21,3 +30,6 @@ monitoring = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Broadsword/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, -4.9738e-14, 0, 4.9738e-14, 0.999999, 0, -0.0145605, 0.0937598)
 shape = SubResource("BoxShape3D_j1ybl")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+volume_db = 10.0

@@ -13,7 +13,9 @@ func tick():
 		rng=1.5
 	if actor.position.distance_to(actor.target.position)>rng:
 		
-		actor.move_to(actor.target.position,rng, true)
+		#workaround needs revision
+		var dict_ = {"collider":actor.target}
+		actor.move_to(dict_,rng, true)
 		return RUNNING
 	else : 
 		var attack = {"type": "use_item", "id":actor.equip["weapon"],

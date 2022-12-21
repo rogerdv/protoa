@@ -10,11 +10,12 @@ albedo_color = Color(0.215686, 0.529412, 0.0313726, 1)
 size = Vector3(0.130532, 0.267056, 0.278739)
 
 [node name="hammer" instance=ExtResource("1_n4mi8")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
 script = ExtResource("2_aksc0")
 area = NodePath("hammer2/Area3D")
 
 [node name="hammer2" parent="." index="0"]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.0251639, -0.195158)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00692187, -0.178863)
 material_override = SubResource("StandardMaterial3D_pwqv4")
 
 [node name="Area3D" type="Area3D" parent="hammer2" index="0"]
