@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cfrywi18axpqn"]
+
+[ext_resource type="Texture2D" uid="uid://b0cd6kgdhrh33" path="res://models/items/armors/wshield/round-shield.png" id="1_ph2b1"]
+
+[resource]
+albedo_texture = ExtResource("1_ph2b1")

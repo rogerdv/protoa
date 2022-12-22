@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kmlcgvvw6wkc"
+path="res://.godot/imported/iron axe.obj-f4e48c6bb110d955e241079dbb244dd8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/iron axe.obj-f4e48c6bb110d955e241079dbb244dd8.mesh"]
+
+source_file="res://models/items/weapons/axe/iron axe.obj"
+dest_files=["res://.godot/imported/iron axe.obj-f4e48c6bb110d955e241079dbb244dd8.mesh", "res://.godot/imported/iron axe.obj-f4e48c6bb110d955e241079dbb244dd8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

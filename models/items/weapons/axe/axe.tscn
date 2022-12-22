@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhmpie8hhkr8o"]
+
+[ext_resource type="Script" path="res://scripts/game/weapon.gd" id="1_05yj1"]
+[ext_resource type="ArrayMesh" uid="uid://kmlcgvvw6wkc" path="res://models/items/weapons/axe/iron axe.obj" id="1_rt0te"]
+[ext_resource type="Material" uid="uid://bej4elmllq7j8" path="res://models/items/weapons/axe/axe_material.tres" id="2_ihbgh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_op2m2"]
+size = Vector3(0.130532, 0.267056, 0.278739)
+
+[node name="axe" type="Node3D"]
+script = ExtResource("1_05yj1")
+area = NodePath("IronAxe/Area3D")
+
+[node name="IronAxe" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.114937, 0.993373, -6.18172e-08, 0.702421, 0.0812729, 0.707107, 0.702421, 0.0812728, -0.707107, 0, 0, 0)
+mesh = ExtResource("1_rt0te")
+surface_material_override/0 = ExtResource("2_ihbgh")
+
+[node name="Area3D" type="Area3D" parent="IronAxe"]
+transform = Transform3D(1, 0, 0, 0, 1, 3.72529e-09, 0, 0, 1, 0, 0, 0)
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IronAxe/Area3D"]
+transform = Transform3D(0.999999, 1.49012e-08, -9.76996e-15, -2.98023e-08, 0.999998, 0, 1.33227e-14, -1.35003e-13, 0.999999, 0.00201548, -0.170323, 0.73516)
+shape = SubResource("BoxShape3D_op2m2")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

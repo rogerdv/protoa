@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://xdwft1w2vbu2"]
+
+[ext_resource type="ArrayMesh" uid="uid://cuh7c1y07mavt" path="res://models/items/armors/wshield/woodshield.obj" id="1_gsomv"]
+[ext_resource type="Material" uid="uid://cfrywi18axpqn" path="res://models/items/armors/wshield/wshield.tres" id="2_o7aut"]
+
+[node name="wshield" type="Node3D"]
+
+[node name="Woodshield" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.512867, -0.858468, 0, 0.858468, 0.512867, 0, 0, 0.04)
+mesh = ExtResource("1_gsomv")
+surface_material_override/0 = ExtResource("2_o7aut")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

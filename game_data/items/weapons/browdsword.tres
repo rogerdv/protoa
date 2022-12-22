@@ -1,17 +1,19 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c1c8jbb0tinfm"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c1c8jbb0tinfm"]
 
 [ext_resource type="Script" path="res://scripts/game/item_weapon.gd" id="1_6mrjw"]
-[ext_resource type="PackedScene" uid="uid://cgygbars7gsph" path="res://models/items/weapons/broadsword/broadsword.tscn" id="1_hl846"]
+[ext_resource type="PackedScene" uid="uid://c2aqaedgnhlu" path="res://models/items/weapons/broadsword/broadsword.tscn" id="1_hl846"]
+[ext_resource type="AudioStream" uid="uid://c13g1xro5beg8" path="res://audio/sfx/chop.ogg" id="3_c2anx"]
 
 [resource]
 script = ExtResource("1_6mrjw")
 damage = 3.0
 range = 1.5
-skill = null
+skill = "swords"
 id = "steel_bsword"
 desc = "steel_bsword_desc"
 type = 1
 mesh = ExtResource("1_hl846")
 slot = "weapon"
+use_sfx = ExtResource("3_c2anx")
 use_time = 1.0
 stack = false

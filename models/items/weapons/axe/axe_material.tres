@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bej4elmllq7j8"]
+
+[ext_resource type="Texture2D" uid="uid://dbbk18whopr4r" path="res://models/items/weapons/axe/ironaxe_difuso_256x256.jpg" id="1_4o03v"]
+[ext_resource type="Texture2D" uid="uid://7h1v06vak7v" path="res://models/items/weapons/axe/ironaxe_bump_256x256.jpg" id="2_13vsn"]
+
+[resource]
+albedo_texture = ExtResource("1_4o03v")
+normal_enabled = true
+normal_scale = 2.47
+normal_texture = ExtResource("2_13vsn")

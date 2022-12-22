@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cf5kix4a6xm2b"]
+
+[ext_resource type="PackedScene" uid="uid://xdwft1w2vbu2" path="res://models/items/armors/wshield/wshield.tscn" id="1_7ehfo"]
+[ext_resource type="Script" path="res://scripts/game/item_armor.gd" id="1_wkil4"]
+
+[resource]
+script = ExtResource("1_wkil4")
+prot = 2.0
+id = "woodshield"
+desc = "woodshield_desc"
+type = 1
+mesh = ExtResource("1_7ehfo")
+slot = "shield"
+use_time = 1.0
+stack = false

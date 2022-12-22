@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cuh7c1y07mavt"
+path="res://.godot/imported/woodshield.obj-aa1392f02bde9dc1489cd6c677e85a7d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/woodshield.obj-aa1392f02bde9dc1489cd6c677e85a7d.mesh"]
+
+source_file="res://models/items/armors/wshield/woodshield.obj"
+dest_files=["res://.godot/imported/woodshield.obj-aa1392f02bde9dc1489cd6c677e85a7d.mesh", "res://.godot/imported/woodshield.obj-aa1392f02bde9dc1489cd6c677e85a7d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
