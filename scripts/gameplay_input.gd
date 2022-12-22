@@ -26,6 +26,8 @@ func _unhandled_input(event):
 		if event.button_index == 2:	
 			#Right click
 			if intersection != null:
+				# Cancel any pending action
+				player.actions.clear()
 				player.move_to(intersection)
 		elif event.button_index == 1:
 			# LEft click, look for NPC or interactable
@@ -40,7 +42,7 @@ func _unhandled_input(event):
 						#TODO: moe only if far away							
 						if intersection["collider"].align>player.align:
 							# Enemy, enable combat
-							player.combat = true
+							player.set_combat(true)
 							var w_rng:float = 1.5 #weapon range
 							if player.equip["weapon"]!="":
 								# get weapon range
@@ -55,7 +57,9 @@ func _unhandled_input(event):
 
 				else:
 					#clicked on ground, unselect current target
+					# and just in case, clear pending actions					
 					if player.target!=null:
+						player.actions.clear()
 						player.target.toggle_select(false)
 						player.target=null#		
 	
