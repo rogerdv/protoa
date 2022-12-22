@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://0fy5x2gcr83w"]
+
+[ext_resource type="Script" path="res://scripts/item_tester.gd" id="1_ny0hr"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_ny0hr")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.20041, -2.1492)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.749037, 0.662529, 0, -0.662529, -0.749037, 0, 2.65233, 0)
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="items" type="VBoxContainer" parent="ui"]
+layout_mode = 0
+offset_right = 145.0
+offset_bottom = 300.0
