@@ -282,3 +282,8 @@ func set_nav_agent(target:Vector3):
 #the default method to set where character should be facing.
 func turn_at(_target:Vector3):
 	face_target = _target
+
+# enters combat mode. Takes care of setting the righ stance acording to weapon, etc	
+func set_combat(toggle:bool):
+	combat=toggle
+	
