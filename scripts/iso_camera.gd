@@ -51,23 +51,9 @@ func _unhandled_input(event):
 					camera.size+=0.5
 			# zoom out
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-				if camera.size>8:
+				if camera.size>5:
 					camera.size-=0.5
 			
-	#Raycasting for click position
-#	if event is InputEventMouseButton and event.pressed and event.button_index == 2:
-#		var space_state = get_world_3d().direct_space_state
-#		var from = camera.project_ray_origin(event.position)
-#		var to = from + camera.project_ray_normal(event.position) * ray_length
-#		var intersection = space_state.intersect_ray(PhysicsRayQueryParameters3D.create(from,to))
-#
-#		#Send click information to the global control
-#		if GlobalControl.debug: print("Left click on: " + str(intersection.position))
-#		if intersection != null:
-#			#GlobalControl.Lclick = intersection.position
-#			GlobalControl.left_click(intersection.position)
-			
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
