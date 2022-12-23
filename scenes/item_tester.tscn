@@ -5,9 +5,6 @@
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ny0hr")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.20041, -2.1492)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.749037, 0.662529, 0, -0.662529, -0.749037, 0, 2.65233, 0)
 
@@ -23,3 +20,20 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 145.0
 offset_bottom = 300.0
+
+[node name="attack" type="Button" parent="ui"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -101.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Attack anim"
+
+[node name="pivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="pivot"]
+transform = Transform3D(-0.988327, 9.20451e-10, 0.152348, 0.00562509, 0.999318, 0.0364918, -0.152244, 0.0369228, -0.987653, 0.378987, 1.2817, -2.1492)
+
+[connection signal="pressed" from="ui/attack" to="." method="_on_attack_pressed"]

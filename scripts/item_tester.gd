@@ -1,6 +1,8 @@
 extends Node3D
 
 var player
+var rot_l=false
+var rot_r=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,6 +37,16 @@ func equip(it):
 	player.inventory[it.id]["item"].equip(player)
 	player.equip[it.slot]=it.id
 	
+
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_key_pressed(KEY_A):
+		$pivot.rotate(Vector3(0, 1,0),-1*delta)
+	if Input.is_key_pressed(KEY_D):
+		$pivot.rotate(Vector3(0, 1,0),1*delta)
+
+
+func _on_attack_pressed():
+	player.anim.set("parameters/Time Scale 2/scale", 0.2 )
+	player.anim.set("parameters/OneShot/active", true )
