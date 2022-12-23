@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://2s6ktbvq68os"]
+[gd_scene load_steps=15 format=3 uid="uid://c0suis3yd7rsy"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_6qgry"]
 [ext_resource type="Texture2D" uid="uid://d25rgj7q3wuol" path="res://textures/select.png" id="2_px7mf"]
@@ -41,7 +41,7 @@ mesh = SubResource("PlaneMesh_no6ea")
 surface_material_override/0 = SubResource("StandardMaterial3D_3tgrc")
 
 [node name="origin" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26924, -0.680647)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.269, 0)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
