@@ -19,7 +19,7 @@ script = ExtResource("1_3jrr2")
 area = NodePath("Broadsword/Area3D")
 
 [node name="Broadsword" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0590403, -0.00349854, 0.0808493)
+transform = Transform3D(0.266418, -0.857284, -0.440551, 0.855699, -1.97384e-08, 0.517474, -0.443623, -0.514844, 0.733577, -0.109719, 0.0497782, 0.0701797)
 mesh = ExtResource("1_s6omp")
 surface_material_override/0 = SubResource("StandardMaterial3D_fo6xk")
 
@@ -32,4 +32,5 @@ transform = Transform3D(1, 0, 0, 0, 0.999999, -4.9738e-14, 0, 4.9738e-14, 0.9999
 shape = SubResource("BoxShape3D_j1ybl")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.316603, -1.38392e-08)
 volume_db = 10.0

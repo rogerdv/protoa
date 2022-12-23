@@ -18,4 +18,4 @@ func _on_area_3d_body_entered(body):
 	var msg:String=body.name
 	
 	body.receive_dmg(damage,0)
-	GlobalControl.scene_ui.add_message("Hit "+msg+" for "+str(damage)+" damage")
+#	GlobalControl.scene_ui.add_message("Hit "+msg+" for "+str(damage)+" damage")

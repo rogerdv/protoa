@@ -12,7 +12,7 @@ script = ExtResource("1_05yj1")
 area = NodePath("IronAxe/Area3D")
 
 [node name="IronAxe" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.114937, 0.993373, -6.18172e-08, 0.702421, 0.0812729, 0.707107, 0.702421, 0.0812728, -0.707107, 0, 0, 0)
+transform = Transform3D(0.015565, 0.991468, -0.129418, 0.702421, 0.0812729, 0.707107, 0.711592, -0.101912, -0.695163, -0.00912976, 0, 0.0286507)
 mesh = ExtResource("1_rt0te")
 surface_material_override/0 = ExtResource("2_ihbgh")
 
