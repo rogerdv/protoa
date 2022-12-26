@@ -2471,7 +2471,7 @@ bones/72/position = Vector3(-0.206212, 0.682659, -0.751493)
 bones/73/position = Vector3(0.258964, 0.682659, -0.13314)
 
 [node name="weapon" type="BoneAttachment3D" parent="." index="1"]
-transform = Transform3D(-0.634308, -0.371782, -0.677814, 0.399962, 0.592493, -0.699273, 0.661577, -0.714654, -0.227124, 0.369724, 1.16711, 0.140519)
+transform = Transform3D(-0.634307, -0.371782, -0.677815, 0.399962, 0.592493, -0.699273, 0.661577, -0.714654, -0.227124, 0.369723, 1.16711, 0.140518)
 bone_name = "weapon_right"
 bone_idx = 55
 use_external_skeleton = true
@@ -2488,7 +2488,7 @@ parameters/Transition/current = 0
 parameters/stance/blend_position = Vector2(0.0017637, -0.973799)
 
 [node name="head" type="BoneAttachment3D" parent="." index="3"]
-transform = Transform3D(0.999227, 0.0268692, -0.0286924, -0.0309924, 0.987494, -0.15458, 0.0241802, 0.155349, 0.987564, -0.00401302, 1.88128, 0.000205155)
+transform = Transform3D(0.999227, 0.0268694, -0.0286915, -0.0309925, 0.987494, -0.154579, 0.0241792, 0.155349, 0.987564, -0.00401302, 1.88129, 0.000204906)
 bone_name = "Head"
 bone_idx = 5
 use_external_skeleton = true
@@ -2501,7 +2501,7 @@ libraries = {
 }
 
 [node name="shield" type="BoneAttachment3D" parent="." index="5"]
-transform = Transform3D(0.210693, 0.918201, -0.335433, -0.772793, 0.366589, 0.518077, 0.598665, 0.150066, 0.786817, -0.491125, 1.39257, 0.0217985)
+transform = Transform3D(0.210692, 0.918201, -0.335433, -0.772792, 0.366588, 0.518079, 0.598666, 0.150065, 0.786816, -0.491125, 1.39258, 0.0217987)
 bone_name = "shield"
 bone_idx = 31
 use_external_skeleton = true
