@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/gameplay_input.gd" id="2_fqsbe"]
 [ext_resource type="PackedScene" uid="uid://d2b2b4qbke2we" path="res://UI/ui.tscn" id="6_cdpqt"]
 [ext_resource type="Environment" uid="uid://bb6goxby35gmv" path="res://scenes/outdoor_env.tres" id="6_dchxl"]
-[ext_resource type="PackedScene" uid="uid://2s6ktbvq68os" path="res://models/npcs/female_npc01/npc_female.tscn" id="6_mqb25"]
+[ext_resource type="PackedScene" uid="uid://c0suis3yd7rsy" path="res://models/npcs/female_npc01/npc_female.tscn" id="6_mqb25"]
 [ext_resource type="PackedScene" uid="uid://b4ntm3jeuvl51" path="res://models/npcs/npc01/npc_male.tscn" id="6_o2ntf"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_vwcsu"]
