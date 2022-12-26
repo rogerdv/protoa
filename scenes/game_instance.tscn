@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ca0mxo8nfnmu"]
+[gd_scene load_steps=10 format=3 uid="uid://ca0mxo8nfnmu"]
 
 [ext_resource type="Script" path="res://scripts/game_instance.gd" id="1_1y4vr"]
 [ext_resource type="Resource" uid="uid://bsxbp38ghufhh" path="res://game_data/abilities/test_mb.tres" id="2_pf7rg"]
@@ -8,8 +8,9 @@
 [ext_resource type="Resource" uid="uid://c1c8jbb0tinfm" path="res://game_data/items/weapons/browdsword.tres" id="6_gtmpc"]
 [ext_resource type="Resource" uid="uid://cf5kix4a6xm2b" path="res://game_data/items/armor/woodshield.tres" id="7_q1dob"]
 [ext_resource type="Resource" uid="uid://b3pbxc8qen768" path="res://game_data/items/weapons/axe.tres" id="8_4b3gd"]
+[ext_resource type="Resource" uid="uid://b3qjqqc7j1f52" path="res://game_data/items/weapons/staff.tres" id="9_bn1af"]
 
 [node name="game_instance" type="Node3D"]
 script = ExtResource("1_1y4vr")
 abilities = [ExtResource("2_pf7rg")]
-items = [ExtResource("5_6sr41"), ExtResource("6_gtmpc"), ExtResource("3_pn6eb"), ExtResource("4_bjuyr"), ExtResource("7_q1dob"), ExtResource("8_4b3gd")]
+items = [ExtResource("5_6sr41"), ExtResource("6_gtmpc"), ExtResource("3_pn6eb"), ExtResource("4_bjuyr"), ExtResource("7_q1dob"), ExtResource("8_4b3gd"), ExtResource("9_bn1af")]
