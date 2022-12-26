@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://7vi4go63j7v5"
+path="res://.godot/imported/iron staff.obj-cf71c0d3518e3f59a45f82f3eee6a2bb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/iron staff.obj-cf71c0d3518e3f59a45f82f3eee6a2bb.mesh"]
+
+source_file="res://models/items/weapons/staff/iron staff.obj"
+dest_files=["res://.godot/imported/iron staff.obj-cf71c0d3518e3f59a45f82f3eee6a2bb.mesh", "res://.godot/imported/iron staff.obj-cf71c0d3518e3f59a45f82f3eee6a2bb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
