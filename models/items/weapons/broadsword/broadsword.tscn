@@ -34,3 +34,5 @@ shape = SubResource("BoxShape3D_j1ybl")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.316603, -1.38392e-08)
 volume_db = 10.0
+
+[connection signal="body_entered" from="Broadsword/Area3D" to="." method="_on_area_3d_body_entered"]
