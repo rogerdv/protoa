@@ -18,4 +18,6 @@ fh_desc,"Un sombrero muy raro, que te tapa los ojos.","A funny hat, that covers 
 hpreg,Regeneración de salud,Health regeneration
 epreg,Regeneración de energía,Energy regeneration
 steel_bsword,Espada ancha de acero,Steel broadsword
-steel_bsword_desc,"Una espada. La punta va hacia el enemigo","A sword. Tip goes towars enemy."
+steel_bsword_desc,Una espada. La punta va hacia el enemigo,A sword. Tip goes towars enemy.
+axe,Hacha de guerra,War axe
+axe_desc,"Una vieja hacha, que aún funciona","An old axe, that still works"
