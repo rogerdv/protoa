@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://b3pbxc8qen768"]
 
-[ext_resource type="PackedScene" uid="uid://dhmpie8hhkr8o" path="res://models/items/weapons/axe/axe.tscn" id="1_5oan7"]
+[ext_resource type="PackedScene" uid="uid://dx25aom5fgypk" path="res://models/items/weapons/axe/axe.tscn" id="1_5oan7"]
 [ext_resource type="Script" path="res://scripts/game/item_weapon.gd" id="1_yl7o2"]
 [ext_resource type="AudioStream" uid="uid://c13g1xro5beg8" path="res://audio/sfx/chop.ogg" id="3_hwiip"]
 

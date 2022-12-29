@@ -14,11 +14,10 @@ script = ExtResource("2_aksc0")
 area = NodePath("hammer2/Area3D")
 
 [node name="hammer2" parent="." index="0"]
-transform = Transform3D(-0.121869, 0.992546, -6.04142e-08, -0.509015, -0.0624992, -0.858486, -0.852087, -0.104623, 0.512837, -0.012087, 0.222877, -0.105447)
+transform = Transform3D(-0.121869, 0.992546, -6.04142e-08, -0.509015, -0.0624992, -0.858486, -0.852087, -0.104623, 0.512837, -0.0530395, 0.222877, -0.105447)
 material_override = SubResource("StandardMaterial3D_pwqv4")
 
 [node name="Area3D" type="Area3D" parent="hammer2" index="0"]
-monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hammer2/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 2.13163e-14, 0, -2.13163e-14, 0.999999, 0, -0.0531115, -0.610533)

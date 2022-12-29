@@ -20,7 +20,7 @@ func update_item_list():
 		add_b.text="equip"
 		add_b.pressed.connect(equip.bind(it))
 		line.add_child(add_b)
-		$ui/items.add_child(line)
+		$UI/items.add_child(line)
 
 func equip(it):
 	# TRansfer to inventory

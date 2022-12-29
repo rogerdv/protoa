@@ -25,7 +25,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fo6xk")
 
 [node name="Area3D" type="Area3D" parent="Broadsword"]
 transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, 5.58794e-08, 0.648374)
-monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Broadsword/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, -4.9738e-14, 0, 4.9738e-14, 0.999999, 0, -0.0145605, 0.0937598)

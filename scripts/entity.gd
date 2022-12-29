@@ -148,7 +148,7 @@ func process_actions(delta):
 			# Maybe selected target is not the destination of item/spell
 			turn_at(actions[0]["target"].position)
 			if actions[0]["id"]!="":
-				print("Target is ",actions[0]["target"].name)
+#				print("Target is ",actions[0]["target"].name)
 				inventory[actions[0]["id"]]["item"].use(self, actions[0]["target"])
 	elif actions[0]["type"]=="cast_ability":
 		if actions[0]["done"]:
@@ -228,7 +228,7 @@ func _physics_process(delta):
 		w_rng=inventory[equip["weapon"]]["item"].range
 	#if is stored a character as target refresh his location
 	if nav_target and position.distance_to(nav_target.position)>=w_rng:
-		set_nav_agent(nav_target.position)
+			set_nav_agent(nav_target.position)
 	
 	#do movement
 	movement()
@@ -263,6 +263,7 @@ func movement():
 	
 	elif nav_agent.is_target_reached() and moving:
 		moving = false
+		nav_target=null
 		if autoatk:
 			anim.set("parameters/stance/blend_position", Vector2(0,0) )
 			

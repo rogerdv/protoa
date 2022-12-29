@@ -8,7 +8,7 @@ script = ExtResource("1_ny0hr")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.749037, 0.662529, 0, -0.662529, -0.749037, 0, 2.65233, 0)
 
-[node name="ui" type="Control" parent="."]
+[node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,11 +16,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="items" type="VBoxContainer" parent="ui"]
+[node name="items" type="VBoxContainer" parent="UI"]
 offset_right = 145.0
 offset_bottom = 300.0
 
-[node name="attack" type="Button" parent="ui"]
+[node name="attack" type="Button" parent="UI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -29,9 +29,26 @@ offset_bottom = 31.0
 grow_horizontal = 0
 text = "Attack anim"
 
+[node name="MessageArea" type="ScrollContainer" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -214.0
+offset_top = -138.0
+offset_right = 202.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 0
+
+[node name="Text" type="VBoxContainer" parent="UI/MessageArea"]
+mouse_filter = 0
+
 [node name="pivot" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="pivot"]
 transform = Transform3D(-0.988327, 9.20451e-10, 0.152348, 0.00562509, 0.999318, 0.0364918, -0.152244, 0.0369228, -0.987653, 0.378987, 1.2817, -2.1492)
 
-[connection signal="pressed" from="ui/attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="UI/attack" to="." method="_on_attack_pressed"]

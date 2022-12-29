@@ -19,13 +19,12 @@ script = ExtResource("1_ghkls")
 area = NodePath("IronStaff/Area3D")
 
 [node name="IronStaff" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.877171, -0.0696815, -0.475095, 0.480178, 0.127292, 0.867886, -4.44982e-09, -0.989415, 0.145116, -0.125763, 0.11111, 0.0594441)
+transform = Transform3D(0.550878, -0.156856, -0.819713, 0.828729, 0.21896, 0.515038, 0.0986973, -0.963044, 0.250612, -0.125763, 0.11111, 0.0594441)
 mesh = ExtResource("1_rthvv")
 surface_material_override/0 = SubResource("StandardMaterial3D_fd0oc")
 
 [node name="Area3D" type="Area3D" parent="IronStaff"]
 transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, 5.58794e-08, 0.648374)
-monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="IronStaff/Area3D"]
 transform = Transform3D(1, -3.36854e-08, -1.80976e-07, -1.77542e-08, 1, 4.47035e-08, 1.53801e-07, -8.9407e-08, 1, 0.00887567, 0.0137933, 0.0336793)

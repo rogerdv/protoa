@@ -24,7 +24,7 @@ func tick():
 							"target":actor.target, "done":false, "loop":true}
 		
 		actor.actions.append(attack)
-		print("IA: added action to ", actor.name)
+#		print("IA: added action to ", actor.name)
 		
 		return SUCCESS
 		
