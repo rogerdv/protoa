@@ -223,9 +223,11 @@ func _process(delta):
 			ep[0]+=attrib[INT]/100+attrib[CON]/100
 
 func _physics_process(delta):
-	
+	var w_rng=1.5	#weapon range
+	if equip["weapon"]!="":
+		w_rng=inventory[equip["weapon"]]["item"].range
 	#if is stored a character as target refresh his location
-	if nav_target:
+	if nav_target and position.distance_to(nav_target.position)>=w_rng:
 		set_nav_agent(nav_target.position)
 	
 	#do movement
