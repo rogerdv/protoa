@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_8pgjm"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tyd57"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w8bbr"]
 radius = 0.3
 height = 1.8
 
@@ -13,7 +13,7 @@ attrib = [5, 5, 5, 5, 5]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.960126, 0)
-shape = SubResource("CapsuleShape3D_tyd57")
+shape = SubResource("CapsuleShape3D_w8bbr")
 
 [node name="origin" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26924, -0.680647)
