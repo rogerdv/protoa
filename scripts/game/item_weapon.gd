@@ -9,8 +9,9 @@ func use(owner, target):
 	# Enable colisions
 #	model.toggle_collisions(true)
 	var level = owner.get_skill(skill)
-	var base_damage=damage*owner.attrib[entity.STR]/10
+	var base_damage:float=damage*owner.attrib[entity.STR]/10
 	model.damage=base_damage+base_damage*level/10
+	print(owner.name+" generate damage ",base_damage+base_damage*level/10)
 	model.owner_name = owner.name
 #	owner.actor.get_node("AnimationPlayer").play("attack_one_handed")
 	owner.anim.set("parameters/OneShot/active", true )

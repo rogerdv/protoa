@@ -190,7 +190,7 @@ func get_protection(dmg_type:int):
 		prot+=inventory[equip["armor"]]["item"].prot
 	if equip["head"]!="":
 		prot+=inventory[equip["head"]]["item"].prot
-	print("Protection is ", prot)
+#	print("Protection is ", prot)
 	return prot
 	
 # Returns skill level

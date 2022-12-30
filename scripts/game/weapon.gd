@@ -8,10 +8,11 @@ func toggle_collisions(toggle):
 	get_node(area).monitoring = toggle
 	
 func _on_area_3d_body_entered(body):
-	print("Hit ", body.name)
+	
 	# Discard self hit
 	if body.name==owner_name:
 		return
+	print("Hit "+body.name+" with damage ",damage)
 	# play use sound
 	$AudioStreamPlayer3D.play()
 	# Disable colisions until next use

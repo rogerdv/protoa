@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dyfawa3lbyap0" path="res://models/npcs/npc01/npc_01.tscn" id="10_2y3qi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hs2wu"]
-radius = 0.3
-height = 1.8
+radius = 0.330571
+height = 2.28245
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_no6ea"]
 size = Vector2(1, 1)
@@ -31,7 +31,7 @@ model = NodePath("Node3D/npc 01")
 attrib = [6, 6, 6, 6, 4]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.947788, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15249, 0)
 shape = SubResource("CapsuleShape3D_hs2wu")
 
 [node name="select" type="MeshInstance3D" parent="."]
