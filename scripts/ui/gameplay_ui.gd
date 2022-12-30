@@ -35,10 +35,8 @@ func _process(delta):
 				var perc:float = pl_cooldown/ab_cooldown*100
 				get_node("slot_bar/"+str(t)).value=100-perc
 
-
-func _on_slot_pressed(extra_arg_0):	
-	
-	match GlobalControl.buttons[extra_arg_0]["action"]:
+func exec_slot(slot_idx:int):
+	match GlobalControl.buttons[slot_idx]["action"]:
 		"attack":
 			#VEry basic action to test attack
 			if game_instance.player.target==null:
@@ -50,13 +48,14 @@ func _on_slot_pressed(extra_arg_0):
 							"target":game_instance.player.target, "done":false, "loop":true}
 			game_instance.player.actions.append(attack)
 		"ability":			
-			if game_instance.player.abilities[GlobalControl.buttons[extra_arg_0]["id"]]["cooldown"]<=0:		
+			if game_instance.player.abilities[GlobalControl.buttons[slot_idx]["id"]]["cooldown"]<=0:		
 				#we can cast
 				for a in game_instance.abilities:
-					if a["id"]==GlobalControl.buttons[extra_arg_0]["id"]:
+					if a["id"]==GlobalControl.buttons[slot_idx]["id"]:
 						a.use(game_instance.player, game_instance.player.target)
-						game_instance.player.abilities[GlobalControl.buttons[extra_arg_0]["id"]]["cooldown"]=a["cooldown"]
+						game_instance.player.abilities[GlobalControl.buttons[slot_idx]["id"]]["cooldown"]=a["cooldown"]
 
+func _on_slot_pressed(extra_arg_0):	
+	exec_slot(extra_arg_0)
+	
 
-func _on_6_pressed(extra_arg_0):
-	pass # Replace with function body.

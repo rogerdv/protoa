@@ -177,7 +177,7 @@ theme_override_colors/font_color = Color(0, 0, 0.952941, 1)
 [connection signal="pressed" from="slot_bar/3" to="." method="_on_slot_pressed" binds= [3]]
 [connection signal="pressed" from="slot_bar/4" to="." method="_on_slot_pressed" binds= [4]]
 [connection signal="pressed" from="slot_bar/5" to="." method="_on_slot_pressed" binds= [5]]
-[connection signal="pressed" from="slot_bar/6" to="." method="_on_6_pressed" binds= [6]]
+[connection signal="pressed" from="slot_bar/6" to="." method="_on_slot_pressed" binds= [6]]
 [connection signal="pressed" from="slot_bar/7" to="." method="_on_slot_pressed" binds= [8]]
 [connection signal="pressed" from="slot_bar/8" to="." method="_on_slot_pressed" binds= [8]]
 [connection signal="pressed" from="slot_bar/9" to="." method="_on_slot_pressed" binds= [9]]

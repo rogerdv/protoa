@@ -65,20 +65,29 @@ func _unhandled_input(event):
 	
 func _unhandled_key_input(event):
 	if  event is InputEventKey and event.pressed:
-		if event.keycode==KEY_ESCAPE:
-			get_tree().quit()
-		elif event.keycode==KEY_C:
-			if cs==null:
-				cs= char_s.instantiate()
-				GlobalControl.scene_ui.add_child(cs)
-			else :
-				cs.queue_free()
-		elif event.keycode==KEY_I:
-			if inv==null:
-				inv = inv_s.instantiate()
-				GlobalControl.scene_ui.add_child(inv)
-			else :
-				inv.queue_free()
+		match event.keycode:
+			KEY_ESCAPE:
+				get_tree().quit()
+			KEY_C:
+				if cs==null:
+					cs= char_s.instantiate()
+					GlobalControl.scene_ui.add_child(cs)
+				else :
+					cs.queue_free()
+			KEY_I:
+				if inv==null:
+					inv = inv_s.instantiate()
+					GlobalControl.scene_ui.add_child(inv)
+				else :
+					inv.queue_free()
+			KEY_1:
+				GlobalControl.scene_ui.exec_slot(1)
+			KEY_2:
+				GlobalControl.scene_ui.exec_slot(2)
+			KEY_3:
+				GlobalControl.scene_ui.exec_slot(3)
+			KEY_4:
+				GlobalControl.scene_ui.exec_slot(4)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
