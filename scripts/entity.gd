@@ -82,11 +82,11 @@ func recalc_stats():
 	hp[1]=5*attrib[CON]+attrib[STR]*2
 	hp[0]=hp[1]
 	hp_regen = attrib[CON]/100.0
-	print("HP regeneration calc: ", hp_regen)
+	
 	ep[1]= 5*attrib[INT]+attrib[CON]*2
 	ep[0]=ep[1]
 	ep_regen = attrib[CON]/100.0+attrib[INT]/100.0
-	print("EP regeneration calc: ", ep_regen)
+	
 
 #Void	move_to
 #set the parameters for character navigation
