@@ -2,7 +2,7 @@ extends Control
 
 var icon_attack=load("res://textures/ui/sword.png")
 var icon_spell=load("res://textures/ui/tome.png")
-
+var l_set =LabelSettings.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,9 +10,12 @@ func _ready():
 	$"slot_bar/2".texture_progress=icon_spell 
 
 func add_message(msg:String):
+	l_set.font_color = Color(0.1,.01,0.1,1)
 	var l = Label.new()
+	l.label_settings = l_set
 	l.text = msg
 	$MessageArea/Text.add_child(l)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

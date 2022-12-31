@@ -5,6 +5,11 @@ var end_game = false
 
 func _ready():
 	GlobalControl.scene_ui = $UI	
+	if GlobalControl.display_tut:
+		GlobalControl.display_tut=false
+		# Tell the player how to play
+		$UI.add_message("tip_hotkeys_c")
+		$UI.add_message("tip_hotkeys_i")
 	add_child(game_instance.player)
 	get_node("player").position=Vector3(0,0,0)
 
