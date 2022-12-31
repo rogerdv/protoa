@@ -25,3 +25,5 @@ staff,Vara,Staff
 woodshield,Rodela de madera,Woooden round shield
 dead,Has muerto,You are dead
 quit,Salir,Quit
+tip_hotkeys_c,Presione C para abrir Hoja de Personaje,Press C to open Character Sheet
+tip_hotkeys_i,Pressione I para abrir el Inventario,Press I to open Inventory
