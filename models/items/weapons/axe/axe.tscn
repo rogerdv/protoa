@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://bej4elmllq7j8" path="res://models/items/weapons/axe/axe_material.tres" id="2_ihbgh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_op2m2"]
-size = Vector3(0.169269, 0.415765, 0.46997)
+size = Vector3(0.169269, 0.415765, 0.619382)
 
 [node name="axe" type="Node3D"]
 script = ExtResource("1_05yj1")
@@ -20,7 +20,7 @@ surface_material_override/0 = ExtResource("2_ihbgh")
 transform = Transform3D(1, 0, 0, 0, 1, 3.72529e-09, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="IronAxe/Area3D"]
-transform = Transform3D(0.999999, -2.98023e-08, -1.19209e-07, 0, 0.999998, 4.47035e-08, 0, 4.47035e-08, 0.999999, 0.00201535, -0.170323, 0.665931)
+transform = Transform3D(0.999999, -7.45058e-08, -2.68221e-07, 2.98023e-08, 0.999998, 7.45058e-08, 0, 8.19564e-08, 0.999999, 0.0020152, -0.170323, 0.674416)
 shape = SubResource("BoxShape3D_op2m2")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
