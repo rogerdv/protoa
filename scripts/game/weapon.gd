@@ -12,7 +12,7 @@ func _on_area_3d_body_entered(body):
 	# Discard self hit
 	if body.name==owner_name:
 		return
-	print("Hit "+body.name+" with damage ",damage)
+	print(owner_name+" hit "+body.name+" with damage ",damage)
 	# play use sound
 	$AudioStreamPlayer3D.play()
 	# Disable colisions until next use

@@ -24,5 +24,5 @@ func get_ability(id:String):
 func get_item(id:String):
 	for it in items:
 		if it.id==id:
-			return it
+			return it.duplicate()
 	return null
