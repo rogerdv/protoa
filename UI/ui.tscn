@@ -63,6 +63,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 offset_right = 64.0
 offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="2" parent="slot_bar" instance=ExtResource("2_0nmhd")]
 anchors_preset = 0
@@ -71,6 +73,8 @@ anchor_bottom = 0.0
 offset_left = 66.0
 offset_right = 130.0
 offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="3" parent="slot_bar" instance=ExtResource("2_0nmhd")]
 anchors_preset = 0
@@ -79,6 +83,8 @@ anchor_bottom = 0.0
 offset_left = 132.0
 offset_right = 196.0
 offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="4" parent="slot_bar" instance=ExtResource("2_0nmhd")]
 anchors_preset = 0
@@ -87,6 +93,8 @@ anchor_bottom = 0.0
 offset_left = 198.0
 offset_right = 262.0
 offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="5" parent="slot_bar" instance=ExtResource("2_0nmhd")]
 anchors_preset = 0
@@ -95,6 +103,8 @@ anchor_bottom = 0.0
 offset_left = 264.0
 offset_right = 328.0
 offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="6" parent="slot_bar" instance=ExtResource("2_0nmhd")]
 anchors_preset = 0
@@ -103,6 +113,8 @@ anchor_bottom = 0.0
 offset_left = 330.0
 offset_right = 394.0
 offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="7" parent="slot_bar" instance=ExtResource("2_0nmhd")]
 anchors_preset = 0
@@ -111,6 +123,8 @@ anchor_bottom = 0.0
 offset_left = 396.0
 offset_right = 460.0
 offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="8" parent="slot_bar" instance=ExtResource("2_0nmhd")]
 anchors_preset = 0
@@ -119,6 +133,8 @@ anchor_bottom = 0.0
 offset_left = 462.0
 offset_right = 526.0
 offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="9" parent="slot_bar" instance=ExtResource("2_0nmhd")]
 anchors_preset = 0
@@ -127,6 +143,8 @@ anchor_bottom = 0.0
 offset_left = 528.0
 offset_right = 592.0
 offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="0" parent="slot_bar" instance=ExtResource("2_0nmhd")]
 anchors_preset = 0
@@ -135,6 +153,8 @@ anchor_bottom = 0.0
 offset_left = 594.0
 offset_right = 658.0
 offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="info" type="HBoxContainer" parent="."]
 offset_right = 66.0

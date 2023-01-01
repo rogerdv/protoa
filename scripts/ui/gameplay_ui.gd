@@ -52,7 +52,9 @@ func exec_slot(slot_idx:int):
 			game_instance.player.actions.append(attack)
 		"ability":			
 			if game_instance.player.abilities[GlobalControl.buttons[slot_idx]["id"]]["cooldown"]<=0:		
-				#we can cast
+				#we can cast, if has a target
+				if game_instance.player.target==null:
+					return
 				for a in game_instance.abilities:
 					if a["id"]==GlobalControl.buttons[slot_idx]["id"]:
 						a.use(game_instance.player, game_instance.player.target)
