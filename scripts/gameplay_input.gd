@@ -33,7 +33,10 @@ func _unhandled_input(event):
 			# LEft click, look for NPC or interactable
 			if intersection != null:
 				if intersection["collider"] is npc:	
-					if player.target==null or player.target.name!=intersection["collider"].name: 				
+					if  player.target==null or player.target.name!=intersection["collider"].name: 				
+						# disable prviously selected entity
+						if player.target!=null:
+							player.target.toggle_select(false)
 						intersection["collider"].toggle_select(true)
 						player.target = intersection["collider"]
 						player.turn_at(player.target.global_transform.origin)						
