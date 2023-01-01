@@ -192,6 +192,10 @@ config/icon="res://icon.svg"
 GlobalControl="*res://scripts/control.gd"
 game_instance="*res://scenes/game_instance.tscn"
 
+[display]
+
+window/size/mode=3
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/yagbta/plugin.cfg")

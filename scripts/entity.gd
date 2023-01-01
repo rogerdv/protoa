@@ -184,6 +184,9 @@ func receive_dmg(damage:float, dmg_type:int):
 	if damage-get_protection(dmg_type)<0:
 		return
 	hp[0]=hp[0]-(damage-get_protection(dmg_type))
+	if hp[0]<0:
+		hp[0]=0
+		
 
 # Returns the total protection for a given damage type
 func get_protection(dmg_type:int):

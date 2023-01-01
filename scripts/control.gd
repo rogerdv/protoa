@@ -13,9 +13,13 @@ var buttons=[{"action":""},{"action":"attack"},{"action":"ability","id":"testmb"
 			{"action":""}]
 
 var display_tut = true#if true, tips about gampley will be displayed on game start
+var native_res_set = false
 
 func _ready():
 	debug = true
+	if !native_res_set:
+		var resolution = DisplayServer.screen_get_size()
+		print(resolution)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
