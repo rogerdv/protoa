@@ -3,11 +3,15 @@ extends Control
 var icon_attack=load("res://textures/ui/sword.png")
 var icon_spell=load("res://textures/ui/tome.png")
 var l_set =LabelSettings.new()
+var scrollbar
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$"slot_bar/1".texture_progress=icon_attack 
 	$"slot_bar/2".texture_progress=icon_spell 
+	scrollbar=$MessageArea.get_v_scroll_bar()
+	scrollbar.changed.connect(handle_scroll)
 
 func add_message(msg:String):
 	l_set.font_color = Color(0.1,.01,0.1,1)
@@ -15,7 +19,11 @@ func add_message(msg:String):
 	l.label_settings = l_set
 	l.text = msg
 	$MessageArea/Text.add_child(l)
-	
+
+
+func handle_scroll():
+	$MessageArea.scroll_vertical = scrollbar.max_value		
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
