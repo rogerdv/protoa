@@ -1,6 +1,7 @@
+@icon("res://addons/yagbta/icons/BehaviorTreeRoot.svg")
 extends BehaviorTreeBranchedNode
 class_name BehaviorTreeRoot 
-@icon("res://addons/yagbta/icons/BehaviorTreeRoot.svg")
+
 
 @export var actor_path:NodePath
 @export var active:bool = true

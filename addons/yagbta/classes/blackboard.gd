@@ -1,6 +1,7 @@
+@icon("res://addons/yagbta/icons/Blackboard.svg")
 extends Resource
 class_name Blackboard 
-@icon("res://addons/yagbta/icons/Blackboard.svg")
+
 
 var data = {}
 

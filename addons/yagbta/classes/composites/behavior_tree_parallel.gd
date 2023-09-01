@@ -1,6 +1,7 @@
+@icon("res://addons/yagbta/icons/BehaviorTreeParallel.svg")
 extends BehaviorTreeComposite
 class_name BehaviorTreeParallel
-@icon("res://addons/yagbta/icons/BehaviorTreeParallel.svg")
+
 
 func tick():
 	for node in stack:

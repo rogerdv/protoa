@@ -1,6 +1,7 @@
+@icon("res://addons/yagbta/icons/BehaviorTreeSequence.svg")
 extends BehaviorTreeComposite
 class_name BehaviorTreeSequence
-@icon("res://addons/yagbta/icons/BehaviorTreeSequence.svg")
+
 
 
 func tick():

@@ -1,6 +1,7 @@
+@icon("res://addons/yagbta/icons/BehaviorTreeComposite.svg")
 extends BehaviorTreeBranchedNode
 class_name BehaviorTreeComposite
-@icon("res://addons/yagbta/icons/BehaviorTreeComposite.svg")
+
 
 var stack = []
 var cursor = 0

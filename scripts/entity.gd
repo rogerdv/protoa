@@ -249,7 +249,7 @@ func movement():
 		var current_location = global_transform.origin
 		
 		#calculate floor point from navmesh
-		var next_nav_location = nav_agent.get_next_location()
+		var next_nav_location = nav_agent.get_next_path_position()
 		var space_state = get_world_3d().get_direct_space_state()
 		var floor_ray = PhysicsRayQueryParameters3D.create(next_nav_location,Vector3(0,-1000,0))
 		var intersection = space_state.intersect_ray(floor_ray)
@@ -285,7 +285,8 @@ func movement():
 
 #Use this method for set navigation target, please dont set it directly.
 func set_nav_agent(target:Vector3):
-	nav_agent.set_target_location(target)
+	nav_agent.target_position=target
+	
 
 #void	turn_at
 #the default method to set where character should be facing.

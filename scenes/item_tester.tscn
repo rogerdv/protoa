@@ -17,11 +17,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="items" type="VBoxContainer" parent="UI"]
+layout_mode = 0
 offset_right = 145.0
 offset_bottom = 300.0
 
 [node name="attack" type="Button" parent="UI"]
-anchors_preset = 1
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -101.0
@@ -30,7 +31,7 @@ grow_horizontal = 0
 text = "Attack anim"
 
 [node name="MessageArea" type="ScrollContainer" parent="UI"]
-anchors_preset = 7
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -44,6 +45,7 @@ grow_vertical = 0
 mouse_filter = 0
 
 [node name="Text" type="VBoxContainer" parent="UI/MessageArea"]
+layout_mode = 2
 mouse_filter = 0
 
 [node name="pivot" type="Node3D" parent="."]

@@ -9,7 +9,6 @@ height = 1.98252
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_8pgjm")
 model_scene = "res://models/player_character/player_character.tscn"
-attrib = [5, 5, 5, 5, 5]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.992057, 0)

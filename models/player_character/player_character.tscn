@@ -10,12 +10,13 @@
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_e6ars"]
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_nvgxn"]
-enabled_inputs = 2
 xfade_time = 0.1
 input_0/name = "movement_state"
 input_0/auto_advance = false
+input_0/reset = true
 input_1/name = "attack_state"
 input_1/auto_advance = false
+input_1/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_72xwm"]
 animation = &"retargeting_base/attack_one_handed"
@@ -2482,9 +2483,13 @@ tree_root = SubResource("AnimationNodeBlendTree_g36lv")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/OneShot/active = false
+parameters/OneShot/internal_active = false
+parameters/OneShot/request = 0
 parameters/TimeScale/scale = 1.0
 "parameters/TimeScale 2/scale" = 0.8
-parameters/Transition/current = 0
+parameters/Transition/current_state = ""
+parameters/Transition/transition_request = ""
+parameters/Transition/current_index = -1
 parameters/stance/blend_position = Vector2(0.0017637, -0.973799)
 
 [node name="head" type="BoneAttachment3D" parent="." index="3"]

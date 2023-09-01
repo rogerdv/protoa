@@ -1,6 +1,7 @@
+@icon("res://addons/yagbta/icons/BehaviorTreeRepeater.svg")
 extends BehaviorTreeDecorator
 class_name BehaviorTreeRepeater
-@icon("res://addons/yagbta/icons/BehaviorTreeRepeater.svg")
+
 
 @export var times:int = 1
 var max_times

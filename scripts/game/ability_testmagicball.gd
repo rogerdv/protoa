@@ -14,7 +14,7 @@ func use(owner, target):
 	#create projectile effect and set values
 	model = fx.instantiate()
 	var level = owner.skills["elemental"]["level"]
-	model.damage = damage+(damage*level/10)
+	model.damage = damage*owner.attrib[entity.INT]/10+(damage*level/10)
 	model.target = target
 	model.hit_fx=hit_fx
 	model.parent_entity=owner

@@ -1,6 +1,7 @@
+@icon("res://addons/yagbta/icons/BehaviorTreeBranchedNode.svg")
 extends BehaviorTreeNode
 class_name BehaviorTreeBranchedNode 
-@icon("res://addons/yagbta/icons/BehaviorTreeBranchedNode.svg")
+
 
 func setup_children(root, actor):
 	self.actor = actor

@@ -28,7 +28,7 @@ size = Vector3(2.68824, 1, 3.70556)
 [node name="npc" type="CharacterBody3D"]
 script = ExtResource("1_vt6jp")
 model = NodePath("Node3D/npc 01")
-attrib = [6, 6, 6, 6, 4]
+attrib = Array[int]([6, 6, 6, 6, 4])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15249, 0)
