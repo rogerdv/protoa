@@ -20,4 +20,3 @@ func _process(delta):
 	super(delta)
 	if hp[0]<=0 and not dead:
 		dead=true	
-

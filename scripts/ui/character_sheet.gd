@@ -43,4 +43,3 @@ func skill_changed(new_val, sk_name):
 	
 func _on_close_pressed():
 	queue_free()
-

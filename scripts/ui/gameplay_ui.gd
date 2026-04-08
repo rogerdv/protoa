@@ -71,4 +71,3 @@ func exec_slot(slot_idx:int):
 func _on_slot_pressed(extra_arg_0):	
 	exec_slot(extra_arg_0)
 	
-

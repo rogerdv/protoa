@@ -112,10 +112,7 @@ func move_to(_target:Dictionary,separation:float=0.2,attacking:bool=false):
 		nav_target = null
 		set_nav_agent(_target.position)
 	#Run anim
-#	if attacking:
-#		anim.set("parameters/stance/blend_position", Vector2(0,0) )
-#	else :
-	anim.set("parameters/stance/blend_position", Vector2(0,1) )
+	anim.set("parameters/MoveIdle/blend_position", 10.0 )
 
 #Void	smooth_rotate
 #set the parameters for character to make a nice smooth rotation
@@ -271,7 +268,8 @@ func movement():
 		moving = false
 		nav_target=null
 		if autoatk:
-			anim.set("parameters/stance/blend_position", Vector2(0,0) )
+			#Set combat stance animation
+			anim.get("parameters/playback").travel("idle_one_handed")
 			
 			#create an attack action
 			var weapon_id = equip["weapon"]
@@ -281,7 +279,7 @@ func movement():
 							"target":target, "done":false, "loop":true}
 			actions.append(attack)
 		else :
-			anim.set("parameters/stance/blend_position", Vector2(0,-1) )
+			anim.set("parameters/IdleMove/blend_position", 0 )
 
 #Use this method for set navigation target, please dont set it directly.
 func set_nav_agent(target:Vector3):
